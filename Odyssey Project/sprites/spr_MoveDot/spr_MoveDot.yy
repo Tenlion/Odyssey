@@ -8,14 +8,14 @@
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
   "bbox_left": 0,
-  "bbox_right": 99,
+  "bbox_right": 9,
   "bbox_top": 0,
-  "bbox_bottom": 99,
+  "bbox_bottom": 9,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 100,
-  "height": 100,
+  "width": 10,
+  "height": 10,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"fb68e585-c5b1-48a9-9323-e7985ee60996","path":"sprites/spr_Player/spr_Player.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"fb68e585-c5b1-48a9-9323-e7985ee60996","path":"sprites/spr_Player/spr_Player.yy",},"LayerId":{"name":"e8985068-26c0-4a81-a9d6-f8d941641cff","path":"sprites/spr_Player/spr_Player.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"spr_Player","path":"sprites/spr_Player/spr_Player.yy",},"resourceVersion":"1.0","name":"fb68e585-c5b1-48a9-9323-e7985ee60996","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"fb68e585-c5b1-48a9-9323-e7985ee60996","path":"sprites/spr_MoveDot/spr_MoveDot.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"fb68e585-c5b1-48a9-9323-e7985ee60996","path":"sprites/spr_MoveDot/spr_MoveDot.yy",},"LayerId":{"name":"e8985068-26c0-4a81-a9d6-f8d941641cff","path":"sprites/spr_MoveDot/spr_MoveDot.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"spr_MoveDot","path":"sprites/spr_MoveDot/spr_MoveDot.yy",},"resourceVersion":"1.0","name":"fb68e585-c5b1-48a9-9323-e7985ee60996","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"spr_Player","path":"sprites/spr_Player/spr_Player.yy",},
+    "spriteId": {"name":"spr_MoveDot","path":"sprites/spr_MoveDot/spr_MoveDot.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"d343bc7a-ea53-45b3-8893-3cb79449100f","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"fb68e585-c5b1-48a9-9323-e7985ee60996","path":"sprites/spr_Player/spr_Player.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"4ad57f40-81c6-46d4-970e-6ca70f29a7e2","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"fb68e585-c5b1-48a9-9323-e7985ee60996","path":"sprites/spr_MoveDot/spr_MoveDot.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
@@ -58,9 +58,9 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"spr_Player","path":"sprites/spr_Player/spr_Player.yy",},
+    "parent": {"name":"spr_MoveDot","path":"sprites/spr_MoveDot/spr_MoveDot.yy",},
     "resourceVersion": "1.4",
-    "name": "spr_Player",
+    "name": "spr_MoveDot",
     "tags": [],
     "resourceType": "GMSequence",
   },
@@ -73,7 +73,7 @@
     "path": "folders/Sprites.yy",
   },
   "resourceVersion": "1.0",
-  "name": "spr_Player",
+  "name": "spr_MoveDot",
   "tags": [],
   "resourceType": "GMSprite",
 }
