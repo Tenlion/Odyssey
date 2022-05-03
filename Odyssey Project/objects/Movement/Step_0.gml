@@ -57,6 +57,26 @@ moveDotY_Unique = _angle_fix(moveDotY_Unique);
 playerPositionY = (moveDotY_Unique * speedMultiplier);
 
 // Calculating the Player's current position.
-Player.x = playerPositionX;	
+Player.x = playerPositionX;
 Player.y = playerPositionY;
 
+
+if (keyboard_check(ord("W")) == true) { 
+	
+	Movement.y -= playerSpeed; 
+}
+
+if (keyboard_check(ord("S")) == true) { 
+	
+	Movement.y += playerSpeed; 
+}
+
+if (keyboard_check(ord("A")) == true) { 
+	
+	Movement.x -= playerSpeed; 
+}
+
+if (keyboard_check(ord("D")) == true) { 
+	
+	Movement.x += playerSpeed;
+}

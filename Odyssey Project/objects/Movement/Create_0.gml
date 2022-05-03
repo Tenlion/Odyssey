@@ -1,8 +1,15 @@
-/* Stuff to Do
+/* 
+
+Stuff To Do
 1. Create a check that looks for whether or not any of the W, A, S or D keys are pressed.  Assign "true" to [variable name] if one or multiple is pressed.
-2. Transition the moveContainer to the center of the room.
+
+Stuff That I Finished
++ Transition the moveContainer to the center of the room.
+
 */
 
+x = room_width * 0.5;
+y = room_height * 0.5;
 
 // Properties
 weight = 1;												// weight : Dictates how fast or slow the player moves and stops.
@@ -24,3 +31,6 @@ anchorToCursorDist = 0;		// anchorToCursorDist : Property to hold the current di
 playerPositionX = 0;
 playerPositionY = 0;
 //distanceFromPlanet = planetRadius + 50;	// playerDistance : Changes the distance the player is from the edge of the Planet Sprite.
+
+
+playerSpeed = 3;
