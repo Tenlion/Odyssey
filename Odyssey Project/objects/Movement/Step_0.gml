@@ -1,5 +1,47 @@
 
+if (keyboard_check(ord("W")) == true) { Movement.y -= Player.force; }
+if (keyboard_check(ord("S")) == true) { Movement.y += Player.force; }
+if (keyboard_check(ord("A")) == true) { Movement.x -= Player.force; }
+if (keyboard_check(ord("D")) == true) { Movement.x += Player.force; }
+
+
+
+if	(keyboard_check(ord("W")) == false) &&
+	(keyboard_check(ord("S")) == false) &&
+	(keyboard_check(ord("A")) == false) &&
+	(keyboard_check(ord("D")) == false) {
+
+	//_move_to_target_straight(Movement, anchorX, anchorY, Player.force);
+}
+
+
+
+blahX = _relPosX_inSprite_real(Movement, spr_MoveContainer, anchorX);
+blahY = _relPosY_inSprite_real(Movement, spr_MoveContainer, anchorY);
+
+if (blahX > 1)	{ Movement.x = anchorX + moveMaxDistance; blahX = 1; }
+if (blahX < -1)	{ Movement.x = anchorX - moveMaxDistance; blahX = -1; }
+
+if (blahY > 1)	{ Movement.y = anchorY + moveMaxDistance; blahY = 1; }
+if (blahY < -1)	{ Movement.y = anchorY - moveMaxDistance; blahY = -1; }
+
+Player.x += blahX * Player.force;
+Player.y += blahY * Player.force;
+
+
+
+
+
+/*
 //----------------------------- PRE-PROCESSING -----------------------------
+
+Player.x = moveDotX_Unique;
+Player.y = moveDotY_Unique;
+
+moveDotX_Unique : The moveDot's value from the range -1 to 1 based on it's current X position within the movement's container.
+	
+moveDotX_Unique = _angle_fix(moveDotX_Unique);
+moveDotY_Unique = _angle_fix(moveDotY_Unique);
 
 // Ever-Changing Object Properties
 cursorX = device_mouse_x_to_gui(0);																		// cursorX : The mouse cursor's current X position.
@@ -43,40 +85,3 @@ else {
 	_move_to_target_straight(Movement, anchorX, anchorY, weight);
 }
 
-
-
-//-------------------------- PLAYER POSITIONING + SPEED -----------------------------
-
-// Calculating the Player's current speed.
-moveDotX_Unique += _relPosX_inSprite_real(Movement, spr_MoveContainer, anchorX);	// moveDotX_Unique : The moveDot's value from the range -1 to 1 based on it's current X position within the movement's container.
-moveDotX_Unique = _angle_fix(moveDotX_Unique);
-playerPositionX = (moveDotX_Unique * speedMultiplier);	// playerPosition : Calculating the current player speed by multiplying the speedMultiplier to the moveDotX_Unique.
-
-moveDotY_Unique += _relPosY_inSprite_real(Movement, spr_MoveContainer, anchorY);
-moveDotY_Unique = _angle_fix(moveDotY_Unique);
-playerPositionY = (moveDotY_Unique * speedMultiplier);
-
-// Calculating the Player's current position.
-Player.x = playerPositionX;
-Player.y = playerPositionY;
-
-
-if (keyboard_check(ord("W")) == true) { 
-	
-	Movement.y -= playerSpeed; 
-}
-
-if (keyboard_check(ord("S")) == true) { 
-	
-	Movement.y += playerSpeed; 
-}
-
-if (keyboard_check(ord("A")) == true) { 
-	
-	Movement.x -= playerSpeed; 
-}
-
-if (keyboard_check(ord("D")) == true) { 
-	
-	Movement.x += playerSpeed;
-}

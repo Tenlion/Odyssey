@@ -6,7 +6,7 @@
 function _relPosX_inSprite_real(object, sprite, spriteX) {
 	
 	// Calculating the result.
-	var result = (spriteX - object.x) / (sprite_get_width(sprite));
+	var result = (object.x - spriteX) / (sprite_get_width(sprite));
 	
 	// Throwing back the relative X value.
 	return result;
@@ -20,7 +20,7 @@ function _relPosX_inSprite_real(object, sprite, spriteX) {
 function _relPosY_inSprite_real(object, sprite, spriteY) {
 	
 	// Calculating the result.
-	var result = (spriteY - object.y) / (sprite_get_width(sprite));
+	var result = (object.y - spriteY) / (sprite_get_width(sprite));
 	
 	// Throwing back the relative X value.
 	return result;
@@ -179,7 +179,7 @@ function _move_to_target_straight(instToMove, targetX, targetY, instSpeed) {
 	
 	// ELSE : If the distance between the instance and target is LESS THAN the given speed, then
 	// set the instance's position to match that of the target.  This action prevents the instance
-	// that is being called to move from bouncing infinitely.
+	// that is being called to bounce infinitely.
 	else {
 		
 		instToMove.x = targetX;

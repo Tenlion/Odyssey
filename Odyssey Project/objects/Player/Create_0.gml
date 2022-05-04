@@ -1,2 +1,1 @@
-playerSpeed = 3;
-playerWeight = 0.1;
+force = 5; // 1 - 10
