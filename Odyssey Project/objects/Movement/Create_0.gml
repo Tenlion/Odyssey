@@ -1,10 +1,13 @@
 /* 
 
 Stuff To Do
-1. Create a check that looks for whether or not any of the W, A, S or D keys are pressed.  Assign "true" to [variable name] if one or multiple is pressed.
-2. Get the Movement Dot to stay inside it's container.
+1. Check if #3 is necessary.  The "issue" might all just be an illusion.  Needs debug variable testing to see though.
+2. Define the force, weight, speed and drag variables.  See if speed is even necessary.  Speed could just be replaced with weight.  Or you can do a force and weight system.
+3. Create a check that looks for whether or not any of the W, A, S or D keys are pressed.  Assign "true" to [variable name] if one or multiple is pressed.
+4. Optimize it all.
 
 Stuff That I Finished
++ Get the Movement Dot to stay inside it's container. (ISSUE : Function calculation wasn't halving the value of the sprite's given width.)
 + Transition the moveContainer to the center of the room.
 + Fix negative and positive values being reversed with the MoveDot's position inside the sprite. (ISSUE : Function calculation had a subtraction expression that needed to have it's variables flipped.)
 

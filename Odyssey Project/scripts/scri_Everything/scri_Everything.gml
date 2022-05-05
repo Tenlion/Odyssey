@@ -6,7 +6,13 @@
 function _relPosX_inSprite_real(object, sprite, spriteX) {
 	
 	// Calculating the result.
-	var result = (object.x - spriteX) / (sprite_get_width(sprite));
+	var result = (object.x - spriteX) / (sprite_get_width(sprite) / 2);
+	
+	// CHECK : If the result is above 1, then set the result to 1.
+	if (result > 1) { result = 1; }
+	
+	// CHECK : If the result is below -1, then set the result to -1.
+	else if	(result < -1) { result = -1; }
 	
 	// Throwing back the relative X value.
 	return result;
@@ -20,7 +26,13 @@ function _relPosX_inSprite_real(object, sprite, spriteX) {
 function _relPosY_inSprite_real(object, sprite, spriteY) {
 	
 	// Calculating the result.
-	var result = (object.y - spriteY) / (sprite_get_width(sprite));
+	var result = (object.y - spriteY) / (sprite_get_height(sprite) / 2);
+	
+	// CHECK : If the result is above 1, then set the result to 1.
+	if (result > 1) { result = 1; }
+	
+	// CHECK : If the result is below -1, then set the result to -1.
+	else if	(result < -1) { result = -1; }
 	
 	// Throwing back the relative X value.
 	return result;
@@ -34,7 +46,7 @@ function _relPosY_inSprite_real(object, sprite, spriteY) {
 function _relPosX_inSprite_whole(object, sprite, spriteX) {
 	
 	// Calculating the result.
-	var result = (spriteX - object.x) / (sprite_get_width(sprite));
+	var result = (object.x - spriteX) / (sprite_get_width(sprite) / 2);
 	
 	
 	// CHECK : If the result is above 0, then set the result to 1.
@@ -59,7 +71,7 @@ function _relPosX_inSprite_whole(object, sprite, spriteX) {
 function _relPosY_inSprite_whole(object, sprite, spriteY) {
 	
 	// Calculating the result.
-	var result = (spriteY - object.y) / (sprite_get_width(sprite));
+	var result = (object.y - spriteY) / (sprite_get_width(sprite) / 2);
 	
 	
 	// CHECK : If the result is above 0, then set the result to 1.
