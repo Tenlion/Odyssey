@@ -6,18 +6,20 @@ if (keyboard_check(ord("A")) == true) { Movement.x -= Player.force; }
 if (keyboard_check(ord("D")) == true) { Movement.x += Player.force; }
 
 
+
 // Checks that ensure the movement dot is reset to it's corresponding axis once any activity is done with the WASD keys.  W and S belonging to the Y axis.  A and D belonging to the X axis.
 if	(keyboard_check(ord("W")) == false) &&
 	(keyboard_check(ord("S")) == false) {
 	
-		_move_to_target_straight(Movement, Movement.x, anchorY, Player.force / 5);
+		_move_to_target_straight(Movement, Movement.x, anchorY, Player.drag);
 	}
 
 if	(keyboard_check(ord("A")) == false) &&
 	(keyboard_check(ord("D")) == false) {
 	
-		_move_to_target_straight(Movement, anchorX, Movement.y, Player.force / 5);
+		_move_to_target_straight(Movement, anchorX, Movement.y, Player.drag);
 	}
+
 
 
 // Obtaining the relative value associated with the position of the Movement Object inside it's container sprite.
@@ -25,12 +27,13 @@ blahX = _relPosX_inSprite_real(Movement, spr_MoveContainer, anchorX);
 blahY = _relPosY_inSprite_real(Movement, spr_MoveContainer, anchorY);
 
 
+
 // Checks that ensure thee movement dot stays inside it's container.  When a check block is active, then the movement dot has reached an edge of it's container.
 if (blahX == 1)		{ Movement.x = anchorX + moveMaxDistance; }
 if (blahX == -1)	{ Movement.x = anchorX - moveMaxDistance; }
-
 if (blahY == 1)		{ Movement.y = anchorY + moveMaxDistance; }
 if (blahY == -1)	{ Movement.y = anchorY - moveMaxDistance; }
+
 
 
 // Positioning the player object.
