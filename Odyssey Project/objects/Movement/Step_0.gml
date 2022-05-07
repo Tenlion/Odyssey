@@ -7,12 +7,11 @@ if (keyboard_check(ord("D")) == true) { Movement.x += force; }
 
 
 
-// Checks that ensure the movement dot is reset to it's corresponding axis once any activity is done with the WASD keys.  W and S belonging to the Y axis.  A and D belonging to the X axis.
 if	(keyboard_check(ord("W")) == false) &&
 	(keyboard_check(ord("S")) == false) &&
 	(keyboard_check(ord("A")) == false) &&
 	(keyboard_check(ord("D")) == false) {
-	
+
 		_move_to_target_straight(Movement, anchorX, anchorY, slide);
 	}
 	
@@ -28,24 +27,24 @@ else if	(keyboard_check(ord("A")) == false) &&
 		_move_to_target_straight(Movement, anchorX, Movement.y, drag);
 	}
 	
-	
+
 
 // Obtaining the relative value associated with the position of the Movement Object inside it's container sprite.
-dot_relation_in_spriteX = _relPosX_inSprite_real(Movement, spr_MoveContainer, anchorX);
-dot_relation_in_spriteY = _relPosY_inSprite_real(Movement, spr_MoveContainer, anchorY);
+dot_relation_in_containerX = _relPosX_inSprite_real(Movement, spr_MoveContainer, anchorX);
+dot_relation_in_containerY = _relPosY_inSprite_real(Movement, spr_MoveContainer, anchorY);
 
 
 // Checks that ensure thee movement dot stays inside it's container.  When a check block is active, then the movement dot has reached an edge of it's container.
-if (dot_relation_in_spriteX == 1)	{ Movement.x = anchorX + moveMaxDistance; }
-if (dot_relation_in_spriteX == -1)	{ Movement.x = anchorX - moveMaxDistance; }
-if (dot_relation_in_spriteY == 1)	{ Movement.y = anchorY + moveMaxDistance; }
-if (dot_relation_in_spriteY == -1)	{ Movement.y = anchorY - moveMaxDistance; }
+if (dot_relation_in_containerX == 1)	{ Movement.x = anchorX + moveMaxDistance; }
+if (dot_relation_in_containerX == -1)	{ Movement.x = anchorX - moveMaxDistance; }
+if (dot_relation_in_containerY == 1)	{ Movement.y = anchorY + moveMaxDistance; }
+if (dot_relation_in_containerY == -1)	{ Movement.y = anchorY - moveMaxDistance; }
 
 
 
 // Positioning the player object.
-Player.x += dot_relation_in_spriteX * force;
-Player.y += dot_relation_in_spriteY * force;
+Player.x += dot_relation_in_containerX * force;
+Player.y += dot_relation_in_containerY * force;
 
 
 

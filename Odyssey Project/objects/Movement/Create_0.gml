@@ -1,8 +1,11 @@
 /* 
 
 Stuff To Do
-3. Create a check that looks for whether or not any of the W, A, S or D keys are pressed.  Assign "true" to [variable name] if one or multiple is pressed.
-4. Optimize it all.
+1. Rename drag to something else.  Also maybe rename turn? ("Turn" might be fine to be honest.)
+2. Take calculations out of container code to increase efficiency.
+3. Maybe add Else Ifs?  But maybe not since the dot could hit two edges at once?
+4. Think if you want to add boosting, otherwise just check if optimization is finished and then you're good to move onto the next objective.
+5. Optimize it all.
 
 Stuff That I Finished
 + Check if #3 is necessary.  The "issue" might all just be an illusion.  Needs debug variable testing to see though.
@@ -30,20 +33,3 @@ force = (sprite_get_width(spr_MoveContainer) * Player.push) / (sprite_get_width(
 slide = sprite_get_width(spr_MoveContainer) * Player.pull;
 
 drag = slide * Player.turn;
-
-
-/*
-speedMultiplier = 1;
-moveDotX_Unique = 0;	// moveDotX_Unique : The moveDot's X position from the range -1 to 1 based on it's current X value within the movement's container.
-moveDotY_Unique = 0;	// moveDotY_Unique : The moveDot's Y position from the range -1 to 1 based on it's current Y value within the movement's container.
-playerPositionX = 0;
-playerPositionY = 0;
-moveMaxDistance = sprite_get_width(spr_MoveContainer) * 0.5;	// moveMaxDistance : Using half of the width of the spr_moveCircle to determine the movement's casing.
-click = false;				// click : Boolean to determine whether or not there is an active click.
-acceptedRange = false;		// acceptedRange : Boolean to determine whether the cursor's position is within the movement's perimeter line.
-//distanceFromPlanet = planetRadius + 50;	// playerDistance : Changes the distance the player is from the edge of the Planet Sprite.
-cursorX = 0;				// cursorX : Property to hold the current cursor's X position.
-cursorY = 0;				// cursorY : Property to hold the current cursor's Y position.
-dotMaxX = 0;				// dotMaxX : A property that keeps the movement dot from staying within the bounds of it's casing for the X Position, all while ensuring it is pointing at the cursor if the cursor is outside the boundary.
-dotMaxY = 0;				// dotMaxY : A property that keeps the movement dot from staying within the bounds of it's casing for the Y Position, all while ensuring it is pointing at the cursor if the cursor is outside the boundary.
-anchorToCursorDist = 0;		// anchorToCursorDist : Property to hold the current distance between the anchor position and cursor position.
