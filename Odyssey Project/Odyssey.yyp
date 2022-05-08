@@ -7,6 +7,7 @@
     {"id":{"name":"Movement","path":"objects/Movement/Movement.yy",},"order":4,},
     {"id":{"name":"Data","path":"objects/Data/Data.yy",},"order":3,},
     {"id":{"name":"spr_MoveDot","path":"sprites/spr_MoveDot/spr_MoveDot.yy",},"order":3,},
+    {"id":{"name":"Time","path":"objects/Time/Time.yy",},"order":5,},
     {"id":{"name":"Camera","path":"objects/Camera/Camera.yy",},"order":1,},
     {"id":{"name":"Player","path":"objects/Player/Player.yy",},"order":0,},
     {"id":{"name":"Space","path":"rooms/Space/Space.yy",},"order":0,},
