@@ -1,4 +1,3 @@
 
-// Drawing HUD Elements for the movement controller.
-draw_sprite_ext(spr_MoveContainer, 0, anchorX, anchorY, 1, 1, 0, c_white, 1);	// Creating the movement's container/casing at the anchored position.
-draw_sprite_ext(spr_MoveDot, 0, x, y, 1, 1, 0, c_white, 1);						// Drawing the movement's dot at the Movement Object's current X and Y Coordinates.
+draw_sprite_ext(container_sprite, 0, anchorX, anchorY, container_width_scale, container_height_scale, 0, c_grey, 1);
+draw_sprite_ext(spr_Dot, 0, Movement.x, Movement.y, 1, 1, 0, c_purple, 1);

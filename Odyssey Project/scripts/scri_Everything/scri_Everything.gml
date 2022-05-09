@@ -3,10 +3,10 @@
 // RELATIVE POSITION IN SPRITE FOR X (Returns REAL Number)
 // Returns the relative X value of an object within a sprite.  If the object is within the sprite AND
 // the spriteX represents the X position of the sprite, then a value between -1.0 to 1.0 will be returned.
-function _relPosX_inSprite_real(object, sprite, spriteX) {
+function _relPosX_inSprite_real(object, spriteWidth, spriteX) {
 	
 	// Calculating the result.
-	var result = (object.x - spriteX) / (sprite_get_width(sprite) / 2);
+	var result = (object.x - spriteX) / (spriteWidth / 2);
 	
 	// CHECK : If the result is above 1, then set the result to 1.
 	if (result > 1) { result = 1; }
@@ -23,10 +23,10 @@ function _relPosX_inSprite_real(object, sprite, spriteX) {
 // RELATIVE POSITION IN SPRITE FOR Y (Returns REAL Number)
 // Returns the relative Y value of an object within a sprite.  If the object is within the sprite AND
 // the spriteX represents the Y position of the sprite, then a value between -1.0 to 1.0 will be returned.
-function _relPosY_inSprite_real(object, sprite, spriteY) {
+function _relPosY_inSprite_real(object, spriteHeight, spriteY) {
 	
 	// Calculating the result.
-	var result = (object.y - spriteY) / (sprite_get_height(sprite) / 2);
+	var result = (object.y - spriteY) / (spriteHeight / 2);
 	
 	// CHECK : If the result is above 1, then set the result to 1.
 	if (result > 1) { result = 1; }
@@ -43,10 +43,10 @@ function _relPosY_inSprite_real(object, sprite, spriteY) {
 // RELATIVE POSITION IN SPRITE FOR X (Returns WHOLE Number)
 // Returns the relative X value of an object within a sprite.  If the object is within the sprite AND
 // the spriteX represents the X position of the sprite, then either -1, 0 or 1 will be returned.
-function _relPosX_inSprite_whole(object, sprite, spriteX) {
+function _relPosX_inSprite_whole(object, spriteWidth, spriteX) {
 	
 	// Calculating the result.
-	var result = (object.x - spriteX) / (sprite_get_width(sprite) / 2);
+	var result = (object.x - spriteX) / (spriteWidth / 2);
 	
 	
 	// CHECK : If the result is above 0, then set the result to 1.
@@ -68,10 +68,10 @@ function _relPosX_inSprite_whole(object, sprite, spriteX) {
 // RELATIVE POSITION IN SPRITE FOR Y (Returns WHOLE Number)
 // Returns the relative Y value of an object within a sprite.  If the object is within the sprite AND
 // the spriteX represents the Y position of the sprite, then either -1, 0 or 1 will be returned.
-function _relPosY_inSprite_whole(object, sprite, spriteY) {
+function _relPosY_inSprite_whole(object, spriteHeight, spriteY) {
 	
 	// Calculating the result.
-	var result = (object.y - spriteY) / (sprite_get_width(sprite) / 2);
+	var result = (object.y - spriteY) / (spriteHeight / 2);
 	
 	
 	// CHECK : If the result is above 0, then set the result to 1.

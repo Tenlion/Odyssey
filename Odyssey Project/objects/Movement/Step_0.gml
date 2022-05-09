@@ -15,9 +15,9 @@ if	(keyboard_check(ord("W")) == false) &&
 
 		_move_to_target_straight(Movement, anchorX, anchorY, centering_speed);
 	}
-	
-	
-	
+
+
+
 // Checking if opposing directional keys are false.  If true, move the dot to the opposite axis associated with both keys using alignment_speed.
 else if	(keyboard_check(ord("W")) == false) &&
 		(keyboard_check(ord("S")) == false) {
@@ -34,8 +34,8 @@ else if	(keyboard_check(ord("A")) == false) &&
 
 
 // Obtaining the relative value associated with the position of the Movement Object inside it's container sprite.
-dot_relation_in_containerX = _relPosX_inSprite_real(Movement, spr_MoveContainer, anchorX);
-dot_relation_in_containerY = _relPosY_inSprite_real(Movement, spr_MoveContainer, anchorY);
+dot_relation_in_containerX = _relPosX_inSprite_real(Movement, container_width, anchorX);
+dot_relation_in_containerY = _relPosY_inSprite_real(Movement, container_height, anchorY);
 
 
 
@@ -66,7 +66,7 @@ if	(keyboard_check(ord("W")) == false) &&
 	_move_to_target_straight(Movement, anchorX, anchorY, Player.force / 5);
 }
 
-else if (Movement.y != anchorY)			{ Movement.y += Player.force / 5; }
+else if (Movement.y != anchorY)	{ Movement.y += Player.force / 5; }
 
 Player.x = moveDotX_Unique;
 Player.y = moveDotY_Unique;
