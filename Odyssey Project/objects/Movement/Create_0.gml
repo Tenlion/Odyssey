@@ -15,7 +15,7 @@ container_sprite = spr_Square;
 container_width_scale = 2;
 container_height_scale = 2;
 container_width = sprite_get_width(container_sprite) * container_width_scale;
-container_height = sprite_get_width(container_sprite) * container_width_scale;
+container_height = sprite_get_height(container_sprite) * container_height_scale;
 
 // Defining the max distances the object is capable of going.
 maxDistance = container_width * 0.5;

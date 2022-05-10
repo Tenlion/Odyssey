@@ -1,6 +1,6 @@
 {
   "resources": [
-    {"id":{"name":"Track","path":"objects/Track/Track.yy",},"order":6,},
+    {"id":{"name":"Ring","path":"objects/Ring/Ring.yy",},"order":6,},
     {"id":{"name":"Weapon","path":"objects/Weapon/Weapon.yy",},"order":7,},
     {"id":{"name":"scri_Everything","path":"scripts/scri_Everything/scri_Everything.yy",},"order":0,},
     {"id":{"name":"spr_Background","path":"sprites/spr_Background/spr_Background.yy",},"order":1,},
