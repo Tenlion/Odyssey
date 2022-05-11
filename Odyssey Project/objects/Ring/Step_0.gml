@@ -5,6 +5,24 @@ anchorY = Player.y;
 cursorX = device_mouse_x_to_gui(0);
 cursorY = device_mouse_y_to_gui(0);
 
+if (keyboard_check(ord("Q")) == true) { 
+	
+		ring_rotation_angle += ring_rotation_speed;
+		ring_rotation_angle = _angle_fix(ring_rotation_angle);
+	}
+	
+if (keyboard_check(ord("E")) == true) { 
+	
+		ring_rotation_angle -= ring_rotation_speed;
+		ring_rotation_angle = _angle_fix(ring_rotation_angle);
+	}
+
+if (keyboard_check(ord(" ")) == true) { 
+	
+		ring_rotation_angle -= ring_rotation_speed;
+		ring_rotation_angle = _angle_fix(ring_rotation_angle);
+	}
+	
 weapon_position_x = anchorX + lengthdir_x(ring_width_half, point_direction(anchorX, anchorY, cursorX, cursorY));
 weapon_position_y = anchorY + lengthdir_y(ring_height_half, point_direction(anchorX, anchorY, cursorX, cursorY));
 
