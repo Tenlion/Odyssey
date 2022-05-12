@@ -3,13 +3,13 @@
 
 Things to Do
 1.	Create a speed property for the weapon moving around the ring.
-2.	Have the ring rotate counterclockwise for the Q key and clockwise for the E key.
-3.	Create another type of ring.  One that is very different from the circular one.  Grid type.  Only 4 points where the weapon can be.
-	Probably do this after finishing COMPLETELY on the basic circle ring first lolz.
-4.	Create a square ring for the Scavenger Cannon
+2.	Revise Q and E concept for Ammo Efficiency and Phasethrough.  Maybe just replace Phasethrough and Ammo Efficiency altogether.
+4.	Create a square ring for the Scavenger Cannon.
 5.	Optimize, comment and document.
 
 Accomplished Tasks
++	Have the ring rotate counterclockwise for the Q key and clockwise for the E key.
+	SOLVED : Done.
 +	Give square sprite to weapon object. (Square for now.  Just to see proper hitbox.)
 	SOLVED : Done.
 +	Get weapon to only be on the outer edge of the track.
@@ -20,32 +20,48 @@ Accomplished Tasks
 	Sprite Height * Height Scale
 	SOLVED : Done.
 
-Scavenger Cannon
+
+
+Engineer Cannon
 
 - Does NOT focus on buffing damage.
-- Cannon focuses on utilizing the damage a person has to it's fullest potential.
+- Cannon focuses on taking a weapon and modifying it to do whatever the user wishes for while managing the damage that comes from the weapons.
+- A weapon will keep it's buffs and debuffs even when a weapon switch occurs.  Buffs/debuffs do NOT transfer from one weapon to another.  They are weapon unique.
+
+Space Bar : Rotates the Cannon Ring by 90 degrees.
 
 + Projectile Speed
-+ Phasethrough (Acts like Punchthrough, but doesn't hit the first target and only hits the second.)
-+ Ammo Efficiency 33%
-+ Accuracy and Falloff Range Increase
+    Q : Decreases Projectile Speed
+    E : Increases Projectile Speed
+
++ Knockback
+    Q : Decreases Knockback.
+    E : Increases Knockback.
+
++ AoE
+    Q : Decreases AoE Radius.  Increases AoE Damage and Ammo Consumption.
+    E : Increases AoE Radius.  Decreases AoE Damage and Ammo Consumption.
+
++ Fire Rate/Charge Rate/Attack Speed
+    Q : Decreases Fire Rate/Charge Rate/Attack Speed.  Increases Damage and Ammo Consumption.
+    E : Increases Fire Rate/Charge Rate/Attack Speed.  Decreases Damage and Ammo Consumption.
 
 */
 
+blah = 0;
 anchorX = 0;
 anchorY = 0;
 
 cursorX = 0;
 cursorY = 0;
 
-weapon_speed = 0;
-weapon_angle = 0;
+weapon_speed = 1;
 weapon_position_x = 0;
 weapon_position_y = 0;
 
-ring_sprite = spr_Circle;
-ring_width_scale = 1;
-ring_height_scale = 1;
+ring_sprite = spr_Square;
+ring_width_scale = 2;
+ring_height_scale = 2;
 ring_width = sprite_get_width(ring_sprite) * ring_width_scale;
 ring_height = sprite_get_height(ring_sprite) * ring_height_scale;
 ring_width_half = ring_width * 0.5;

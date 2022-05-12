@@ -198,3 +198,20 @@ function _move_to_target_straight(instToMove, targetX, targetY, instSpeed) {
 		instToMove.y = targetY;
 	}
 }
+
+
+
+
+
+// NUMBER TO NUMBER
+// 
+function _number_to_number(starting_number, target_number, rate) {
+	
+	var difference = abs(target_number - starting_number);
+	
+	if (difference < rate) { return target_number; }
+	
+	else if (target_number > starting_number) { return starting_number + rate; }
+	
+	else if (target_number < starting_number) { return starting_number - rate; }
+}

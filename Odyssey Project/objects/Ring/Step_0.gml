@@ -5,26 +5,23 @@ anchorY = Player.y;
 cursorX = device_mouse_x_to_gui(0);
 cursorY = device_mouse_y_to_gui(0);
 
-if (keyboard_check(ord("Q")) == true) { 
-	
-		ring_rotation_angle += ring_rotation_speed;
-		ring_rotation_angle = _angle_fix(ring_rotation_angle);
-	}
-	
-if (keyboard_check(ord("E")) == true) { 
-	
-		ring_rotation_angle -= ring_rotation_speed;
-		ring_rotation_angle = _angle_fix(ring_rotation_angle);
-	}
+anchor_to_cursor_angle = point_direction(anchorX, anchorY, cursorX, cursorY);
+anchor_to_weapon_angle = point_direction(anchorX, anchorY, Weapon.x, Weapon.y);
+difference_in_angles = abs(anchor_to_cursor_angle - anchor_to_weapon_angle);
 
-if (keyboard_check(ord(" ")) == true) { 
-	
-		ring_rotation_angle -= ring_rotation_speed;
-		ring_rotation_angle = _angle_fix(ring_rotation_angle);
-	}
-	
-weapon_position_x = anchorX + lengthdir_x(ring_width_half, point_direction(anchorX, anchorY, cursorX, cursorY));
-weapon_position_y = anchorY + lengthdir_y(ring_height_half, point_direction(anchorX, anchorY, cursorX, cursorY));
+blah = _number_to_number(anchor_to_weapon_angle, anchor_to_cursor_angle, weapon_speed);
+
+weapon_position_x = anchorX + lengthdir_x(ring_width_half, blah);
+weapon_position_y = anchorY + lengthdir_y(ring_height_half, blah);
+
+
+
+if (keyboard_check(ord(" ")) == true) {
+
+	ring_rotation_angle = anchor_to_cursor_angle;
+}
+
+
 
 Weapon.x = weapon_position_x;
 Weapon.y = weapon_position_y;
@@ -33,7 +30,29 @@ Ring.x = Player.x;
 Ring.y = Player.y;
 
 /*
-//----------------------------- PRE-PROCESSING -----------------------------
+
+--------------------------- Circle Boundary Weapon Lining ---------------------------------------
+
+_number_to_number();
+
+anchorX = Player.x;
+anchorY = Player.y;
+
+cursorX = device_mouse_x_to_gui(0);
+cursorY = device_mouse_y_to_gui(0);
+
+anchor_to_cursor_angle = point_direction(anchorX, anchorY, cursorX, cursorY);
+
+weapon_position_x = anchorX + lengthdir_x(ring_width_half, anchor_to_cursor_angle);
+weapon_position_y = anchorY + lengthdir_y(ring_height_half, anchor_to_cursor_angle);
+
+Weapon.x = weapon_position_x;
+Weapon.y = weapon_position_y;
+	
+Ring.x = Player.x;
+Ring.y = Player.y;
+
+--------------------------------------------------------------------------------------------------
 
 moveDotX_Unique = _angle_fix(moveDotX_Unique);
 moveDotY_Unique = _angle_fix(moveDotY_Unique);
