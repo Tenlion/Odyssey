@@ -209,7 +209,7 @@ function _number_to_number(starting_number, target_number, rate) {
 	
 	var difference = abs(target_number - starting_number);
 	
-	if (difference < rate) { return target_number; }
+	if (difference <= rate) { return target_number; }
 	
 	else if (target_number > starting_number) { return starting_number + rate; }
 	

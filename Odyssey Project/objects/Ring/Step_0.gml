@@ -7,24 +7,25 @@ cursorY = device_mouse_y_to_gui(0);
 
 anchor_to_cursor_angle = point_direction(anchorX, anchorY, cursorX, cursorY);
 anchor_to_weapon_angle = point_direction(anchorX, anchorY, Weapon.x, Weapon.y);
-difference_in_angles = abs(anchor_to_cursor_angle - anchor_to_weapon_angle);
 
-blah = _number_to_number(anchor_to_weapon_angle, anchor_to_cursor_angle, weapon_speed);
-
-weapon_position_x = anchorX + lengthdir_x(ring_width_half, blah);
-weapon_position_y = anchorY + lengthdir_y(ring_height_half, blah);
+weapon_positionX = anchorX + lengthdir_x(ring_width_half, anchor_to_cursor_angle);
+weapon_positionY = anchorY + lengthdir_y(ring_height_half, anchor_to_cursor_angle);
 
 
 
-if (keyboard_check(ord(" ")) == true) {
+if (keyboard_check_pressed(ord(" ")) == true) {
 
-	ring_rotation_angle = anchor_to_cursor_angle;
+	ring_rotation = _angle_fix(ring_rotation + ring_rotation_turn);
 }
 
+// WORK HERE
+if (ring_rotation_angle != (anchor_to_weapon_angle + ring_rotation)) {
 
+	ring_rotation_angle = anchor_to_weapon_angle + ring_rotation;
+}
 
-Weapon.x = weapon_position_x;
-Weapon.y = weapon_position_y;
+Weapon.x = weapon_positionX;
+Weapon.y = weapon_positionY;
 
 Ring.x = Player.x;
 Ring.y = Player.y;
@@ -32,8 +33,6 @@ Ring.y = Player.y;
 /*
 
 --------------------------- Circle Boundary Weapon Lining ---------------------------------------
-
-_number_to_number();
 
 anchorX = Player.x;
 anchorY = Player.y;
@@ -53,6 +52,8 @@ Ring.x = Player.x;
 Ring.y = Player.y;
 
 --------------------------------------------------------------------------------------------------
+
+_number_to_number();
 
 moveDotX_Unique = _angle_fix(moveDotX_Unique);
 moveDotY_Unique = _angle_fix(moveDotY_Unique);

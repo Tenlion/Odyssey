@@ -3,11 +3,12 @@
 
 Things to Do
 1.	Create a speed property for the weapon moving around the ring.
-2.	Revise Q and E concept for Ammo Efficiency and Phasethrough.  Maybe just replace Phasethrough and Ammo Efficiency altogether.
-4.	Create a square ring for the Scavenger Cannon.
+4.	Create a square ring for the Engineer Cannon.
 5.	Optimize, comment and document.
 
 Accomplished Tasks
++	Revise Q and E concept for Ammo Efficiency and Phasethrough.  Maybe just replace Phasethrough and Ammo Efficiency altogether.
+	SOLVED : 
 +	Have the ring rotate counterclockwise for the Q key and clockwise for the E key.
 	SOLVED : Done.
 +	Give square sprite to weapon object. (Square for now.  Just to see proper hitbox.)
@@ -22,7 +23,7 @@ Accomplished Tasks
 
 
 
-Engineer Cannon
+ENGINEER CANNON
 
 - Does NOT focus on buffing damage.
 - Cannon focuses on taking a weapon and modifying it to do whatever the user wishes for while managing the damage that comes from the weapons.
@@ -48,16 +49,17 @@ Space Bar : Rotates the Cannon Ring by 90 degrees.
 
 */
 
-blah = 0;
 anchorX = 0;
 anchorY = 0;
 
 cursorX = 0;
 cursorY = 0;
 
-weapon_speed = 1;
-weapon_position_x = 0;
-weapon_position_y = 0;
+anchor_to_cursor_angle = 0;
+anchor_to_weapon_angle = 0;
+
+weapon_positionX = 0;
+weapon_positionY = 0;
 
 ring_sprite = spr_Square;
 ring_width_scale = 2;
@@ -67,4 +69,6 @@ ring_height = sprite_get_height(ring_sprite) * ring_height_scale;
 ring_width_half = ring_width * 0.5;
 ring_height_half = ring_height * 0.5;
 ring_rotation_angle = 0;
-ring_rotation_speed = 5;
+ring_rotation_speed = 0;
+ring_rotation_turn = 90;
+ring_rotation = 45;
