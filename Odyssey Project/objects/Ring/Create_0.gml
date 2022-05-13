@@ -2,13 +2,18 @@
 /*
 
 Things to Do
-1.	Create a speed property for the weapon moving around the ring.
-4.	Create a square ring for the Engineer Cannon.
-5.	Optimize, comment and document.
+0.	Optimize, comment and document.
+1.	Is "knockback" really a good property to mess with on weapons?  Feels stupid or maybe the ring should just have more options?
+	Ring should probably just have more options lol.  Is that a bad thing?  Ask the others to see if that's a bad idea?  I think it fits
+	the concept of an engineer really well.  Not to mention, it helps with testing if we have a Cannon that can literally fuck with every
+	stat lmao.
+2.	Create a square ring for the Engineer Cannon.
 
 Accomplished Tasks
++	Create a speed property for the weapon moving around the ring.
+	SOLVED : Made property for speed.
 +	Revise Q and E concept for Ammo Efficiency and Phasethrough.  Maybe just replace Phasethrough and Ammo Efficiency altogether.
-	SOLVED : 
+	SOLVED : Projectile Speed, Knockback, AoE, Fire Rate/Attack Speed/Charge Rate
 +	Have the ring rotate counterclockwise for the Q key and clockwise for the E key.
 	SOLVED : Done.
 +	Give square sprite to weapon object. (Square for now.  Just to see proper hitbox.)
@@ -68,7 +73,6 @@ ring_width = sprite_get_width(ring_sprite) * ring_width_scale;
 ring_height = sprite_get_height(ring_sprite) * ring_height_scale;
 ring_width_half = ring_width * 0.5;
 ring_height_half = ring_height * 0.5;
-ring_rotation_angle = 0;
-ring_rotation_speed = 0;
-ring_rotation_turn = 90;
-ring_rotation = 45;
+ring_angle = 0;
+ring_angle_base = 45;
+ring_rotation_speed = 5;

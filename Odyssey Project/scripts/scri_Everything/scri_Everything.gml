@@ -100,14 +100,13 @@ function _angle_fix(angle) {
 
 	// CHECK : If the angle goes below or is equal to -360, then reset it's position to 0.
 	// Addition to 0 is better than re-assigning because it's more smooth for frames. (Might take more processing, but it's better for gameplay.)
-	if (angle <= -360) { angle += 360; }
+	if (angle <= -360) { return (angle + 360); }
 	
 	// CHECK : If the angle goes above or is equal to 360, then reset it's position to 0.
 	// Subtracting to 0 is better than re-assigning because it's more smooth for frames. (Might take more processing, but it's better for gameplay.)
-	else if (angle >= 360) { angle -= 360; }
+	else if (angle >= 360) { return (angle - 360); }
 	
-	// RETURN : Throwing back the newly fixed angle.
-	return angle;
+	else { return angle; }
 }
 
 
