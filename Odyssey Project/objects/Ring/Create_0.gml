@@ -3,6 +3,8 @@
 
 Things to Do
 0.	Optimize, comment and document.
+2.	Create weapon speed using anchor_to_weapon_angle, anchor_to_cursor_angle and the angle_difference function.
+	Just as you did before with the ring_angle.
 3.	Create a weapon anchor.
 
 Accomplished Tasks
