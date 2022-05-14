@@ -13,11 +13,18 @@ weapon_positionY = anchorY + lengthdir_y(ring_height_half, anchor_to_cursor_angl
 
 
 
-ring_angle = _angle_fix(anchor_to_weapon_angle + ring_angle_base);
+ring_angle_target = _angle_fix(anchor_to_weapon_angle + ring_angle_base);
 
-if (keyboard_check(ord(" ")) == true) { 
+if (keyboard_check_pressed(ord(" ")) == true) {
+
+	ring_angle_base = _angle_fix(ring_angle_base + ring_rotation_adjust);
+}
+
+if (ring_angle != ring_angle_target) {
+
+	ring_angle_difference = angle_difference(ring_angle_target, ring_angle);
 	
-	ring_angle_base = _angle_fix(ring_angle_base + ring_rotation_speed); 
+	ring_angle += ring_angle_difference * ring_rotation_speed;
 }
 
 
@@ -29,6 +36,12 @@ Ring.x = Player.x;
 Ring.y = Player.y;
 
 /*
+ring_angle = _angle_fix(anchor_to_weapon_angle + ring_angle_base);
+
+if (keyboard_check(ord(" ")) == true) { 
+	
+	ring_angle_base = _angle_fix(ring_angle_base + ring_rotation_speed); 
+}
 
 ----- Ring Angle 4 Button Turning (Experiemental Failure, Not Smart Enough) ------------------
 
