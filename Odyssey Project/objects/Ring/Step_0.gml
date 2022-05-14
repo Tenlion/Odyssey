@@ -6,14 +6,16 @@ cursorX = device_mouse_x_to_gui(0);
 cursorY = device_mouse_y_to_gui(0);
 
 anchor_to_cursor_angle = point_direction(anchorX, anchorY, cursorX, cursorY);
-anchor_to_weapon_angle = point_direction(anchorX, anchorY, Weapon.x, Weapon.y);
 
 weapon_positionX = anchorX + lengthdir_x(ring_width_half, anchor_to_cursor_angle);
 weapon_positionY = anchorY + lengthdir_y(ring_height_half, anchor_to_cursor_angle);
 
+anchor_positionX = anchorX + lengthdir_x(ring_width_half, ring_angle_target);
+anchor_positionY = anchorY + lengthdir_y(ring_height_half, ring_angle_target);
 
 
-ring_angle_target = _angle_fix(anchor_to_weapon_angle + ring_angle_base);
+
+ring_angle_target = _angle_fix(anchor_to_cursor_angle + ring_angle_base);
 
 if (keyboard_check_pressed(ord(" ")) == true) {
 
@@ -31,6 +33,9 @@ if (ring_angle != ring_angle_target) {
 
 Weapon.x = weapon_positionX;
 Weapon.y = weapon_positionY;
+
+Anchor.x = anchor_positionX;
+Anchor.y = anchor_positionY;
 
 Ring.x = Player.x;
 Ring.y = Player.y;

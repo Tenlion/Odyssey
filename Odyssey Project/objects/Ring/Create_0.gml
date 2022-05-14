@@ -3,7 +3,6 @@
 
 Things to Do
 0.	Optimize, comment and document.
-2.	Create an octagon ring for the Engineer Cannon.
 3.	Create a weapon anchor.
 
 Accomplished Tasks
@@ -88,7 +87,7 @@ anchor_to_weapon_angle = 0;
 weapon_positionX = 0;
 weapon_positionY = 0;
 
-ring_sprite = spr_Octagon;
+ring_sprite = spr_Circle;
 ring_width_scale = 2;
 ring_height_scale = 2;
 ring_width = sprite_get_width(ring_sprite) * ring_width_scale;

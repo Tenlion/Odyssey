@@ -4,11 +4,13 @@ game_set_speed(60, gamespeed_fps);
 scri_Everything();
 
 // Creating Layers
-layer_Entities = layer_create(-2, "Entity Object Layer");
-layer_Invisible = layer_create(-1, "Invisible Object Layer");
+layer_2 = layer_create(-2, "Layer -2");
+layer_1 = layer_create(-1, "Layer -1");
+layer_0 = layer_create(0, "Layer 0");
 
 // Filling Layers
-instance_create_layer(0, 0, layer_Entities, Player);
-instance_create_layer(0, 0, layer_Invisible, Movement);
-instance_create_layer(0, 0, layer_Invisible, Ring);
-instance_create_layer(0, 0, layer_Entities, Weapon);
+instance_create_layer(0, 0, layer_2, Player);
+instance_create_layer(0, 0, layer_0, Movement);
+instance_create_layer(0, 0, layer_1, Ring);
+instance_create_layer(0, 0, layer_2, Anchor);
+instance_create_layer(0, 0, layer_2, Weapon);

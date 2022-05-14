@@ -6,6 +6,7 @@
     {"id":{"name":"spr_Background","path":"sprites/spr_Background/spr_Background.yy",},"order":1,},
     {"id":{"name":"spr_Hexagon","path":"sprites/spr_Hexagon/spr_Hexagon.yy",},"order":6,},
     {"id":{"name":"spr_Square","path":"sprites/spr_Square/spr_Square.yy",},"order":7,},
+    {"id":{"name":"Anchor","path":"objects/Anchor/Anchor.yy",},"order":8,},
     {"id":{"name":"spr_Octagon","path":"sprites/spr_Octagon/spr_Octagon.yy",},"order":2,},
     {"id":{"name":"Movement","path":"objects/Movement/Movement.yy",},"order":4,},
     {"id":{"name":"spr_Circle","path":"sprites/spr_Circle/spr_Circle.yy",},"order":4,},
