@@ -3,26 +3,40 @@
 
 Things to Do
 0.	Optimize, comment and document.
-2.	Create weapon speed using anchor_to_weapon_angle, anchor_to_cursor_angle and the angle_difference function.
-	Just as you did before with the ring_angle.
-3.	Create a weapon anchor.
+1.	Player visual appears to be moving before the object, or vice versa.  Get the visuals to be static with everything else.
+2.	Ring Anchor is not set to the top of the ring.  Gungineer's active cannon ring buffer/debuffer should be indicated by being
+	below the Ring's anchor, so we want the Ring Anchor to always be at the top for this purpose.
+4.  Create the new Cannon Diagram.
 
 Accomplished Tasks
++	Create a weapon anchor.
+	SOLVED : Done.
+	
++	Create weapon speed using anchor_to_weapon_angle, anchor_to_cursor_angle and the angle_difference function.
+	Just as you did before with the ring_angle.
+	SOLVED : Done.
+	
 +	Is "knockback" really a good property to mess with on weapons?  Feels stupid or maybe the ring should just have more options?
 	Ring should probably just have more options lol.  Is that a bad thing?  Ask the others to see if that's a bad idea?  I think it fits
 	the concept of an engineer really well.  Not to mention, it helps with testing if we have a Cannon that can literally fuck with every
 	stat lmao.
 	SOLVED : Added a bunch of stats + speed property changing.
+	
 +	Create a speed property for the weapon moving around the ring.
 	SOLVED : Made property for speed.
+	
 +	Revise Q and E concept for Ammo Efficiency and Phasethrough.  Maybe just replace Phasethrough and Ammo Efficiency altogether.
 	SOLVED : Projectile Speed, Knockback, AoE, Fire Rate/Attack Speed/Charge Rate
+	
 +	Have the ring rotate counterclockwise for the Q key and clockwise for the E key.
 	SOLVED : Done.
+	
 +	Give square sprite to weapon object. (Square for now.  Just to see proper hitbox.)
 	SOLVED : Done.
+	
 +	Get weapon to only be on the outer edge of the track.
 	SOLVED : Done.  Length Direction + Point Direction baby!
+	
 +	dot_relation_in_sprite variables inside the Movement Object need to not have a sprite resource sent into them.
 	Instead, have the value that is respective to the current sprite's scale sent in as an argument.
 	Sprite Width * Width Scale
@@ -77,27 +91,26 @@ Space Bar : Rotates the Cannon Ring by 45 degrees.
 	
 */
 
+sprite = spr_Circle;
+sprite_color = c_maroon;
+sprite_width_scale = 2;
+sprite_height_scale = 2;
+sprite_angle = 0;
+sprite_angle_target = 90;
+sprite_rotation_speed = 0.125;	// 0.0 - 1.0
+sprite_rotation_adjust = -45;		// 0 - 360
+
 anchorX = 0;
 anchorY = 0;
+anchor_sprite = spr_Dot;
+anchor_sprite_angle = 0;
+anchor_sprite_color = c_aqua;
+anchor_sprite_width_scale = 2;
+anchor_sprite_height_scale = 2;
 
-cursorX = 0;
-cursorY = 0;
+width = sprite_get_width(sprite) * sprite_width_scale;
+height = sprite_get_height(sprite) * sprite_height_scale;
+width_halved = width * 0.5;
+height_halved = height * 0.5;
 
-anchor_to_cursor_angle = 0;
-anchor_to_weapon_angle = 0;
-
-weapon_positionX = 0;
-weapon_positionY = 0;
-
-ring_sprite = spr_Circle;
-ring_width_scale = 2;
-ring_height_scale = 2;
-ring_width = sprite_get_width(ring_sprite) * ring_width_scale;
-ring_height = sprite_get_height(ring_sprite) * ring_height_scale;
-ring_width_half = ring_width * 0.5;
-ring_height_half = ring_height * 0.5;
-ring_angle = 0;
-ring_angle_base = 45;			// 0 - 360
-ring_angle_target = 0;
-ring_rotation_speed = 0.125;	// 0.0 - 1.0
-ring_rotation_adjust = 45;		// 0 - 360
+currentAngle_to_targetAngle_difference = 0;

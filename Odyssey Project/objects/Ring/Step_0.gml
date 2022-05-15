@@ -1,4 +1,22 @@
+x = Player.x;
+y = Player.y;
 
+anchorX = x + lengthdir_x(width_halved, sprite_angle);
+anchorY = y + lengthdir_y(height_halved, sprite_angle);
+
+
+if (keyboard_check_pressed(ord(" ")) == true) {
+	
+	sprite_angle_target = _angle_fix(sprite_angle_target + sprite_rotation_adjust);
+}
+
+if (sprite_angle != sprite_angle_target) {
+
+	currentAngle_to_targetAngle_difference = angle_difference(sprite_angle_target, sprite_angle);
+	sprite_angle += currentAngle_to_targetAngle_difference * sprite_rotation_speed;
+}
+
+/*
 anchorX = Player.x;
 anchorY = Player.y;
 
@@ -6,17 +24,17 @@ cursorX = device_mouse_x_to_gui(0);
 cursorY = device_mouse_y_to_gui(0);
 
 anchor_to_cursor_angle = point_direction(anchorX, anchorY, cursorX, cursorY);
-anchor_to_weapon_angle = point_direction(anchorX, anchorY, Weapon.x, Weapon.y);
+anchor_to_attachment_angle = point_direction(anchorX, anchorY, Attachment.x, Attachment.y);
 
 weapon_positionX = anchorX + lengthdir_x(ring_width_half, anchor_to_cursor_angle);
 weapon_positionY = anchorY + lengthdir_y(ring_height_half, anchor_to_cursor_angle);
 
-anchor_positionX = anchorX + lengthdir_x(ring_width_half, ring_angle_base);
-anchor_positionY = anchorY + lengthdir_y(ring_height_half, ring_angle_base);
+anchor_positionX = anchorX + lengthdir_x(ring_width_half, ring_angle - ring_angle_base);
+anchor_positionY = anchorY + lengthdir_y(ring_height_half, ring_angle - ring_angle_base);
 
 
 
-ring_angle_target = _angle_fix(anchor_to_weapon_angle + ring_angle_base);
+ring_angle_target = _angle_fix(anchor_to_attachment_angle + ring_angle_base);
 
 if (keyboard_check_pressed(ord(" ")) == true) {
 
@@ -31,23 +49,14 @@ if (ring_angle != ring_angle_target) {
 }
 
 
+Attachment.x = weapon_positionX;
+Attachment.y = weapon_positionY;
 
-Weapon.x = weapon_positionX;
-Weapon.y = weapon_positionY;
-
-Anchor.x = anchor_positionX;
-Anchor.y = anchor_positionY;
+global.ring_anchor.x = anchor_positionX;
+global.ring_anchor.y = anchor_positionY;
 
 Ring.x = Player.x;
 Ring.y = Player.y;
-
-/*
-ring_angle = _angle_fix(anchor_to_weapon_angle + ring_angle_base);
-
-if (keyboard_check(ord(" ")) == true) { 
-	
-	ring_angle_base = _angle_fix(ring_angle_base + ring_rotation_speed); 
-}
 
 ----- Ring Angle 4 Button Turning (Experiemental Failure, Not Smart Enough) ------------------
 

@@ -12,5 +12,5 @@ layer_0 = layer_create(0, "Layer 0");
 instance_create_layer(0, 0, layer_2, Player);
 instance_create_layer(0, 0, layer_0, Movement);
 instance_create_layer(0, 0, layer_1, Ring);
-instance_create_layer(0, 0, layer_2, Anchor);
-instance_create_layer(0, 0, layer_2, Weapon);
+instance_create_layer(0, 0, layer_1, Track);
+instance_create_layer(0, 0, layer_2, Attachment);
