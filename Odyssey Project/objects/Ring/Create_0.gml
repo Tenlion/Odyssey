@@ -4,6 +4,7 @@
 Things to Do
 0.	Optimize, comment and document.
 1.	Player visual appears to be moving before the object, or vice versa.  Get the visuals to be static with everything else.
+	(This is due to how step event works.  Need to look into begin and end step events.  But they might be clunky?)
 3.	anchor_distance_from_attachment variable needs to be relative.
 4.  Create the new Cannon Diagram.
 
@@ -95,14 +96,14 @@ Space Bar : Rotates the Cannon Ring by 45 degrees.
 	
 */
 
-sprite = spr_Circle;
+sprite = spr_Octagon;
 sprite_color = c_maroon;
 sprite_width_scale = 2;
 sprite_height_scale = 2;
 sprite_rotation = 0;
 sprite_rotation_target = 90;
 sprite_rotation_speed = 0.125;	// 0.0 - 1.0
-sprite_rotation_adjust = -45;		// 0 - 360
+sprite_rotation_adjust = -45;	// 0 - 360
 
 anchorX = 0;
 anchorY = 0;

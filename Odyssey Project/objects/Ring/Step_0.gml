@@ -12,11 +12,6 @@ if (sprite_rotation != sprite_rotation_target) {
 	sprite_rotation += currentAngle_to_targetAngle_difference * sprite_rotation_speed;
 }
 
-
-
-x = Player.x;
-y = Player.y;
-
 anchorX = x + lengthdir_x(width_halved, anchor_angle);
 anchorY = y + lengthdir_y(height_halved, anchor_angle);
 
