@@ -3,10 +3,10 @@
 // RELATIVE POSITION IN SPRITE FOR X (Returns REAL Number)
 // Returns the relative X value of an object within a sprite.  If the object is within the sprite AND
 // the spriteX represents the X position of the sprite, then a value between -1.0 to 1.0 will be returned.
-function _relPosX_inSprite_real(object, spriteWidth, spriteX) {
+function _relPosX_inSprite_real(itemX, spriteWidth, spriteX) {
 	
 	// Calculating the result.
-	var result = (object.x - spriteX) / (spriteWidth / 2);
+	var result = (itemX - spriteX) / (spriteWidth / 2);
 	
 	// CHECK : If the result is above 1, then set the result to 1.
 	if (result > 1) { result = 1; }
@@ -23,10 +23,10 @@ function _relPosX_inSprite_real(object, spriteWidth, spriteX) {
 // RELATIVE POSITION IN SPRITE FOR Y (Returns REAL Number)
 // Returns the relative Y value of an object within a sprite.  If the object is within the sprite AND
 // the spriteX represents the Y position of the sprite, then a value between -1.0 to 1.0 will be returned.
-function _relPosY_inSprite_real(object, spriteHeight, spriteY) {
+function _relPosY_inSprite_real(itemY, spriteHeight, spriteY) {
 	
 	// Calculating the result.
-	var result = (object.y - spriteY) / (spriteHeight / 2);
+	var result = (itemY - spriteY) / (spriteHeight / 2);
 	
 	// CHECK : If the result is above 1, then set the result to 1.
 	if (result > 1) { result = 1; }
@@ -168,49 +168,42 @@ function _move_to_target_semiGrid(instToMove, targetX, targetY, instSpeed) {
 
 
 
-// MOVE TO TARGET (STRAIGHT)
-// Moving an instance to a specified target with a set speed in a straight-manner.
-function _move_to_target_straight(instToMove, targetX, targetY, instSpeed) {
+// MOVE TO TARGET X (STRAIGHT)
+// Moving an instance to a specified x-target with a set speed in a straight-manner.
+function _move_to_target_straightX(itemToMoveX, itemToMoveY, targetX, targetY, speedToMove) {
 	
 	// Local Variables
-	var distance = point_distance(instToMove.x, instToMove.y, targetX, targetY);	// distance : Distance between instToMove and the target.
-	var distX = targetX - instToMove.x;												// distX : Distance between the instToMove X coordinate and the target's X coordinate. 
-	var distY = targetY - instToMove.y;												// distY : Distance between the instToMove Y coordinate and the target's Y coordinate. 
-	var speedX = (instSpeed / distance) * distX;									// speedX : Calculating the X speed by finding the distance of the Speed Triangle's X Length. (Speed Triangle is a pseudo-triangle created by instSpeed.)
-	var speedY = (instSpeed / distance) * distY;									// speedY : Calculating the Y speed by finding the distance of the Speed Triangle's Y Length. (Speed Triangle is a pseudo-triangle created by instSpeed.)
+	var distance = point_distance(itemToMoveX, itemToMoveY, targetX, targetY);	// distance : The distance between the item and it's target.
+	var distX = targetX - itemToMoveX;											// distX : Distance between itemToMoveX and the targetX.
+	var speedX = (speedToMove / distance) * distX;								// speedX : Calculating the X speed by finding the distance of the Speed Triangle's X Length. (Speed Triangle is a pseudo-triangle created by speedToMove.)
 	
-	
-	
-	// CHECK : If the distance between the instance and target is GREATER THAN the given speed, then move the instance.
-	if (distance > instSpeed) {
-		
-		instToMove.x += speedX;
-		instToMove.y += speedY;
-	}
+	// CHECK : If the distance between the item and target is GREATER THAN the given speed, then move the item.
+	if (distance > speedToMove) { return itemToMoveX + speedX; }
 	
 	// ELSE : If the distance between the instance and target is LESS THAN the given speed, then
-	// set the instance's position to match that of the target.  This action prevents the instance
+	// set the item's position to match that of the target.  This action prevents the item
 	// that is being called to bounce infinitely.
-	else {
-		
-		instToMove.x = targetX;
-		instToMove.y = targetY;
-	}
+	else { return targetX; }
 }
 
 
 
 
 
-// NUMBER TO NUMBER
-// 
-function _number_to_number(starting_number, target_number, rate) {
+// MOVE TO TARGET Y (STRAIGHT)
+// Moving an instance to a specified y-target with a set speed in a straight-manner.
+function _move_to_target_straightY(itemToMoveX, itemToMoveY, targetX, targetY, speedToMove) {
 	
-	var difference = abs(target_number - starting_number);
+	// Local Variables
+	var distance = point_distance(itemToMoveX, itemToMoveY, targetX, targetY);	// distance : The distance between the item and it's target.				
+	var distY = targetY - itemToMoveY;											// distY : Distance between itemToMoveY and the targetY.
+	var speedY = (speedToMove / distance) * distY;								// speedX : Calculating the Y speed by finding the distance of the Speed Triangle's Y Length. (Speed Triangle is a pseudo-triangle created by speedToMove.)
 	
-	if (difference <= rate) { return target_number; }
+	// CHECK : If the distance between the item and target is GREATER THAN the given speed, then move the instance.
+	if (distance > speedToMove) { return itemToMoveY + speedY; }
 	
-	else if (target_number > starting_number) { return starting_number + rate; }
-	
-	else if (target_number < starting_number) { return starting_number - rate; }
+	// ELSE : If the distance between the instance and target is LESS THAN the given speed, then
+	// set the item's position to match that of the target.  This action prevents the item
+	// that is being called to bounce infinitely.
+	else { return targetY; }
 }

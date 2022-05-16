@@ -1,20 +1,24 @@
-x = Player.x;
-y = Player.y;
-
-anchorX = x + lengthdir_x(width_halved, sprite_angle);
-anchorY = y + lengthdir_y(height_halved, sprite_angle);
-
 
 if (keyboard_check_pressed(ord(" ")) == true) {
 	
-	sprite_angle_target = _angle_fix(sprite_angle_target + sprite_rotation_adjust);
+	sprite_rotation_target = _angle_fix(sprite_rotation_target + sprite_rotation_adjust);
 }
 
-if (sprite_angle != sprite_angle_target) {
 
-	currentAngle_to_targetAngle_difference = angle_difference(sprite_angle_target, sprite_angle);
-	sprite_angle += currentAngle_to_targetAngle_difference * sprite_rotation_speed;
+
+if (sprite_rotation != sprite_rotation_target) {
+
+	var currentAngle_to_targetAngle_difference = angle_difference(sprite_rotation_target, sprite_rotation);
+	sprite_rotation += currentAngle_to_targetAngle_difference * sprite_rotation_speed;
 }
+
+
+
+x = Player.x;
+y = Player.y;
+
+anchorX = x + lengthdir_x(width_halved, anchor_angle);
+anchorY = y + lengthdir_y(height_halved, anchor_angle);
 
 /*
 anchorX = Player.x;

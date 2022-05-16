@@ -1,2 +1,2 @@
 
-draw_sprite_ext(spr_Square, -1, x, y, 1, 1, 0, c_green, 1);
+draw_sprite_ext(sprite, 0, x, y, sprite_width_scale, sprite_height_scale, sprite_rotation, sprite_color, 1);

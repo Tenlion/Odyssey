@@ -1,4 +1,10 @@
 
+sprite = spr_Square;
+sprite_color = c_green;
+sprite_width_scale = 1;
+sprite_height_scale = 1;
+sprite_rotation = 0;
+
 // ----------------------- Movement Properties --------------------------
 
 // Higher Mass = Slower Player

@@ -4,11 +4,15 @@
 Things to Do
 0.	Optimize, comment and document.
 1.	Player visual appears to be moving before the object, or vice versa.  Get the visuals to be static with everything else.
-2.	Ring Anchor is not set to the top of the ring.  Gungineer's active cannon ring buffer/debuffer should be indicated by being
-	below the Ring's anchor, so we want the Ring Anchor to always be at the top for this purpose.
+3.	anchor_distance_from_attachment variable needs to be relative.
 4.  Create the new Cannon Diagram.
 
 Accomplished Tasks
++	Ring Anchor is not set to the top of the ring.  Gungineer's active cannon ring buffer/debuffer should be indicated by being
+	below the Ring's anchor, so we want the Ring Anchor to always be at the top for this purpose.
+	SOLVED : Had to redefine variables to be more accurate to their functionality and then implement a new variable that
+	defined the angle the anchor was to be aligned with at all times.
+	
 +	Create a weapon anchor.
 	SOLVED : Done.
 	
@@ -95,15 +99,16 @@ sprite = spr_Circle;
 sprite_color = c_maroon;
 sprite_width_scale = 2;
 sprite_height_scale = 2;
-sprite_angle = 0;
-sprite_angle_target = 90;
+sprite_rotation = 0;
+sprite_rotation_target = 90;
 sprite_rotation_speed = 0.125;	// 0.0 - 1.0
 sprite_rotation_adjust = -45;		// 0 - 360
 
 anchorX = 0;
 anchorY = 0;
+anchor_angle = 90;
 anchor_sprite = spr_Dot;
-anchor_sprite_angle = 0;
+anchor_sprite_rotation = 0;
 anchor_sprite_color = c_aqua;
 anchor_sprite_width_scale = 2;
 anchor_sprite_height_scale = 2;
@@ -112,5 +117,3 @@ width = sprite_get_width(sprite) * sprite_width_scale;
 height = sprite_get_height(sprite) * sprite_height_scale;
 width_halved = width * 0.5;
 height_halved = height * 0.5;
-
-currentAngle_to_targetAngle_difference = 0;

@@ -1,21 +1,25 @@
 
 // Setting the object to the center of the room.
-Movement.x = room_width * 0.5;
-Movement.y = room_height * 0.5;
+x = room_width * 0.5;
+y = room_height * 0.5;
 
-// Defining the movement object's visuals.
-sprite = spr_Dot;
-sprite_color = c_purple;
-sprite_angle = 0;
-sprite_width_scale = 1;
-sprite_height_scale = 1;
+// Defining the movement object's dot.
+dotX = x;
+dotY = y;
+dot_sprite = spr_Dot;
+dot_sprite_color = c_purple;
+dot_sprite_rotation = 0;
+dot_sprite_width_scale = 1;
+dot_sprite_height_scale = 1;
 
 // Defining the movement object's container.
-containerX = Movement.x;
-containerY = Movement.y;
+containerX = x;
+containerY = y;
 container_sprite = spr_Square;
+container_sprite_color = c_grey;
 container_sprite_width_scale = 2;
 container_sprite_height_scale = 2;
+container_sprite_rotation = 0;
 container_width = sprite_get_width(container_sprite) * container_sprite_width_scale;
 container_height = sprite_get_height(container_sprite) * container_sprite_height_scale;
 
