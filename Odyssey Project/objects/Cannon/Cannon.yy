@@ -4,7 +4,10 @@
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "Player",
+    "path": "objects/Player/Player.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -25,11 +28,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Player Frames",
+    "path": "folders/Objects/Entity Types/Player Frames.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Movement",
+  "name": "Cannon",
   "tags": [],
   "resourceType": "GMObject",
 }

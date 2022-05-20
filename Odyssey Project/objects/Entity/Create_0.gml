@@ -1,14 +1,37 @@
 
+// -------------------- Entity Properties ------------------------
+
+// Higher Mass = Slower and heavier.
+// Lower Mass = Faster and lighter.
+
+// Higher Speed = Faster
+// Lower Speed = Slower
+
+entity_mass = 0;	// ADVISED : 0 - 1
+entity_speed = 0;	// ADVISED : 0 - 1
+
+
+
 /*
 
 Things to Do
 0.	Optimize, comment and document.
-1.	Player visual appears to be moving before the object, or vice versa.  Get the visuals to be static with everything else.
-	(This is due to how step event works.  Need to look into begin and end step events.  But they might be clunky?)
-3.	anchor_distance_from_attachment variable needs to be relative.
-4.  Create the new Cannon Diagram.
+1.	Create time object.
+3.	magnet_distance_from_attachment variable needs to be relative.
 
 Accomplished Tasks
++	Create the new Cannon Diagram.
+	SOLVED : Yup, did it.  Woot woot.  Entity -> Player -> Cannon -> Cannon Classes -> Class Subclasses
+	
++	Player visual appears to be moving before the object, or vice versa.  Get the visuals to be static with everything else.
+	(This is due to how step event works.  Need to look into begin and end step events.  But they might be clunky?)
+	SOLVED : Had to deal with when I was drawing the pieces into the room.  I rearranged the order and all is good.
+	
++	Cannon movement speed variables are defined on a creative event.  This is problematic since the subclasses
+	define the subvariables that makeup the Cannon speed...  Maybe just put the calculation in the Step Event?
+	SOLVED : Decided to re-define the speed properties when inside a subclasses, rather than having calculations
+	run every frame.  This isn't ideal, but it's at least a really good band-aid fix that I'm comfortable with.
+	
 +	Ring Anchor is not set to the top of the ring.  Gungineer's active cannon ring buffer/debuffer should be indicated by being
 	below the Ring's anchor, so we want the Ring Anchor to always be at the top for this purpose.
 	SOLVED : Had to redefine variables to be more accurate to their functionality and then implement a new variable that
@@ -95,26 +118,3 @@ Space Bar : Rotates the Cannon Ring by 45 degrees.
 	E : Decreases Player Force.  Increases Player Boost.  Player Boost has a cap.
 	
 */
-
-sprite = spr_Octagon;
-sprite_color = c_maroon;
-sprite_width_scale = 2;
-sprite_height_scale = 2;
-sprite_rotation = 0;
-sprite_rotation_target = 90;
-sprite_rotation_speed = 0.125;	// 0.0 - 1.0
-sprite_rotation_adjust = -45;	// 0 - 360
-
-anchorX = 0;
-anchorY = 0;
-anchor_angle = 90;
-anchor_sprite = spr_Dot;
-anchor_sprite_rotation = 0;
-anchor_sprite_color = c_aqua;
-anchor_sprite_width_scale = 2;
-anchor_sprite_height_scale = 2;
-
-width = sprite_get_width(sprite) * sprite_width_scale;
-height = sprite_get_height(sprite) * sprite_height_scale;
-width_halved = width * 0.5;
-height_halved = height * 0.5;
