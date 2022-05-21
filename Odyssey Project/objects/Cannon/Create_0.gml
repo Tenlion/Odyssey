@@ -124,5 +124,6 @@ magnet_to_cursor_angle_difference = 0;
 
 // --------------------------- Attachment Properties --------------------------
 
+attachment_active = 0;
 attachment_x = 0;
 attachment_y = 0;

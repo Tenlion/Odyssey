@@ -6,7 +6,7 @@
     "path": "folders/Scripts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scri_Everything",
+  "name": "scr_Everything",
   "tags": [],
   "resourceType": "GMScript",
 }

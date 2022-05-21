@@ -1,13 +1,13 @@
 
-if (keyboard_check_pressed(ord(slot_number)) == true) { 
+if ((keyboard_check_pressed(ord(slot_number)) == true) && (activeSlot.slot_number != slot_number)) {
 	
-	slot_active.slot_item.x = room_width * 0.75;
-	slot_active.slot_item.y = room_height * 0.75;
-	slot_active.slot_sprite_color = slot_active.slot_inactive_color;
+	activeSlot.slot_item.x = room_width * 0.75;
+	activeSlot.slot_item.y = room_height * 0.75;
+	activeSlot.slot_sprite_color = activeSlot.slot_inactive_color;
 	
-	Slot.slot_active = id;
+	Slot.activeSlot = id;
 	
-	slot_item.x = Cannon.attachment_x;
-	slot_item.y = Cannon.attachment_y;
+	Cannon.attachment_active = activeSlot.slot_item;
+	
 	slot_sprite_color = slot_active_color;
 }

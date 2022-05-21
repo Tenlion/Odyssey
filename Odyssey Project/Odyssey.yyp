@@ -1,7 +1,7 @@
 {
   "resources": [
     {"id":{"name":"Attachment","path":"objects/Attachment/Attachment.yy",},"order":3,},
-    {"id":{"name":"scri_Everything","path":"scripts/scri_Everything/scri_Everything.yy",},"order":0,},
+    {"id":{"name":"scr_Everything","path":"scripts/scr_Everything/scr_Everything.yy",},"order":0,},
     {"id":{"name":"spr_Background","path":"sprites/spr_Background/spr_Background.yy",},"order":1,},
     {"id":{"name":"spr_Hexagon","path":"sprites/spr_Hexagon/spr_Hexagon.yy",},"order":6,},
     {"id":{"name":"SC_Gungineer","path":"objects/SC_Gungineer/SC_Gungineer.yy",},"order":0,},
@@ -9,6 +9,7 @@
     {"id":{"name":"spr_Square","path":"sprites/spr_Square/spr_Square.yy",},"order":7,},
     {"id":{"name":"spr_Rectangle","path":"sprites/spr_Rectangle/spr_Rectangle.yy",},"order":8,},
     {"id":{"name":"spr_Octagon","path":"sprites/spr_Octagon/spr_Octagon.yy",},"order":2,},
+    {"id":{"name":"scr_Cannon","path":"scripts/scr_Cannon/scr_Cannon.yy",},"order":1,},
     {"id":{"name":"Cannon","path":"objects/Cannon/Cannon.yy",},"order":0,},
     {"id":{"name":"spr_Circle","path":"sprites/spr_Circle/spr_Circle.yy",},"order":4,},
     {"id":{"name":"CC_Engineer","path":"objects/CC_Engineer/CC_Engineer.yy",},"order":0,},

@@ -17,9 +17,13 @@ entity_speed = 0;	// ADVISED : 0 - 1
 Things to Do
 0.	Optimize, comment and document.
 1.	Create time object.
-3.	magnet_distance_from_attachment variable needs to be relative.
+2.	Slot items are being placed at the attachment's location upon switch, but only for the first time.
+	Something to do with the sequence of the switching or?
 
 Accomplished Tasks
++	magnet_distance_from_attachment variable needs to be relative.
+	SOLVED : I don't believe it needs to be relative actually...  Maybe I'm wrong, but future me will have to deal with that.
+	
 +	Create the new Cannon Diagram.
 	SOLVED : Yup, did it.  Woot woot.  Entity -> Player -> Cannon -> Cannon Classes -> Class Subclasses
 	
