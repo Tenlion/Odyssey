@@ -119,3 +119,10 @@ magnet_sprite_rotation = 0;
 
 magnet_distance_from_attachment = 50;
 magnet_to_cursor_angle_difference = 0;
+
+
+
+// --------------------------- Attachment Properties --------------------------
+
+attachment_x = 0;
+attachment_y = 0;
