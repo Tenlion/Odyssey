@@ -1,7 +1,9 @@
 
 draw_sprite_ext(track_sprite, 0, cannon_x, cannon_y, track_sprite_width_scale, track_sprite_height_scale, track_sprite_rotation, track_sprite_color, 1);
 
-draw_sprite_ext(magnet_sprite, 0, magnet_sprite_x, magnet_sprite_y, magnet_sprite_width_scale, magnet_sprite_height_scale, magnet_sprite_rotation, magnet_sprite_color, 1);
+draw_sprite_ext(magnet_sprite, 0, magnet_sprite_x, magnet_sprite_y, magnet_sprite_width_scale, magnet_sprite_height_scale, cannon_to_magnet_angle, magnet_sprite_color, 1);
+
+draw_sprite_ext(activeAttachment.attachment_sprite, 0, activeAttachment.id.x, activeAttachment.id.y, activeAttachment.attachment_sprite_width_scale, activeAttachment.attachment_sprite_height_scale, cannon_to_magnet_angle, activeAttachment.attachment_sprite_color, 1);
 
 draw_sprite_ext(ring_sprite, 0, cannon_x, cannon_y, ring_sprite_width_scale, ring_sprite_height_scale, ring_sprite_rotation, ring_sprite_color, 1);
 

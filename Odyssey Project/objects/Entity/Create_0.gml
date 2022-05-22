@@ -19,6 +19,8 @@ Things to Do
 1.	Create time object.
 2.	Slot items are being placed at the attachment's location upon switch, but only for the first time.
 	Something to do with the sequence of the switching or?
+3.	Get the active attachment sprite to draw at the same time as the other objects by placing it's draw action
+	inside the Subclass Level.
 
 Accomplished Tasks
 +	magnet_distance_from_attachment variable needs to be relative.

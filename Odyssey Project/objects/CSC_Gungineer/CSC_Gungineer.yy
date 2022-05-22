@@ -32,7 +32,7 @@
     "path": "folders/Objects/Entity Types/Player Frames/Cannon Classes/Engineer Subclasses.yy",
   },
   "resourceVersion": "1.0",
-  "name": "SC_Gungineer",
+  "name": "CSC_Gungineer",
   "tags": [],
   "resourceType": "GMObject",
 }

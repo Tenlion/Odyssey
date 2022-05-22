@@ -99,11 +99,16 @@ chassis_sprite_rotation = 0;
 
 // ---------------------------- Track Properties -----------------------------
 
-track_sprite = 0;
+track_sprite = spr_Square;
 track_sprite_color = 0;
 track_sprite_width_scale = 1;
 track_sprite_height_scale = 1;
 track_sprite_rotation = 0;
+
+track_width = sprite_get_width(track_sprite) * track_sprite_width_scale;
+track_height = sprite_get_height(track_sprite) * track_sprite_height_scale;
+track_width_halved = track_width * 0.5;
+track_height_halved = track_height * 0.5;
 
 
 
@@ -122,8 +127,6 @@ magnet_to_cursor_angle_difference = 0;
 
 
 
-// --------------------------- Attachment Properties --------------------------
+// ------------------------- Active Attachment Properties ---------------------
 
-attachment_active = 0;
-attachment_x = 0;
-attachment_y = 0;
+activeAttachment = 0;
