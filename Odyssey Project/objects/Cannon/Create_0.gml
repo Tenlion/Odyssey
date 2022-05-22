@@ -120,7 +120,6 @@ magnet_sprite_y = 0;
 magnet_sprite_color = 0;
 magnet_sprite_width_scale = 1;
 magnet_sprite_height_scale = 1;
-magnet_sprite_rotation = 0;
 
 magnet_distance_from_attachment = 50;
 magnet_to_cursor_angle_difference = 0;
