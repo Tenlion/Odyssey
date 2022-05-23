@@ -5,8 +5,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "Gun",
-    "path": "objects/Gun/Gun.yy",
+    "name": "Projectile_Weaponry",
+    "path": "objects/Projectile_Weaponry/Projectile_Weaponry.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -27,8 +27,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Guns",
-    "path": "folders/Objects/Attachment Types/Weapons/Ranged/Guns.yy",
+    "name": "Projectile Weaponry",
+    "path": "folders/Objects/Attachment Types/Weapons/Ranged Weapons/Projectile Weaponry.yy",
   },
   "resourceVersion": "1.0",
   "name": "Pistol",

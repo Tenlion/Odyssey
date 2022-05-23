@@ -5,8 +5,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "Ranged",
-    "path": "objects/Ranged/Ranged.yy",
+    "name": "Ranged_Weapon",
+    "path": "objects/Ranged_Weapon/Ranged_Weapon.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -26,11 +26,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Ranged",
-    "path": "folders/Objects/Attachment Types/Weapons/Ranged.yy",
+    "name": "Ranged Weapons",
+    "path": "folders/Objects/Attachment Types/Weapons/Ranged Weapons.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Gun",
+  "name": "Projectile_Weaponry",
   "tags": [],
   "resourceType": "GMObject",
 }

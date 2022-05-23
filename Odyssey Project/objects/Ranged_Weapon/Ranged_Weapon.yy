@@ -5,8 +5,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "Projectile",
-    "path": "objects/Projectile/Projectile.yy",
+    "name": "Weapon",
+    "path": "objects/Weapon/Weapon.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -26,11 +26,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Projectile Types",
-    "path": "folders/Objects/Attack Forms/Projectile Types.yy",
+    "name": "Weapons",
+    "path": "folders/Objects/Attachment Types/Weapons.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Bullet",
+  "name": "Ranged_Weapon",
   "tags": [],
   "resourceType": "GMObject",
 }

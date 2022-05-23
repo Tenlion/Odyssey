@@ -17,12 +17,25 @@ entity_speed = 0;	// ADVISED : 0 - 1
 Things to Do
 0.	Optimize, comment and document.
 1.	Create time object.
-2.	Slot items are being placed at the attachment's location upon switch, but only for the first time.
-	Something to do with the sequence of the switching or?
-3.	Get the active attachment sprite to draw at the same time as the other objects by placing it's draw action
-	inside the Subclass Level.
+2.	Create a draw object that holds the code to draw each element of the game?  Possibly a really bad idea?
+3.	Bullets need to follow the attachment angle so they know where to go.
+4.	Define accuracy.  Also deliberate whether stats should be functioned or not?  I believe they should be, but I haven't
+	thought about it too much.  It would make things a lot easier if they can be though. :)
 
 Accomplished Tasks
++	Get the active attachment sprite to draw at the same time as the other objects by placing it's draw action
+	inside the Subclass Level.
+	SOLVED : Did it. Woot.  Now the attachments don't need to draw their shit, instead the thing they connect to draws
+	the sprites the attachment is associated with.  Might not be a good idea though seeing as how an attachment might need
+	multiple sprites...
+	
++	Slot items are being placed at the attachment's location upon switch, but only for the first time.
+	Something to do with the sequence of the switching or?
+	SOLVED : Complicated, but essentially each inactive attachment was following one another until a switch occurred and
+	they would only stay at the attachment's magnet location once every attachment had at least been switched once.  It had
+	to deal with the ordering of the slot switching with the combined element of the Cannon magnet positioning multiple
+	attachments.  At least, that's what I can understand of the situation...?  Either way, it's fucking fixed lol.
+	
 +	magnet_distance_from_attachment variable needs to be relative.
 	SOLVED : I don't believe it needs to be relative actually...  Maybe I'm wrong, but future me will have to deal with that.
 	
@@ -91,13 +104,13 @@ Space Bar : Rotates the Cannon Ring by 45 degrees.
     Q : Decreases Projectile Speed
     E : Increases Projectile Speed
 
-+ Knockback
-    Q : Decreases Knockback.
-    E : Increases Knockback.
++ Recoil
+    Q : Decreases Recoil.
+    E : Increases Recoil.
 
-+ AoE
-    Q : Decreases AoE Radius.  Increases AoE Damage and Ammo Consumption.
-    E : Increases AoE Radius.  Decreases AoE Damage and Ammo Consumption.
++ Multishot
+    Q : Decreases Multishot by 1.  Increases Damage and Ammo Consumption.
+    E : Increases Multishot by 1.  Decreases Damage and Ammo Consumption.
 
 + Fire Rate/Charge Rate
     Q : Decreases Fire Rate/Charge Rate.  Increases Damage and Ammo Consumption.
