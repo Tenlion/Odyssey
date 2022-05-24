@@ -31,7 +31,7 @@
     "path": "folders/Objects/Attachment Types/Weapons/Ranged Weapons/Projectile Weaponry.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Pistol",
+  "name": "PW_MachineGun",
   "tags": [],
   "resourceType": "GMObject",
 }

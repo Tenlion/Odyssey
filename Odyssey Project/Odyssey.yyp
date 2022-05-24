@@ -2,7 +2,7 @@
   "resources": [
     {"id":{"name":"Attack","path":"objects/Attack/Attack.yy",},"order":8,},
     {"id":{"name":"Attachment","path":"objects/Attachment/Attachment.yy",},"order":1,},
-    {"id":{"name":"Pistol","path":"objects/Pistol/Pistol.yy",},"order":0,},
+    {"id":{"name":"PW_MachineGun","path":"objects/PW_MachineGun/PW_MachineGun.yy",},"order":0,},
     {"id":{"name":"scr_Everything","path":"scripts/scr_Everything/scr_Everything.yy",},"order":0,},
     {"id":{"name":"spr_Background","path":"sprites/spr_Background/spr_Background.yy",},"order":1,},
     {"id":{"name":"spr_Hexagon","path":"sprites/spr_Hexagon/spr_Hexagon.yy",},"order":6,},

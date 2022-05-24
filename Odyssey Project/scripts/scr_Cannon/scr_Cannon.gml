@@ -13,10 +13,10 @@ function scr_Cannon() {
 	
 	instance_player = instance_create_layer(0, 0, layer_visible, CSC_Gungineer);
 
-	attach1 = instance_create_layer(0, 0, layer_visible, Pistol);
-	attach2 = instance_create_layer(0, 0, layer_visible, Pistol);
-	attach3 = instance_create_layer(0, 0, layer_visible, Pistol);
-	attach4 = instance_create_layer(0, 0, layer_visible, Pistol);
+	attach1 = instance_create_layer(0, 0, layer_visible, PW_MachineGun);
+	attach2 = instance_create_layer(0, 0, layer_visible, PW_MachineGun);
+	attach3 = instance_create_layer(0, 0, layer_visible, PW_MachineGun);
+	attach4 = instance_create_layer(0, 0, layer_visible, PW_MachineGun);
 
 	slot1 = instance_create_layer(0, 0, layer_invisible, Slot);
 	slot2 = instance_create_layer(0, 0, layer_invisible, Slot);

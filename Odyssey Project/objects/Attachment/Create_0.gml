@@ -1,7 +1,7 @@
 
 attachment_entity = 0;
 attachment_active = false;
-attachment_weight = 0;
+attachment_angle = 0;
 
 attachment_sprite = 0;
 attachment_sprite_color = 0;

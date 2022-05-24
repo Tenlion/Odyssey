@@ -49,3 +49,5 @@ magnet_sprite_y = cannon_y + lengthdir_y(track_height_halved, cannon_to_magnet_a
 
 activeAttachment.id.x = cannon_x + lengthdir_x(track_width_halved + magnet_distance_from_attachment, cannon_to_magnet_angle);
 activeAttachment.id.y = cannon_y + lengthdir_y(track_height_halved + magnet_distance_from_attachment, cannon_to_magnet_angle);
+
+activeAttachment.attachment_angle = cannon_to_magnet_angle;
