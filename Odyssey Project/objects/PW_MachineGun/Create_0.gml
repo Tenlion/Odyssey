@@ -21,13 +21,13 @@ weapon_weakspot_damage = weapon_damage * weapon_weakspot_multiplier;
 weapon_crit_multiplier = 2;
 weapon_crit_count = 20;
 weapon_crit_damage = weapon_damage * weapon_crit_multiplier;
-weapon_range = 400;
+weapon_range = 1200;
 weapon_ammoConsumption = 10;
 
 // Ranged Weapon Properties
 ranged_fireType = "Automatic";
-ranged_falloff = 0;
-ranged_fireRate = 5;
+ranged_falloff = weapon_range * 0.5;
+ranged_fireRate = 10;
 ranged_accuracy = 100;
 ranged_multishot = 0;
 ranged_punchthrough = 0;
@@ -35,7 +35,7 @@ ranged_recoil = 50;
 ranged_knockback = 0;
 
 // Projectile Weaponry Properties
-weaponProjectile_speed = 10;
+wProjectile_speed = 10;
 
 // Pistol Unique Properties
-
+pistol_attack = 0;

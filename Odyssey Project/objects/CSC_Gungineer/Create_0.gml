@@ -73,4 +73,4 @@ magnet_sprite_color = c_aqua;
 magnet_sprite_width_scale = 2;
 magnet_sprite_height_scale = 2;
 
-magnet_rotation_speed = 0.1;
+magnet_rotation_speed = 1;

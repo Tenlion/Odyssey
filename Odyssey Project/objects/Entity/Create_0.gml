@@ -10,7 +10,13 @@
 entity_mass = 0;	// ADVISED : 0 - 1
 entity_speed = 0;	// ADVISED : 0 - 1
 
+entity_life = 0;
 
+entity_sprite = 0;
+entity_sprite_color = 0;
+entity_sprite_width_scale = 1;
+entity_sprite_height_scale = 1;
+entity_sprite_rotation = 0;
 
 /*
 
