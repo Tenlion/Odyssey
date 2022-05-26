@@ -11,4 +11,5 @@ weapon_crit_multiplier = 0;
 weapon_crit_count = 0;
 weapon_crit_damage = 0;
 weapon_range = 0;
-weapon_ammoConsumption = 0;
+weapon_ammo_gauge = 0;
+weapon_ammo_consumption = 0;

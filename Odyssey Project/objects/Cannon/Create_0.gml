@@ -20,6 +20,9 @@ cannon_y = y;
 cannon_to_cursor_angle = 0;
 cannon_to_magnet_angle = 0;
 
+// The ammo gauge that the cannon is connected to.
+cannon_ammo_gauge = 0;
+
 
 
 // ----------------------- Movement Properties ------------------------

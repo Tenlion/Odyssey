@@ -22,20 +22,23 @@ weapon_crit_multiplier = 2;
 weapon_crit_count = 20;
 weapon_crit_damage = weapon_damage * weapon_crit_multiplier;
 weapon_range = 1200;
-weapon_ammoConsumption = 10;
+weapon_ammo_consumption = 5;
 
 // Ranged Weapon Properties
-ranged_fireType = "Automatic";
+ranged_fire_type = "Automatic";
 ranged_falloff = weapon_range * 0.5;
-ranged_fireRate = 10;
+ranged_fire_rate = 10;
 ranged_accuracy = 100;
-ranged_multishot = 0;
+ranged_shot_count = 1;
+ranged_shot_array = [ranged_shot_count];
 ranged_punchthrough = 0;
-ranged_recoil = 50;
-ranged_knockback = 0;
+ranged_knockback = 100;
+ranged_knockback_speed = 0.1;
+ranged_recoil = 0;
 
 // Projectile Weaponry Properties
-wProjectile_speed = 10;
+wProjectile_speed = 5;
+wProjectile_acceleration = 0.1;
 
 // Pistol Unique Properties
-pistol_attack = 0;
+gun_attack = 0;

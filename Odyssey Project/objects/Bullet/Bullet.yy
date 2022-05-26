@@ -5,8 +5,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "Projectile_Weaponry",
-    "path": "objects/Projectile_Weaponry/Projectile_Weaponry.yy",
+    "name": "Projectile",
+    "path": "objects/Projectile/Projectile.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -21,17 +21,16 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Projectile Weaponry",
-    "path": "folders/Objects/Attachment Types/Weapons/Ranged Weapons/Projectile Weaponry.yy",
+    "name": "Projectile Types",
+    "path": "folders/Objects/Attack Forms/Projectile Types.yy",
   },
   "resourceVersion": "1.0",
-  "name": "PW_MachineGun",
+  "name": "Bullet",
   "tags": [],
   "resourceType": "GMObject",
 }

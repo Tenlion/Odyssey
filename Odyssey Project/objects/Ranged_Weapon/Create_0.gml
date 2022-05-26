@@ -4,14 +4,17 @@
 // Inheriting the Parent Create Event.
 event_inherited();
 
-ranged_fireType = " ";
-ranged_fireRate = 0;
-ranged_fireTime = 100;
-ranged_fireAccumulator = ranged_fireTime;
+ranged_fire_type = " ";
+ranged_fire_rate = 0;
+ranged_fire_time = 100;
+ranged_fire_accumulator = ranged_fire_time;
 ranged_falloff = 0;
 ranged_accuracy = 0;
-ranged_multishot = 0;
+ranged_shot_count = 1;
+ranged_shot_array = [ranged_shot_count];
 ranged_punchthrough = 0;
+ranged_knockback = 100;
+ranged_knockback_speed = 0.1;
+ranged_knockback_accumulator = 0;
+ranged_knockback_angle = 180;
 ranged_recoil = 0;
-ranged_knockback = 0;
-

@@ -1,1 +1,2 @@
-with (Projectile) { entity_life -= 10; }
+/// @description Insert description here
+// You can write your code in this editor
