@@ -32,8 +32,8 @@ ranged_accuracy = 100;
 ranged_shot_count = 1;
 ranged_shot_array = [ranged_shot_count];
 ranged_punchthrough = 0;
-ranged_knockback = 100;
-ranged_knockback_speed = 0.1;
+ranged_kick = 100;
+ranged_kick_speed = 0.1;
 ranged_recoil = 0;
 
 // Projectile Weaponry Properties

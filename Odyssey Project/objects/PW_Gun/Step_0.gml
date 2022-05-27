@@ -34,8 +34,8 @@ if (attachment_active == true) {
 					ranged_shot_array[i].projectile_destination_y = y + lengthdir_y(weapon_range, attachment_angle);
 				}
 			
-				// Accumulating knockback.
-				ranged_knockback_accumulator += ranged_knockback;
+				// Accumulating kick.
+				ranged_kick_accumulator += ranged_kick;
 			
 				// Reducing the count inside the ammo gauge the weapon is connected to.
 				weapon_ammo_gauge.ammo_count -= weapon_ammo_consumption;
@@ -55,11 +55,11 @@ if (attachment_active == true) {
 
 
 
-// Checking if the knockback accumulator is above 0.  If true, knockback the attachment's entity.
-if (ranged_knockback_accumulator > 0) {
+// Checking if the kick accumulator is above 0.  If true, kick the attachment's entity.
+if (ranged_kick_accumulator > 0) {
 	
-	attachment_entity.x += lengthdir_x(ranged_knockback_accumulator * ranged_knockback_speed, attachment_angle - ranged_knockback_angle);
-	attachment_entity.y += lengthdir_y(ranged_knockback_accumulator * ranged_knockback_speed, attachment_angle - ranged_knockback_angle);
+	attachment_entity.x += lengthdir_x(ranged_kick_accumulator * ranged_kick_speed, attachment_angle - ranged_kick_angle);
+	attachment_entity.y += lengthdir_y(ranged_kick_accumulator * ranged_kick_speed, attachment_angle - ranged_kick_angle);
 	
-	ranged_knockback_accumulator -= (ranged_knockback_accumulator * ranged_knockback_speed);
+	ranged_kick_accumulator -= (ranged_kick_accumulator * ranged_kick_speed);
 }
