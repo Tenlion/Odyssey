@@ -6,7 +6,7 @@ event_inherited();
 
 
 
-// ---------------- Defining Projectile Properties -----------------
+// ---------------- Defining Bullet Properties -----------------
 
 // Attack Sprite Properties
 attack_sprite = spr_Dot;
@@ -14,3 +14,6 @@ attack_sprite_color = c_white;
 attack_sprite_width_scale = 1;
 attack_sprite_height_scale = 1;
 attack_sprite_rotation = 0;
+
+mask_index = attack_sprite;
+sprite_collision_mask(mask_index, false, 1, 0, 0, 0, 0, bboxkind_rectangular, 0);

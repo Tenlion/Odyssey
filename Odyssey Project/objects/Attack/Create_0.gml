@@ -2,7 +2,6 @@
 attack_item = 0;
 attack_adversary = 0;
 attack_damage = 0;
-attack_weakspot_damage = 0;
 
 attack_sprite = 0;
 attack_sprite_color = 0;

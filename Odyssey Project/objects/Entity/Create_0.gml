@@ -23,12 +23,15 @@ entity_sprite_rotation = 0;
 Things to Do
 0.	Optimize, comment and document.
 1.	Create time object.
-2.	Create a draw object that holds the code to draw each element of the game?  Possibly a really bad idea?
-3.	Bullets need to follow the attachment angle so they know where to go.
+2.	After the Time Object is made, optimize everything that has been made so far.  Object Inheritance, conditional statements
+	+ their use efficiency, layer usage and instance implementation.
 4.	Define accuracy.  Also deliberate whether stats should be functioned or not?  I believe they should be, but I haven't
 	thought about it too much.  It would make things a lot easier if they can be though. :)
 
 Accomplished Tasks
++	Bullets need to follow the attachment angle so they know where to go.
+	SOLVED : Done.
+	
 +	Get the active attachment sprite to draw at the same time as the other objects by placing it's draw action
 	inside the Subclass Level.
 	SOLVED : Did it. Woot.  Now the attachments don't need to draw their shit, instead the thing they connect to draws
