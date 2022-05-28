@@ -1,14 +1,18 @@
 
 // -------------------- Entity Properties ------------------------
 
-// Higher Mass = Slower and heavier.
-// Lower Mass = Faster and lighter.
-
 // Higher Speed = Faster
 // Lower Speed = Slower
 
-entity_mass = 0;	// ADVISED : 0 - 1
-entity_speed = 0;	// ADVISED : 0 - 1
+// Higher Mass = Slower and heavier.
+// Lower Mass = Faster and lighter.
+
+// Higher Force = More pushing power throwing the entity in a designated direction.
+// Lower Force = Less pushing power throwing the entity in a designated direction.
+
+entity_speed = 1;	// ADVISED : 0 - 1
+entity_mass = 1;	// ADVISED : 0 - 1
+entity_force = 1;	// ADVISED : 0 - 1
 
 entity_life = 0;
 
@@ -23,10 +27,15 @@ entity_sprite_rotation = 0;
 Things to Do
 0.	Optimize, comment and document.
 1.	Create time object.
-2.	After the Time Object is made, optimize everything that has been made so far.  Object Inheritance, conditional statements
-	+ their use efficiency, layer usage and instance implementation.
-4.	Define accuracy.  Also deliberate whether stats should be functioned or not?  I believe they should be, but I haven't
+2.	Kick and Knockback
+3.	Attachment Weight
+4.	Shot Count Overlap Issue
+5.	Falloff Range
+6.	Accuracy  
+7.	Deliberate whether stats should be functioned or not?  I believe they should be, but I haven't
 	thought about it too much.  It would make things a lot easier if they can be though. :)
+8.	After the Time Object is made, optimize everything that has been made so far.  Object Inheritance, conditional statements
+	+ their use efficiency, layer usage and instance implementation.
 
 Accomplished Tasks
 +	Bullets need to follow the attachment angle so they know where to go.

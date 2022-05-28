@@ -8,10 +8,6 @@ event_inherited();
 
 // ----------------------- General Properties ----------------------
 
-// Entity Attributes
-entity_mass = 1;
-entity_speed = 1;
-
 // Cannon Position
 cannon_x = x;
 cannon_y = y;
@@ -27,10 +23,6 @@ cannon_ammo_gauge = 0;
 
 // ----------------------- Movement Properties ------------------------
 
-// Higher Force = More pushing power throwing the Cannon in a designated direction.
-// Lower Force = Less pushing power throwing the Cannon in a designated direction.
-cannon_force = 0;	// ADVISED : 0 - 1 Real
-
 // Higher Brake = Shorter distance in which the Cannon slides.
 // Lower Brake = Longer distance for the Cannon to slide.
 cannon_brake = 0;	// ADVISED : 0 - 1 Real
@@ -45,8 +37,7 @@ These formulas aren't stored in their own variables to ensure that when a variab
 changed mid-game that the effect of the change is reflected immediately.  There may be a better way to do this,
 but for now this is what we got.
 
-
-Directive Speed Formula : cannon_speed_directive = ((moveContainer_width * cannon_force) / (moveContainer_width * entity_mass)) * entity_speed;
+Directive Speed Formula : cannon_speed_directive = ((moveContainer_width * entity_force) / (moveContainer_width * entity_mass)) * entity_speed;
 Braking Speed X Formula : cannon_speed_braking_x = ((moveContainer_width * 0.01) * cannon_brake) * entity_speed;
 Braking Speed Y Formula : cannon_speed_braking_y = ((moveContainer_height * 0.01) * cannon_brake) * entity_speed;
 Turning Speed X Formula : cannon_speed_turning_x = ((moveContainer_width * 0.01) * cannon_turn) * entity_speed;

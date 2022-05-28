@@ -10,12 +10,12 @@ event_inherited();
 // --------------- Entity Properties ---------------
 
 entity_mass = 0.1;
+entity_force = 0.5;
 
 
 
 // --------------- Cannon Properties ---------------
 
-cannon_force = 0.5;
 cannon_brake = 0.5;
 cannon_turn = 0.5;
 

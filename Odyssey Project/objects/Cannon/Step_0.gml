@@ -17,10 +17,10 @@ cannon_to_magnet_angle = point_direction(cannon_x, cannon_y, magnet_sprite_x, ma
 // --------------------------- Movement ---------------------------------
 
 // Movement dot transitions by the player object's set speed in a direction corresponding to the WASD layout.
-if (keyboard_check(ord("W")) == true) { moveDot_y -= (((moveContainer_width * cannon_force) / (moveContainer_width * entity_mass)) * entity_speed); }
-if (keyboard_check(ord("S")) == true) { moveDot_y += (((moveContainer_width * cannon_force) / (moveContainer_width * entity_mass)) * entity_speed); }
-if (keyboard_check(ord("A")) == true) { moveDot_x -= (((moveContainer_width * cannon_force) / (moveContainer_width * entity_mass)) * entity_speed); }
-if (keyboard_check(ord("D")) == true) { moveDot_x += (((moveContainer_width * cannon_force) / (moveContainer_width * entity_mass)) * entity_speed); }
+if (keyboard_check(ord("W")) == true) { moveDot_y -= (((moveContainer_width * entity_force) / (moveContainer_width * entity_mass)) * entity_speed); }
+if (keyboard_check(ord("S")) == true) { moveDot_y += (((moveContainer_width * entity_force) / (moveContainer_width * entity_mass)) * entity_speed); }
+if (keyboard_check(ord("A")) == true) { moveDot_x -= (((moveContainer_width * entity_force) / (moveContainer_width * entity_mass)) * entity_speed); }
+if (keyboard_check(ord("D")) == true) { moveDot_x += (((moveContainer_width * entity_force) / (moveContainer_width * entity_mass)) * entity_speed); }
 
 
 
@@ -67,5 +67,5 @@ else if (dot_relation_in_container_y <= -1)	{ moveDot_y = maxDistance_north; }
 
 
 // X and Y values for any item that uses this form of movement.
-x += dot_relation_in_container_x * (((moveContainer_width * cannon_force) / (moveContainer_width * entity_mass)) * entity_speed);
-y += dot_relation_in_container_y * (((moveContainer_width * cannon_force) / (moveContainer_width * entity_mass)) * entity_speed);
+x += dot_relation_in_container_x * (((moveContainer_width * entity_force) / (moveContainer_width * entity_mass)) * entity_speed);
+y += dot_relation_in_container_y * (((moveContainer_width * entity_force) / (moveContainer_width * entity_mass)) * entity_speed);
