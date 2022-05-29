@@ -208,3 +208,43 @@ function _move_to_target_straightY(itemToMoveX, itemToMoveY, targetX, targetY, s
 	// that is being called to bounce infinitely.
 	else { return targetY; }
 }
+
+
+
+
+
+function _value_to_zero(value, speed) {
+	
+	// Checking if the value is 0.  If so, return 0.
+	if (value == 0) { return 0; }
+	
+	
+	
+	// Checking if the value is greater than 0.
+	// If true, continue checking the value.
+	// If false, continue the outer checks.
+	if (value > 0) {
+		
+		// Checking if the result from "value + speed" is greater than 0.
+		// If true, return 0.  We do this because the expression would skip over 0 otherwise.
+		// If false, return the result of "value + speed".
+		if ((value - speed) < 0) { return 0; }
+		
+		else { return value - speed; }
+	}
+	
+	
+	
+	// Checking if the value is less than 0.
+	// If true, continue checking the value.
+	// If false, the function ends and nothing happens.
+	else if (value < 0) {
+		
+		// Checking if the result from "value - speed" is less than 0.
+		// If true, return 0. We do this because the expression would skip over 0 otherwise.
+		// If false, return the result of "value - speed".
+		if ((value + speed) > 0) { return 0; }
+		
+		else { return value + speed; }
+	}
+}

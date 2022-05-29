@@ -7,9 +7,9 @@ function scr_Cannon() {
 	layer_invisible = layer_create(-2, "Invisible Things");
 	layer_visible = layer_create(-1, "Visible Things");
 
-
-
-	// Filling Layers
+	instance_player = instance_create_layer(0, 0, "Visible Things", CSC_Gungineer);
+}
+	/* Filling Layers
 	
 	instance_ammo = instance_create_layer(0, 0, "Visible Things", Ammo);
 	
@@ -102,5 +102,4 @@ function scr_Cannon() {
 	
 	instance_player.activeAttachment = slot1.slot_item;
 	instance_player.cannon_ammo_gauge = instance_ammo;
-}
 
