@@ -55,8 +55,8 @@ if (attachment_active == true) {
 				ranged_kick_accumulator += ranged_kick;
 				ranged_kick_storedAngle = attachment_angle - ranged_kick_counterAngle;
 				
-				//attachment_entity.entity_force_x = _value_to_zero(attachment_entity.entity_force_x, 1);
-				//attachment_entity.entity_force_y = _value_to_zero(attachment_entity.entity_force_y, 1);
+				attachment_entity.entity_force_x = _value_to_zero(attachment_entity.entity_force_x, ranged_kick);
+				attachment_entity.entity_force_y = _value_to_zero(attachment_entity.entity_force_y, ranged_kick);
 			
 				// Reducing the count inside the ammo gauge the weapon is connected to.
 				weapon_ammo_gauge.ammo_count -= weapon_ammo_consumption;

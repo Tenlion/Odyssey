@@ -8,11 +8,10 @@ event_inherited();
 
 // ----------------------- General Properties ----------------------
 
-entity_mass = 0.5;
+entity_mass = 1;
 entity_force_x = 0;
 entity_force_y = 0;
-entity_acceleration = 0.1;
-entity_force = 0;
+entity_acceleration = 0.05;
 
 cannon_brake = 0.01;
 cannon_turn = 0.01;
