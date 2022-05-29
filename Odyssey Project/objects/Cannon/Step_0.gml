@@ -15,11 +15,8 @@ cannon_to_magnet_angle = point_direction(x, y, magnet_sprite_x, magnet_sprite_y)
 // --------------------------- Movement ---------------------------------
 
 if (keyboard_check(ord("W")) == true) { entity_force_y -= entity_acceleration; }
-
 if (keyboard_check(ord("S")) == true) { entity_force_y += entity_acceleration; }
-
 if (keyboard_check(ord("A")) == true) { entity_force_x -= entity_acceleration; }
-
 if (keyboard_check(ord("D")) == true) { entity_force_x += entity_acceleration; }
 
 

@@ -12,11 +12,16 @@ entity_mass = 0.5;
 entity_force_x = 0;
 entity_force_y = 0;
 entity_acceleration = 0.1;
+entity_force = 0;
+
+cannon_brake = 0.01;
+cannon_turn = 0.01;
 
 cannon_speed_x = 0;
 cannon_speed_y = 0;
-cannon_brake = 0.01;
-cannon_turn = 0.01;
+
+cannon_position_x = 0;
+cannon_position_y = 0;
 
 
 // Angles associated with a Cannon and constant elements found within all Cannons.

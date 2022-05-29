@@ -10,12 +10,12 @@
 // Higher Force = More pushing power throwing the entity in a designated direction.
 // Lower Force = Less pushing power throwing the entity in a designated direction.
 
-entity_mass = 1;		// ADVISED : 0 - 1
-entity_speed = 1;		// ADVISED : 0 - 1
-entity_force_x = 0;		// ADVISED : 0
-entity_force_y = 0;		// ADVISED : 0
+entity_mass = 1;			// ADVISED : 0 - 1
+entity_speed = 1;			// ADVISED : 0 - 1
 entity_acceleration = 0;
 entity_direction = 0;
+entity_force_x = 0;			// ADVISED : 0
+entity_force_y = 0;			// ADVISED : 0
 
 entity_life = 0;
 
