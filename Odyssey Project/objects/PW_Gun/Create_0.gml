@@ -26,7 +26,7 @@ ranged_fire_type = "Automatic";
 ranged_fire_rate = 10;
 ranged_shot_count = 1;
 ranged_shot_array = [ranged_shot_count];
-ranged_kick = 100;
+ranged_kick_force = 5;
 ranged_kick_speed = 0.1;
 
 // Projectile Weaponry Properties
