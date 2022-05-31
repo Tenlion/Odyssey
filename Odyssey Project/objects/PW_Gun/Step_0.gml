@@ -52,12 +52,12 @@ if (attachment_active == true) {
 				}
 			
 				// Accumulating kick and storing the angle of the shot.
-				ranged_kick_accumulator += ranged_kick_force;
-				ranged_kick_storedAngle = attachment_angle - ranged_kick_counterAngle;
+				ranged_kick_accumulator += (ranged_kick_force / attachment_entity.entity_mass);
+				ranged_kick_angle = attachment_angle - COUNTER_ANGLE;
 				
-			
-			
-			
+				
+				
+				
 				// Reducing the count inside the ammo gauge the weapon is connected to.
 				weapon_ammo_gauge.ammo_count -= weapon_ammo_consumption;
 			
@@ -77,8 +77,10 @@ if (attachment_active == true) {
 // Checking if the kick accumulator is above 0.  If true, kick the attachment's entity.
 if (ranged_kick_accumulator > 0) {
 	
-	attachment_entity.entity_force_x += lengthdir_x(ranged_kick_accumulator * ranged_kick_speed, ranged_kick_storedAngle);
-	attachment_entity.entity_force_y += lengthdir_y(ranged_kick_accumulator * ranged_kick_speed, ranged_kick_storedAngle);
+	ranged_kick_step = ranged_kick_accumulator * ranged_kick_speed;
 	
-	ranged_kick_accumulator -= (ranged_kick_accumulator * ranged_kick_speed);
+	attachment_entity.entity_force_x += lengthdir_x(ranged_kick_step, ranged_kick_angle);
+	attachment_entity.entity_force_y += lengthdir_y(ranged_kick_step, ranged_kick_angle);
+	
+	ranged_kick_accumulator -= ranged_kick_step;
 }

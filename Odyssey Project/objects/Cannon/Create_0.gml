@@ -8,16 +8,8 @@ event_inherited();
 
 // ----------------------- General Properties ----------------------
 
-entity_mass = 1;
-entity_force_x = 0;
-entity_force_y = 0;
-entity_acceleration = 0.05;
-
-cannon_brake = 0.01;
-cannon_turn = 0.01;
-
-cannon_speed_x = 0;
-cannon_speed_y = 0;
+cannon_brake = 0.0;
+cannon_turn = 0.0;
 
 cannon_position_x = 0;
 cannon_position_y = 0;
@@ -101,39 +93,4 @@ magnet_to_cursor_angle_difference = 0;
 // ------------------------- Active Attachment Properties ---------------------
 
 activeAttachment = 0;
-
-/*
-// -------------------- Cannon Movement Container + Dot -------------
-
-// Defining the movement object's container.
-moveContainer_x = room_width * 0.5;
-moveContainer_y = room_height * 0.5;
-moveContainer_sprite = spr_Square;
-moveContainer_sprite_color = c_grey;
-moveContainer_sprite_width_scale = 2;
-moveContainer_sprite_height_scale = 2;
-moveContainer_sprite_rotation = 0;
-moveContainer_width = sprite_get_width(moveContainer_sprite) * moveContainer_sprite_width_scale;
-moveContainer_height = sprite_get_height(moveContainer_sprite) * moveContainer_sprite_height_scale;
-
-// Defining the movement object's dot.
-moveDot_x = moveContainer_x;
-moveDot_y = moveContainer_y;
-moveDot_sprite = spr_Dot;
-moveDot_sprite_color = c_purple;
-moveDot_sprite_rotation = 0;
-moveDot_sprite_width_scale = 1;
-moveDot_sprite_height_scale = 1;
-
-// Defining the max distances the object is capable of going.
-maxDistance = moveContainer_width * 0.5;
-maxDistance_north = moveContainer_y - maxDistance;
-maxDistance_south = moveContainer_y + maxDistance;
-maxDistance_west = moveContainer_x - maxDistance;
-maxDistance_east = moveContainer_x + maxDistance;
-
-// Variables that hold the axis data of the object's relation inside it's container.
-dot_relation_in_container_x = 0;
-dot_relation_in_container_y = 0;
-
 

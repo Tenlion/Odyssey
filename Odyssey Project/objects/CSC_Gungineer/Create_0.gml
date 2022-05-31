@@ -7,18 +7,18 @@ event_inherited();
 
 
 
-/* --------------- Entity Properties ---------------
+// --------------- Entity Properties ---------------
 
-entity_mass = 0.1;
-entity_force = 0.5;
+entity_mass = 1;
+entity_acceleration = 0.05;
 
 
 
 // --------------- Cannon Properties ---------------
 
-cannon_brake = 0.5;
-cannon_turn = 0.5;
-*/
+cannon_brake = 0.01;
+cannon_turn = 0.01;
+
 
 
 // --------------- Chassis Properties ---------------
