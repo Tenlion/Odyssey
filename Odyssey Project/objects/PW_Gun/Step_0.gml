@@ -25,9 +25,11 @@ if (attachment_active == true) {
 					ranged_shot_array[shot].attack_item = id;
 					ranged_shot_array[shot].attack_adversary = attachment_adversary;
 					ranged_shot_array[shot].attack_range = weapon_range;
+					ranged_shot_array[shot].attack_knockback_force = ranged_knockback_force;
+					ranged_shot_array[shot].attack_knockback_speed = ranged_knockback_speed;
 					ranged_shot_array[shot].projectile_speed = wProjectile_speed;
 					ranged_shot_array[shot].projectile_acceleration = wProjectile_acceleration;
-			
+					
 					// Calculating the attack's damage.
 					if (weapon_crit_accumulator >= weapon_crit_max) {
 						
@@ -53,10 +55,7 @@ if (attachment_active == true) {
 			
 				// Accumulating kick and storing the angle of the shot.
 				ranged_kick_accumulator += (ranged_kick_force / attachment_entity.entity_mass);
-				ranged_kick_angle = attachment_angle - COUNTER_ANGLE;
-				
-				
-				
+				ranged_kick_angle = attachment_angle - 180;
 				
 				// Reducing the count inside the ammo gauge the weapon is connected to.
 				weapon_ammo_gauge.ammo_count -= weapon_ammo_consumption;

@@ -14,8 +14,6 @@ entity_mass = 0;			// ADVISED : 0 - 1
 entity_acceleration = 0;	// ADVISED : 0 - 1
 
 entity_direction = 0;		// ADVISED : 0
-entity_future_x = 0;		// ADVISED : 0
-entity_future_y = 0;		// ADVISED : 0
 
 entity_speed = 1;			// ADVISED : 0 - 1
 entity_speed_x = 0;			// ADVISED : 0
@@ -25,12 +23,6 @@ entity_force_x = 0;			// ADVISED : 0
 entity_force_y = 0;			// ADVISED : 0
 
 entity_life = 0;
-
-entity_sprite = 0;
-entity_sprite_color = 0;
-entity_sprite_width_scale = 1;
-entity_sprite_height_scale = 1;
-entity_sprite_rotation = 0;
 
 /*
 

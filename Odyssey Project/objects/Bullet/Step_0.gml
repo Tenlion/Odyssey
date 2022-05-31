@@ -16,5 +16,14 @@ if (position_meeting(x, y, attack_adversary) == true) {
 	
 	enemy_id.entity_life -= attack_damage;
 	
+	
+	
+	attack_knockback_angle = projectile_direction;
+	
+	enemy_id.entity_force_x += lengthdir_x((attack_knockback_force / enemy_id.entity_mass) * attack_knockback_speed, attack_knockback_angle);
+	enemy_id.entity_force_y += lengthdir_y((attack_knockback_force / enemy_id.entity_mass) * attack_knockback_speed, attack_knockback_angle);
+	
+	
+	
 	instance_destroy();
 }

@@ -29,6 +29,8 @@ ranged_shot_array = [ranged_shot_count];
 ranged_kick_force = 1;
 ranged_kick_speed = 1;
 ranged_kick_step = 0;
+ranged_knockback_force = 1;
+ranged_knockback_speed = 1;
 
 // Projectile Weaponry Properties
 wProjectile_speed = 5;

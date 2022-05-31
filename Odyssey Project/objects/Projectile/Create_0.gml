@@ -11,5 +11,6 @@ event_inherited();
 // Projectile Unique Properties
 projectile_speed = 0;
 projectile_acceleration = 0;
+projectile_direction = 0;
 projectile_destination_x = 0;
 projectile_destination_y = 0;
