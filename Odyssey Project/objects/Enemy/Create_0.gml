@@ -13,6 +13,7 @@ entity_acceleration = 0.01;
 entity_force_max = 1;
 entity_force_min = -1;
 
+
 enemy_sprite = spr_Square;
 enemy_sprite_color = c_fuchsia;
 enemy_sprite_width_scale = 1;

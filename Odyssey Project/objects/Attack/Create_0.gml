@@ -1,6 +1,6 @@
 
 attack_item = 0;
-attack_adversary = 0;
+attack_foe = 0;
 attack_damage = 0;
 attack_knockback_force = 0;
 attack_knockback_speed = 0;

@@ -10,18 +10,18 @@ if (projectile_speed <= 0) { instance_destroy(); }
 
 
 
-if (position_meeting(x, y, attack_adversary) == true) {
+if (position_meeting(x, y, attack_foe) == true) {
 		
-	enemy_id = instance_position(x, y, attack_adversary);
+	foe = instance_position(x, y, attack_foe);
 	
-	enemy_id.entity_life -= attack_damage;
+	foe.entity_life -= attack_damage;
 	
 	
 	
 	attack_knockback_angle = projectile_direction;
 	
-	enemy_id.entity_force_x += lengthdir_x((attack_knockback_force / enemy_id.entity_mass) * attack_knockback_speed, attack_knockback_angle);
-	enemy_id.entity_force_y += lengthdir_y((attack_knockback_force / enemy_id.entity_mass) * attack_knockback_speed, attack_knockback_angle);
+	foe.entity_force_x += lengthdir_x((attack_knockback_force / foe.entity_mass) * attack_knockback_speed, attack_knockback_angle);
+	foe.entity_force_y += lengthdir_y((attack_knockback_force / foe.entity_mass) * attack_knockback_speed, attack_knockback_angle);
 	
 	
 	

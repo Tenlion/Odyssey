@@ -1,6 +1,6 @@
 
 attachment_entity = 0;
-attachment_adversary = 0;
+attachment_foe = 0;
 attachment_active = false;
 attachment_angle = 0;
 
