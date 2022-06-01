@@ -5,7 +5,7 @@ if (attachment_active == true) {
 	// Checking to see if the ammo count is high enough in the connected gauge before firing the weapon.
 	// If true, the weapon is allowed to fire.
 	// If false, the weapon can not fire.
-	if (weapon_ammo_gauge.ammo_count >= weapon_ammo_consumption) {
+	if (weapon_ammo_gauge.ammo_count >= weapon_ammo_drain) {
 	
 		// Check that looks to see if the player is trying to fire the weapon using the left mouse button.
 		if (mouse_check_button(mb_left) == true) {
@@ -23,7 +23,7 @@ if (attachment_active == true) {
 					
 					// Defining the properties inside the pistol attack before it moves.
 					ranged_shot_array[shot].attack_item = id;
-					ranged_shot_array[shot].attack_adversary = attachment_adversary;
+					ranged_shot_array[shot].attack_foe = attachment_foe;
 					ranged_shot_array[shot].attack_range = weapon_range;
 					ranged_shot_array[shot].attack_knockback_force = ranged_knockback_force;
 					ranged_shot_array[shot].attack_knockback_speed = ranged_knockback_speed;
@@ -58,7 +58,7 @@ if (attachment_active == true) {
 				ranged_kick_angle = attachment_angle - 180;
 				
 				// Reducing the count inside the ammo gauge the weapon is connected to.
-				weapon_ammo_gauge.ammo_count -= weapon_ammo_consumption;
+				weapon_ammo_gauge.ammo_count -= weapon_ammo_drain;
 			
 				// Resetting the fireAccumulator to 0 to appropriate the weapon's rate of fire.
 				ranged_fire_accumulator = 0;

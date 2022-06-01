@@ -19,7 +19,7 @@ weapon_damage = 10;
 weapon_crit_multiplier = 2;
 weapon_crit_count = 25;
 weapon_range = 1200;
-weapon_ammo_consumption = 5;
+weapon_ammo_drain = 5;
 
 // Ranged Weapon Properties
 ranged_fire_type = "Automatic";

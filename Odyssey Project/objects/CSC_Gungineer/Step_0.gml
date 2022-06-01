@@ -41,7 +41,7 @@ if (cannon_to_magnet_angle != cannon_to_cursor_angle) {
 
 
 
-// ------------------ Positioning All Elements of the Cannon ----------------------
+// ------------------ Positioning All Elements of the Cannon ------------------
 
 anchor_sprite_x = x + lengthdir_x(ring_width_halved, anchor_angle);
 anchor_sprite_y = y + lengthdir_y(ring_height_halved, anchor_angle);
@@ -49,7 +49,7 @@ anchor_sprite_y = y + lengthdir_y(ring_height_halved, anchor_angle);
 magnet_sprite_x = x + lengthdir_x(track_width_halved, cannon_to_magnet_angle);
 magnet_sprite_y = y + lengthdir_y(track_height_halved, cannon_to_magnet_angle);
 
-activeAttachment.id.x = x + lengthdir_x(track_width_halved + magnet_distance_from_attachment, cannon_to_magnet_angle);
-activeAttachment.id.y = y + lengthdir_y(track_height_halved + magnet_distance_from_attachment, cannon_to_magnet_angle);
+attachment.x = x + lengthdir_x(track_width_halved + magnet_distance_from_attachment, cannon_to_magnet_angle);
+attachment.y = y + lengthdir_y(track_height_halved + magnet_distance_from_attachment, cannon_to_magnet_angle);
 
-activeAttachment.attachment_angle = cannon_to_magnet_angle;
+attachment.attachment_angle = cannon_to_magnet_angle;

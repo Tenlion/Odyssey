@@ -19,7 +19,6 @@
     {"id":{"name":"Ranged_Weapon","path":"objects/Ranged_Weapon/Ranged_Weapon.yy",},"order":1,},
     {"id":{"name":"spr_Circle","path":"sprites/spr_Circle/spr_Circle.yy",},"order":4,},
     {"id":{"name":"CC_Engineer","path":"objects/CC_Engineer/CC_Engineer.yy",},"order":0,},
-    {"id":{"name":"spr_Dot","path":"sprites/spr_Dot/spr_Dot.yy",},"order":5,},
     {"id":{"name":"Bullet","path":"objects/Bullet/Bullet.yy",},"order":0,},
     {"id":{"name":"Ammo","path":"objects/Ammo/Ammo.yy",},"order":12,},
     {"id":{"name":"Player","path":"objects/Player/Player.yy",},"order":0,},

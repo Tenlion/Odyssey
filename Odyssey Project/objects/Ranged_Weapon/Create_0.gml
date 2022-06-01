@@ -4,7 +4,7 @@
 // Inheriting the Parent Create Event.
 event_inherited();
 
-ranged_fire_type = " ";
+ranged_fire_type = "";
 ranged_fire_rate = 0;
 ranged_fire_time = 100;
 ranged_fire_accumulator = ranged_fire_time;

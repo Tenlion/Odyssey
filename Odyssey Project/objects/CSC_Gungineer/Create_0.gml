@@ -44,13 +44,13 @@ ring_height = sprite_get_height(ring_sprite) * ring_sprite_height_scale;
 ring_width_halved = ring_width * 0.5;
 ring_height_halved = ring_height * 0.5;
 
-anchor_sprite = spr_Dot;
+anchor_sprite = spr_Square;
 anchor_sprite_x = 0;
 anchor_sprite_y = 0;
 anchor_sprite_rotation = 0;
 anchor_sprite_color = c_aqua;
-anchor_sprite_width_scale = 2;
-anchor_sprite_height_scale = 2;
+anchor_sprite_width_scale = 0.2;
+anchor_sprite_height_scale = 0.2;
 
 anchor_angle = 90;
 
@@ -68,9 +68,9 @@ track_height = sprite_get_height(track_sprite) * track_sprite_height_scale;
 track_width_halved = track_width * 0.5;
 track_height_halved = track_height * 0.5;
 
-magnet_sprite = spr_Dot;
+magnet_sprite = spr_Circle;
 magnet_sprite_color = c_aqua;
-magnet_sprite_width_scale = 2;
-magnet_sprite_height_scale = 2;
+magnet_sprite_width_scale = 0.2;
+magnet_sprite_height_scale = 0.2;
 
 magnet_rotation_speed = 1;
