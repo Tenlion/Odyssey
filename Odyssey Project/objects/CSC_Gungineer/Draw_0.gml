@@ -1,10 +1,10 @@
 
-draw_sprite_ext(track_sprite, 0, x, y, track_sprite_width_scale, track_sprite_height_scale, track_sprite_rotation, track_sprite_color, 1);
+draw_sprite_ext(_sprTrack, 0, x, y, _sprTrack_width_scale, _sprTrack_height_scale, _sprTrack_rotation, _sprTrack_color, 1);
 
-draw_sprite_ext(magnet_sprite, 0, magnet_sprite_x, magnet_sprite_y, magnet_sprite_width_scale, magnet_sprite_height_scale, cannon_to_magnet_angle, magnet_sprite_color, 1);
+draw_sprite_ext(_sprMagnet, 0, _sprMagnet_x, _sprMagnet_y, _sprMagnet_width_scale, _sprMagnet_height_scale, _cannon_to_magnet_angle, _sprMagnet_color, 1);
 
-draw_sprite_ext(ring_sprite, 0, x, y, ring_sprite_width_scale, ring_sprite_height_scale, ring_sprite_rotation, ring_sprite_color, 1);
+draw_sprite_ext(_sprRing, 0, x, y, _sprRing_width_scale, _sprRing_height_scale, _sprRing_rotation, _sprRing_color, 1);
 
-draw_sprite_ext(anchor_sprite, 0, anchor_sprite_x, anchor_sprite_y, anchor_sprite_width_scale, anchor_sprite_height_scale, anchor_sprite_rotation, anchor_sprite_color, 1);
+draw_sprite_ext(_sprAnchor, 0, _sprAnchor_x, _sprAnchor_y, _sprAnchor_width_scale, _sprAnchor_height_scale, _sprAnchor_rotation, _sprAnchor_color, 1);
 
-draw_sprite_ext(chassis_sprite, 0, x, y, chassis_sprite_width_scale, chassis_sprite_height_scale, chassis_sprite_rotation, chassis_sprite_color, 1);
+draw_sprite_ext(_sprChassis, 0, x, y, _sprChassis_width_scale, _sprChassis_height_scale, _sprChassis_rotation, _sprChassis_color, 1);

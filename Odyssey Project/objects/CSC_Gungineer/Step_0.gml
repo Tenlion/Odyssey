@@ -12,16 +12,16 @@ event_inherited();
 
 if (keyboard_check_pressed(ord(" ")) == true) {
 	
-	ring_sprite_rotation_target = _angle_fix(ring_sprite_rotation_target + ring_sprite_rotation_adjust);
+	_sprRing_rotation_target = _angle_fix(_sprRing_rotation_target + _sprRing_rotation_adjust);
 }
 
 
 
-if (ring_sprite_rotation != ring_sprite_rotation_target) {
+if (_sprRing_rotation != _sprRing_rotation_target) {
 
-	var currentAngle_to_targetAngle_difference = angle_difference(ring_sprite_rotation_target, ring_sprite_rotation);
+	var currentAngle_to_targetAngle_difference = angle_difference(_sprRing_rotation_target, _sprRing_rotation);
 	
-	ring_sprite_rotation += currentAngle_to_targetAngle_difference * ring_sprite_rotation_speed;
+	_sprRing_rotation += currentAngle_to_targetAngle_difference * _sprRing_rotation_speed;
 }
 
 
@@ -30,11 +30,11 @@ if (ring_sprite_rotation != ring_sprite_rotation_target) {
 
 // -------------------------------- Track ------------------------------------
 
-if (cannon_to_magnet_angle != cannon_to_cursor_angle) {
+if (_cannon_to_magnet_angle != _player_to_cursor_angle) {
 
-	magnet_to_cursor_angle_difference = angle_difference(cannon_to_cursor_angle, cannon_to_magnet_angle);
+	_magnet_to_cursor_angle_difference = angle_difference(_player_to_cursor_angle, _cannon_to_magnet_angle);
 	
-	cannon_to_magnet_angle += magnet_to_cursor_angle_difference * magnet_rotation_speed;
+	_cannon_to_magnet_angle += _magnet_to_cursor_angle_difference * _magnet_rotation_speed;
 }
 
 
@@ -43,13 +43,13 @@ if (cannon_to_magnet_angle != cannon_to_cursor_angle) {
 
 // ------------------ Positioning All Elements of the Cannon ------------------
 
-anchor_sprite_x = x + lengthdir_x(ring_width_halved, anchor_angle);
-anchor_sprite_y = y + lengthdir_y(ring_height_halved, anchor_angle);
+_sprAnchor_x = x + lengthdir_x(_ring_width_halved, _anchor_angle);
+_sprAnchor_y = y + lengthdir_y(_ring_height_halved, _anchor_angle);
 
-magnet_sprite_x = x + lengthdir_x(track_width_halved, cannon_to_magnet_angle);
-magnet_sprite_y = y + lengthdir_y(track_height_halved, cannon_to_magnet_angle);
+_sprMagnet_x = x + lengthdir_x(_track_width_halved, _cannon_to_magnet_angle);
+_sprMagnet_y = y + lengthdir_y(_track_height_halved, _cannon_to_magnet_angle);
 
-attachment.x = x + lengthdir_x(track_width_halved + magnet_distance_from_attachment, cannon_to_magnet_angle);
-attachment.y = y + lengthdir_y(track_height_halved + magnet_distance_from_attachment, cannon_to_magnet_angle);
+_attachment.x = x + lengthdir_x(_track_width_halved + _magnet_distance_from_attachment, _cannon_to_magnet_angle);
+_attachment.y = y + lengthdir_y(_track_height_halved + _magnet_distance_from_attachment, _cannon_to_magnet_angle);
 
-attachment.attachment_angle = cannon_to_magnet_angle;
+_attachment._angle = _cannon_to_magnet_angle;

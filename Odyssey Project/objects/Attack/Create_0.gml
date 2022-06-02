@@ -1,13 +1,15 @@
 
-attack_item = 0;
-attack_foe = 0;
-attack_damage = 0;
-attack_knockback_force = 0;
-attack_knockback_speed = 0;
-attack_knockback_angle = 0;
+_attachment_id = 0;
+_attachment_foe = 0;
 
-attack_sprite = 0;
-attack_sprite_color = 0;
-attack_sprite_width_scale = 1;
-attack_sprite_height_scale = 1;
-attack_sprite_rotation = 0;
+_damage = 0;
+_range = 0;
+_knockback_force = 0;
+_knockback_speed = 0;
+_knockback_angle = 0;
+
+_sprAttack = 0;
+_sprAttack_color = 0;
+_sprAttack_width_scale = 1;
+_sprAttack_height_scale = 1;
+_sprAttack_rotation = 0;

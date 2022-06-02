@@ -9,32 +9,29 @@ event_inherited();
 // ------------------ Defining Pistol Properties -------------------
 
 // Attachment Properties
-attachment_sprite = spr_Diamond;
-attachment_sprite_color = c_white;
-attachment_sprite_width_scale = 0.5;
-attachment_sprite_height_scale = 0.5;
+_sprAttachment = spr_Diamond;
+_sprAttachment_color = c_white;
+_sprAttachment_width_scale = 0.5;
+_sprAttachment_height_scale = 0.5;
 
 // Weapon Properties
-weapon_damage = 10;
-weapon_crit_multiplier = 2;
-weapon_crit_count = 25;
-weapon_range = 1200;
-weapon_ammo_drain = 5;
+_damage = 10;
+_crit_multiplier = 2;
+_crit_count = 25;
+_range = 1200;
+_ammo_drain = 5;
 
 // Ranged Weapon Properties
-ranged_fire_type = "Automatic";
-ranged_fire_rate = 10;
-ranged_shot_count = 1;
-ranged_shot_array = [ranged_shot_count];
-ranged_kick_force = 1;
-ranged_kick_speed = 1;
-ranged_kick_step = 0;
-ranged_knockback_force = 1;
-ranged_knockback_speed = 1;
+_fire_type = "Automatic";
+_fire_rate = 10;
+_projectile_count = 1;
+_kick_force = 1;
+_kick_speed = 1;
+_kick_step = 0;
+_knockback_force = 1;
+_knockback_speed = 1;
 
 // Projectile Weaponry Properties
-wProjectile_speed = 5;
-wProjectile_acceleration = 0.1;
-
-// Pistol Unique Properties
-gun_attack = 0;
+_projectiles = [_projectile_count];
+_projectile_speed = 5;
+_projectile_acceleration = 0.1;

@@ -5,5 +5,11 @@
 event_inherited();
 
 // Properties to hold the cursor's location.
-cursor_x = 0;
-cursor_y = 0;
+_cursor_x = 0;
+_cursor_y = 0;
+
+// Player to Cursor Angle
+_player_to_cursor_angle = 0;
+
+// Player Adversary
+_adversary = Enemy;

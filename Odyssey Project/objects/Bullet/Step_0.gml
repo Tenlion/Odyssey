@@ -6,23 +6,23 @@ event_inherited();
 
 
 
-if (projectile_speed <= 0) { instance_destroy(); }
+if (_speed <= 0) { instance_destroy(); }
 
 
 
-if (position_meeting(x, y, attack_foe) == true) {
+else if (position_meeting(x, y, _attachment_foe) == true) {
 		
-	foe = instance_position(x, y, attack_foe);
-	
-	foe.entity_life -= attack_damage;
+	var _foe_instance = instance_position(x, y, _attachment_foe);
 	
 	
+	_foe_instance._life -= _damage;
 	
-	attack_knockback_angle = projectile_direction;
 	
-	foe.entity_force_x += lengthdir_x((attack_knockback_force / foe.entity_mass) * attack_knockback_speed, attack_knockback_angle);
-	foe.entity_force_y += lengthdir_y((attack_knockback_force / foe.entity_mass) * attack_knockback_speed, attack_knockback_angle);
+	_knockback_angle = _direction;
 	
+	
+	_foe_instance._force_x += lengthdir_x((_knockback_force / _foe_instance._mass) * _knockback_speed, _knockback_angle);
+	_foe_instance._force_y += lengthdir_y((_knockback_force / _foe_instance._mass) * _knockback_speed, _knockback_angle);
 	
 	
 	instance_destroy();

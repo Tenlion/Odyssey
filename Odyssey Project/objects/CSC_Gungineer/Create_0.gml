@@ -9,68 +9,68 @@ event_inherited();
 
 // --------------- Entity Properties ---------------
 
-entity_mass = 1;
-entity_acceleration = 0.05;
+_mass = 1;
+_acceleration = 0.05;
 
 
 
 // --------------- Cannon Properties ---------------
 
-cannon_brake = 0.01;
-cannon_turn = 0.01;
+_brake = 0.01;
+_turn = 0.01;
 
 
 
 // --------------- Chassis Properties ---------------
 
-chassis_sprite = spr_Square;
-chassis_sprite_color = c_green;
+_sprChassis = spr_Square;
+_sprChassis_color = c_green;
 
 
 
 // ----------------- Ring Properties ----------------
 
-ring_sprite = spr_Octagon;
-ring_sprite_color = c_maroon;
-ring_sprite_width_scale = 2;
-ring_sprite_height_scale = 2;
-ring_sprite_rotation = 0;
-ring_sprite_rotation_target = 90;
-ring_sprite_rotation_speed = 0.125;	// 0.0 - 1.0
-ring_sprite_rotation_adjust = -45;	// -360 - 360
+_sprRing = spr_Octagon;
+_sprRing_color = c_maroon;
+_sprRing_width_scale = 2;
+_sprRing_height_scale = 2;
+_sprRing_rotation = 0;
+_sprRing_rotation_target = 90;
+_sprRing_rotation_speed = 0.125;	// 0.0 - 1.0
+_sprRing_rotation_adjust = -45;	// -360 - 360
 
-ring_width = sprite_get_width(ring_sprite) * ring_sprite_width_scale;
-ring_height = sprite_get_height(ring_sprite) * ring_sprite_height_scale;
-ring_width_halved = ring_width * 0.5;
-ring_height_halved = ring_height * 0.5;
+_ring_width = sprite_get_width(_sprRing) * _sprRing_width_scale;
+_ring_height = sprite_get_height(_sprRing) * _sprRing_height_scale;
+_ring_width_halved = _ring_width * 0.5;
+_ring_height_halved = _ring_height * 0.5;
 
-anchor_sprite = spr_Square;
-anchor_sprite_x = 0;
-anchor_sprite_y = 0;
-anchor_sprite_rotation = 0;
-anchor_sprite_color = c_aqua;
-anchor_sprite_width_scale = 0.2;
-anchor_sprite_height_scale = 0.2;
+_sprAnchor = spr_Square;
+_sprAnchor_x = 0;
+_sprAnchor_y = 0;
+_sprAnchor_rotation = 0;
+_sprAnchor_color = c_aqua;
+_sprAnchor_width_scale = 0.2;
+_sprAnchor_height_scale = 0.2;
 
-anchor_angle = 90;
+_anchor_angle = 90;
 
 
 
 // --------------- Track Properties ------------------
 
-track_sprite = spr_Circle;
-track_sprite_color = c_purple;
-track_sprite_width_scale = 3;
-track_sprite_height_scale = 3;
+_sprTrack = spr_Circle;
+_sprTrack_color = c_purple;
+_sprTrack_width_scale = 3;
+_sprTrack_height_scale = 3;
 
-track_width = sprite_get_width(track_sprite) * track_sprite_width_scale;
-track_height = sprite_get_height(track_sprite) * track_sprite_height_scale;
-track_width_halved = track_width * 0.5;
-track_height_halved = track_height * 0.5;
+_track_width = sprite_get_width(_sprTrack) * _sprTrack_width_scale;
+_track_height = sprite_get_height(_sprTrack) * _sprTrack_height_scale;
+_track_width_halved = _track_width * 0.5;
+_track_height_halved = _track_height * 0.5;
 
-magnet_sprite = spr_Circle;
-magnet_sprite_color = c_aqua;
-magnet_sprite_width_scale = 0.2;
-magnet_sprite_height_scale = 0.2;
+_sprMagnet = spr_Circle;
+_sprMagnet_color = c_aqua;
+_sprMagnet_width_scale = 0.2;
+_sprMagnet_height_scale = 0.2;
 
-magnet_rotation_speed = 1;
+_magnet_rotation_speed = 1;

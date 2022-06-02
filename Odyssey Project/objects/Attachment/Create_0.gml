@@ -1,10 +1,11 @@
 
-attachment_active = false;
-attachment_entity = 0;
-attachment_foe = 0;
-attachment_angle = 0;
+_entity_id = 0;
+_entity_foe = 0;
 
-attachment_sprite = 0;
-attachment_sprite_color = 0;
-attachment_sprite_width_scale = 1;
-attachment_sprite_height_scale = 1;
+_active = false;
+_angle = 0;
+
+_sprAttachment = 0;
+_sprAttachment_color = 0;
+_sprAttachment_width_scale = 1;
+_sprAttachment_height_scale = 1;

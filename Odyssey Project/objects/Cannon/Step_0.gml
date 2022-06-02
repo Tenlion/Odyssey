@@ -5,9 +5,8 @@
 event_inherited();
 
 // Obtaining the angles associated with every Cannon.
-cannon_to_cursor_angle = point_direction(x, y, cursor_x, cursor_y);
-cannon_to_magnet_angle = point_direction(x, y, magnet_sprite_x, magnet_sprite_y);
-cannon_to_attachment_angle = point_direction(x, y, attachment.x, attachment.y);
+_cannon_to_magnet_angle = point_direction(x, y, _sprMagnet_x, _sprMagnet_y);
+_cannon_to_attachment_angle = point_direction(x, y, _attachment.x, _attachment.y);
 
 
 
@@ -15,10 +14,10 @@ cannon_to_attachment_angle = point_direction(x, y, attachment.x, attachment.y);
 
 // --------------------------- Movement ---------------------------------
 
-if (keyboard_check(ord("W")) == true) { entity_force_y -= entity_acceleration; }
-if (keyboard_check(ord("S")) == true) { entity_force_y += entity_acceleration; }
-if (keyboard_check(ord("A")) == true) { entity_force_x -= entity_acceleration; }
-if (keyboard_check(ord("D")) == true) { entity_force_x += entity_acceleration; }
+if (keyboard_check(ord("W")) == true) { _force_y -= _acceleration; }
+if (keyboard_check(ord("S")) == true) { _force_y += _acceleration; }
+if (keyboard_check(ord("A")) == true) { _force_x -= _acceleration; }
+if (keyboard_check(ord("D")) == true) { _force_x += _acceleration; }
 
 
 
@@ -27,31 +26,31 @@ if	(keyboard_check(ord("W")) == false) &&
 	(keyboard_check(ord("A")) == false) &&
 	(keyboard_check(ord("D")) == false) {
 	
-		entity_force_x = _value_to_zero(entity_force_x, cannon_brake);
-		entity_force_y = _value_to_zero(entity_force_y, cannon_brake);
+		_force_x = _value_to_zero(_force_x, _brake);
+		_force_y = _value_to_zero(_force_y, _brake);
 }
 
 else if	(keyboard_check(ord("W")) == false) &&
 		(keyboard_check(ord("S")) == false) {
 	
-		entity_force_y = _value_to_zero(entity_force_y, cannon_turn);
+		_force_y = _value_to_zero(_force_y, _turn);
 }
 
 else if	(keyboard_check(ord("A")) == false) &&
 		(keyboard_check(ord("D")) == false) {
 	
-		entity_force_x = _value_to_zero(entity_force_x, cannon_turn);
+		_force_x = _value_to_zero(_force_x, _turn);
 }
 
 
 
-entity_speed_x = ((entity_force_x / entity_mass) * entity_speed);
-entity_speed_y = ((entity_force_y / entity_mass) * entity_speed);
+_speed_x = ((_force_x / _mass) * _speed);
+_speed_y = ((_force_y / _mass) * _speed);
 
-cannon_position_x = x + entity_speed_x;
-cannon_position_y = y + entity_speed_y;
+_position_x = x + _speed_x;
+_position_y = y + _speed_y;
 
-entity_direction = point_direction(x, y, cannon_position_x, cannon_position_y);
+_direction = point_direction(x, y, _position_x, _position_y);
 
-x = cannon_position_x;
-y = cannon_position_y;
+x = _position_x;
+y = _position_y;

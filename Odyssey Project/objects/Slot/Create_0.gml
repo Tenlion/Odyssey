@@ -1,4 +1,4 @@
 
-slot_entity = 0;
-slot_number = 0;
-slot_item = 0;
+_entity_id = 0;
+_item_id = 0;
+_key_value = 0;

@@ -1,10 +1,10 @@
 
-if ((keyboard_check_pressed(ord(slot_number)) == true) && (slot_entity.attachment != slot_item)) {
+if ((keyboard_check_pressed(ord(_key_value)) == true) && (_entity_id._attachment != _item_id)) {
 	
-	slot_entity.attachment.attachment_active = false;
-	slot_entity.attachment.x = room_width * 2;
-	slot_entity.attachment.y = room_height * 2;
+	_entity_id._attachment._active = false;
+	_entity_id._attachment.x = room_width * 2;
+	_entity_id._attachment.y = room_height * 2;
 	
-	slot_entity.attachment = slot_item;
-	slot_item.attachment_active = true;
+	_entity_id._attachment = _item_id;
+	_item_id._active = true;
 }
