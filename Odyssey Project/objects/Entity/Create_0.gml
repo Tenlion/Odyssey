@@ -16,11 +16,11 @@ _acceleration = 0;	// ADVISED : 0 - 1
 _direction = 0;		// ADVISED : 0
 
 _speed = 1;			// ADVISED : 0 - 1
-_speed_x = 0;			// ADVISED : 0
-_speed_y = 0;			// ADVISED : 0
+_speed_x = 0;		// ADVISED : 0
+_speed_y = 0;		// ADVISED : 0
 
-_force_x = 0;			// ADVISED : 0
-_force_y = 0;			// ADVISED : 0
+_force_x = 0;		// ADVISED : 0
+_force_y = 0;		// ADVISED : 0
 
 _position_x = 0;
 _position_y = 0;

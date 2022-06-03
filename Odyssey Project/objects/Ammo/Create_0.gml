@@ -1,4 +1,7 @@
 
+x = room_width - 75;
+y = room_height - 75;
+	
 _max = 100;
 _count = _max;
 

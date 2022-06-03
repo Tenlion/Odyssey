@@ -6,7 +6,7 @@ if (_active == true) {
 	// Checking to see if the ammo count is high enough in the connected gauge before firing the weapon.
 	// If true, the weapon is allowed to fire.
 	// If false, the weapon can not fire.
-	if (_ammo_gauge._count >= _ammo_drain) {
+	if (_ammo_gauge_id._count >= _ammo_drain) {
 		
 		
 		// Checking if the left mouse button has been released in order to reset the fireAccumulator to be at the fireTime's value.
@@ -34,7 +34,7 @@ if (_active == true) {
 				_crit_accumulator += _crit_count;
 				
 				// Reducing the count inside the ammo gauge the weapon is connected to.
-				_ammo_gauge._count -= _ammo_drain;
+				_ammo_gauge_id._count -= _ammo_drain;
 				
 				
 				// Looping out a number of projectiles based on the shotCount of the weapon.

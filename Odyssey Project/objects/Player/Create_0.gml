@@ -12,4 +12,4 @@ _cursor_y = 0;
 _player_to_cursor_angle = 0;
 
 // Player Adversary
-_adversary = Enemy;
+_foe = Enemy;

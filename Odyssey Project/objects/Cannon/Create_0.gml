@@ -13,7 +13,7 @@ _cannon_to_magnet_angle = 0;
 _cannon_to_attachment_angle = 0;
 
 // The ammo gauge that the cannon is connected to.
-_ammo_gauge = 0;
+_ammo_gauge = instance_create_layer(0, 0, "Visible Things", Ammo);
 
 
 
@@ -71,7 +71,24 @@ _magnet_rotation_speed = 0;
 
 
 
-// ------------------------- Active Attachment Properties ---------------------
+// --------------------------- Attachment Properties ---------------------------
 
 _attachment = 0;
 
+// Creating Attachments and Slots
+_number_of_attachments = 8;
+_attachments = [_number_of_attachments];
+_slots = [_number_of_attachments];
+
+for (var attach = 0; attach < _number_of_attachments; attach++) {
+	
+	_attachments[attach] = instance_create_layer(0, 0, "Visible Things", PW_Gun);
+	_attachments[attach]._entity_id = id;
+	_attachments[attach]._entity_foe = _foe;
+	_attachments[attach]._ammo_gauge_id = _ammo_gauge;
+	 
+	_slots[attach] = instance_create_layer(0, 0, "Invisible Things", Slot);
+	_slots[attach]._key_value = string(attach + 1);
+	_slots[attach]._item_id = _attachments[attach];
+	_slots[attach]._entity_id = id;
+}
