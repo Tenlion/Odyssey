@@ -23,8 +23,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Attack",
+    "path": "folders/Objects/Attack.yy",
   },
   "resourceVersion": "1.0",
   "name": "Attack",

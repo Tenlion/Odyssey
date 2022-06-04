@@ -4,6 +4,8 @@
 // Inheriting the Parent Step Event.
 event_inherited();
 
+
+
 if (keyboard_check(ord("R")) == true) { 
 	
 	// Checking if the reload would go over the connected ammo gauge's max value.

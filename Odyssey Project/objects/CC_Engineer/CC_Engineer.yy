@@ -27,8 +27,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Cannon Classes",
-    "path": "folders/Objects/Entity Types/Player Frames/Cannon Classes.yy",
+    "name": "Entity",
+    "path": "folders/Objects/Entity.yy",
   },
   "resourceVersion": "1.0",
   "name": "CC_Engineer",

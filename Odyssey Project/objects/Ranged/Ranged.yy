@@ -5,8 +5,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "Ranged_Weapon",
-    "path": "objects/Ranged_Weapon/Ranged_Weapon.yy",
+    "name": "Attachment",
+    "path": "objects/Attachment/Attachment.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -22,16 +22,15 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Ranged Weapons",
-    "path": "folders/Objects/Attachment Types/Weapons/Ranged Weapons.yy",
+    "name": "Attachment",
+    "path": "folders/Objects/Attachment.yy",
   },
   "resourceVersion": "1.0",
-  "name": "PW_Gun",
+  "name": "Ranged",
   "tags": [],
   "resourceType": "GMObject",
 }

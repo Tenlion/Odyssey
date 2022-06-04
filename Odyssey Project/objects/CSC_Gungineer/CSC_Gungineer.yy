@@ -28,8 +28,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Engineer Subclasses",
-    "path": "folders/Objects/Entity Types/Player Frames/Cannon Classes/Engineer Subclasses.yy",
+    "name": "Entity",
+    "path": "folders/Objects/Entity.yy",
   },
   "resourceVersion": "1.0",
   "name": "CSC_Gungineer",

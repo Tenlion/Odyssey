@@ -27,8 +27,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Entity Types",
-    "path": "folders/Objects/Entity Types.yy",
+    "name": "Entity",
+    "path": "folders/Objects/Entity.yy",
   },
   "resourceVersion": "1.0",
   "name": "Player",

@@ -28,8 +28,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Projectile Types",
-    "path": "folders/Objects/Attack Forms/Projectile Types.yy",
+    "name": "Attack",
+    "path": "folders/Objects/Attack.yy",
   },
   "resourceVersion": "1.0",
   "name": "Bullet",

@@ -43,14 +43,10 @@ _sprChassis_rotation = 0;
 
 _sprTrack = spr_Square;
 _sprTrack_color = 0;
-_sprTrack_width_scale = 1;
-_sprTrack_height_scale = 1;
+_sprTrack_scale = 1;
 _sprTrack_rotation = 0;
 
-_track_width = 0;
-_track_height = 0;
-_track_width_halved = 0;
-_track_height_halved = 0;
+_track_radius = 0;
 
 
 
@@ -63,11 +59,9 @@ _sprMagnet_color = 0;
 _sprMagnet_width_scale = 1;
 _sprMagnet_height_scale = 1;
 
-_magnet_distance_from_attachment = 50;
+_attachment_distance_from_magnet = 50;
 
-_magnet_to_cursor_angle_difference = 0;
-
-_magnet_rotation_speed = 0;
+_attachment_to_cursor_angle_difference = 0;
 
 
 
@@ -82,11 +76,11 @@ _slots = [_number_of_attachments];
 
 for (var attach = 0; attach < _number_of_attachments; attach++) {
 	
-	_attachments[attach] = instance_create_layer(0, 0, "Visible Things", PW_Gun);
+	_attachments[attach] = instance_create_layer(0, 0, "Visible Things", PewPew9000);
 	_attachments[attach]._entity_id = id;
 	_attachments[attach]._entity_foe = _foe;
 	_attachments[attach]._ammo_gauge_id = _ammo_gauge;
-	 
+	
 	_slots[attach] = instance_create_layer(0, 0, "Invisible Things", Slot);
 	_slots[attach]._key_value = string(attach + 1);
 	_slots[attach]._item_id = _attachments[attach];
@@ -94,6 +88,6 @@ for (var attach = 0; attach < _number_of_attachments; attach++) {
 }
 
 _attachments[0]._weight = 180;
-_attachments[1]._weight = 0.2;
-_attachments[2]._weight = 0.7;
-_attachments[3]._weight = 1;
+_attachments[1]._weight = 5;
+_attachments[2]._weight = 1;
+_attachments[3]._weight = 0.5;

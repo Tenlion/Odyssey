@@ -5,8 +5,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "Attachment",
-    "path": "objects/Attachment/Attachment.yy",
+    "name": "Gun",
+    "path": "objects/Gun/Gun.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -22,15 +22,16 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Attachment Types",
-    "path": "folders/Objects/Attachment Types.yy",
+    "name": "Attachment",
+    "path": "folders/Objects/Attachment.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Weapon",
+  "name": "PewPew9000",
   "tags": [],
   "resourceType": "GMObject",
 }

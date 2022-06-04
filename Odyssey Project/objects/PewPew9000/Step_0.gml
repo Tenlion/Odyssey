@@ -28,7 +28,7 @@ if (_active == true) {
 				
 				// Accumulating kick and storing the angle of the shot.
 				_kick_accumulator += (_kick_force / _entity_id._mass);
-				_kick_angle = _angle - 180;
+				_kick_angle = _direction - 180;
 				
 				// Upping the critical accumulator by the critical count.
 				_crit_accumulator += _crit_count;
@@ -65,8 +65,8 @@ if (_active == true) {
 					
 					
 					// Assigning the position the pistol's attack should move to.
-					_projectiles[projectile]._destination_x = x + lengthdir_x(_range, _angle);
-					_projectiles[projectile]._destination_y = y + lengthdir_y(_range, _angle);
+					_projectiles[projectile]._destination_x = x + lengthdir_x(_range, _direction);
+					_projectiles[projectile]._destination_y = y + lengthdir_y(_range, _direction);
 				}
 			}
 		}

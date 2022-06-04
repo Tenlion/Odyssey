@@ -27,8 +27,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Attack Forms",
-    "path": "folders/Objects/Attack Forms.yy",
+    "name": "Attack",
+    "path": "folders/Objects/Attack.yy",
   },
   "resourceVersion": "1.0",
   "name": "Projectile",
