@@ -213,38 +213,44 @@ function _move_to_target_straightY(itemToMoveX, itemToMoveY, targetX, targetY, s
 
 
 
-function _value_to_zero(value, speed) {
+function _value_to_desired_value(value, desiredValue, speed) {
 	
-	// Checking if the value is greater than 0.
+	// Checking if the value is greater than desiredValue.
 	// If true, continue checking the value.
 	// If false, continue to the else-if statement.
-	if (value > 0) {
+	if (value > desiredValue) {
 		
-		// Checking if the result from "value + speed" is greater than 0.
-		// If true, return 0.  We do this because the expression would skip over 0 otherwise.
+		// Checking if the result from "value + speed" is greater than desiredValue.
+		// If true, return desiredValue.  We do this because the expression would skip over desiredValue otherwise.
 		// If false, return the result of "value + speed".
-		if ((value - speed) < 0) { return 0; }
+		if ((value - speed) < desiredValue) { return desiredValue; }
 		
 		else { return value - speed; }
 	}
 	
 	
 	
-	// Checking if the value is less than 0.
+	// Checking if the value is less than desiredValue.
 	// If true, continue checking the value.
 	// If false, continue to the else statement.
-	else if (value < 0) {
+	else if (value < desiredValue) {
 		
-		// Checking if the result from "value - speed" is less than 0.
-		// If true, return 0. We do this because the expression would skip over 0 otherwise.
+		// Checking if the result from "value - speed" is less than desiredValue.
+		// If true, return desiredValue. We do this because the expression would skip over desiredValue otherwise.
 		// If false, return the result of "value - speed".
-		if ((value + speed) > 0) { return 0; }
+		if ((value + speed) > desiredValue) { return desiredValue; }
 		
 		else { return value + speed; }
 	}
 	
 	
 	
-	// If the value is neither over 0 or under 0, then the value must be 0.  So, return 0.
-	else { return 0; }
+	// If the value is neither over desiredValue or under desiredValue, 
+	// then the value must be desiredValue.  So, return desiredValue.
+	else { return desiredValue; }
+}
+
+function _angle_of_points(x1, y1, x2, y2) {
+	
+	return arctan2(y2 - y1, x2 - x1) * (-180 / pi);
 }

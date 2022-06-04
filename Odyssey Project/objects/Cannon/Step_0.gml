@@ -26,20 +26,20 @@ if	(keyboard_check(ord("W")) == false) &&
 	(keyboard_check(ord("A")) == false) &&
 	(keyboard_check(ord("D")) == false) {
 	
-		_force_x = _value_to_zero(_force_x, _brake);
-		_force_y = _value_to_zero(_force_y, _brake);
+		_force_x = _value_to_desired_value(_force_x, 0, _brake);
+		_force_y = _value_to_desired_value(_force_y, 0, _brake);
 }
 
 else if	(keyboard_check(ord("W")) == false) &&
 		(keyboard_check(ord("S")) == false) {
 	
-		_force_y = _value_to_zero(_force_y, _turn);
+		_force_y = _value_to_desired_value(_force_y, 0, _turn);
 }
 
 else if	(keyboard_check(ord("A")) == false) &&
 		(keyboard_check(ord("D")) == false) {
 	
-		_force_x = _value_to_zero(_force_x, _turn);
+		_force_x = _value_to_desired_value(_force_x, 0, _turn);
 }
 
 

@@ -76,7 +76,7 @@ _magnet_rotation_speed = 0;
 _attachment = 0;
 
 // Creating Attachments and Slots
-_number_of_attachments = 8;
+_number_of_attachments = 4;
 _attachments = [_number_of_attachments];
 _slots = [_number_of_attachments];
 
@@ -92,3 +92,8 @@ for (var attach = 0; attach < _number_of_attachments; attach++) {
 	_slots[attach]._item_id = _attachments[attach];
 	_slots[attach]._entity_id = id;
 }
+
+_attachments[0]._weight = 180;
+_attachments[1]._weight = 0.2;
+_attachments[2]._weight = 0.7;
+_attachments[3]._weight = 1;

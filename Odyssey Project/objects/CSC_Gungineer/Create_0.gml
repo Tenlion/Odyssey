@@ -72,5 +72,3 @@ _sprMagnet = spr_Circle;
 _sprMagnet_color = c_aqua;
 _sprMagnet_width_scale = 0.2;
 _sprMagnet_height_scale = 0.2;
-
-_magnet_rotation_speed = 1;
