@@ -7,7 +7,8 @@ function scr_Cannon() {
 	layer_create(-1, "Visible Things");
 
 
-
+	// Creating Time
+	instance_create_layer(0, 0, "Invisible Things", Time);
 
 
 	// Creating the Player Instance

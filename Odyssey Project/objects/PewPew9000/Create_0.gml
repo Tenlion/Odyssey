@@ -36,8 +36,8 @@ _falloff = 0;
 _accuracy = 0;
 
 // Attachment Properties
+_ammo_drain = 5;
 _sprAttachment = spr_Diamond;
 _sprAttachment_color = c_white;
 _sprAttachment_width_scale = 0.5;
 _sprAttachment_height_scale = 0.5;
-_ammo_drain = 5;

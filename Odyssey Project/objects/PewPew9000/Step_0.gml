@@ -74,7 +74,6 @@ if (_active == true) {
 }
 
 
-
 // Checking if the kick accumulator is above 0.  If true, kick the attachment's entity.
 if (_kick_accumulator > 0) {
 	
