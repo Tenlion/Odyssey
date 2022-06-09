@@ -18,11 +18,11 @@ else if (position_meeting(x, y, _attachment_foe) == true) {
 	_foe_instance._life -= _damage;
 	
 	
-	_knockback_angle = _direction;
+	_knockback = _knockback_force / _foe_instance._mass;
 	
 	
-	_foe_instance._force_x += lengthdir_x((_knockback_force / _foe_instance._mass) * _knockback_speed, _knockback_angle);
-	_foe_instance._force_y += lengthdir_y((_knockback_force / _foe_instance._mass) * _knockback_speed, _knockback_angle);
+	_foe_instance._force_x += lengthdir_x(_knockback, _direction);
+	_foe_instance._force_y += lengthdir_y(_knockback, _direction);
 	
 	
 	instance_destroy();

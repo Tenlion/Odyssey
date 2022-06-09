@@ -17,12 +17,9 @@ _crit_accumulator = 0;
 
 // Gun Properties
 _fire_type = "Automatic";
-_fire_rate = 10;
-_kick_force = 1;
-_kick_speed = 1;
-_kick_step = 0;
+_fire_time = 0.2;	// 0 - Infinite (Fire Time is both fire delay and fire rate.)
+_kick_force = 1;	// -Infinite to Infinite
 _knockback_force = 1;
-_knockback_speed = 1;
 _projectile_count = 1;
 _projectiles = [_projectile_count];
 _projectile_speed = 5;

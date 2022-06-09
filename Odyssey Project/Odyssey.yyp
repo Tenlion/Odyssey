@@ -1,8 +1,8 @@
 {
   "resources": [
     {"id":{"name":"Attack","path":"objects/Attack/Attack.yy",},"order":3,},
-    {"id":{"name":"Attachment","path":"objects/Attachment/Attachment.yy",},"order":4,},
-    {"id":{"name":"PewPew9000","path":"objects/PewPew9000/PewPew9000.yy",},"order":2,},
+    {"id":{"name":"Attachment","path":"objects/Attachment/Attachment.yy",},"order":3,},
+    {"id":{"name":"PewPew9000","path":"objects/PewPew9000/PewPew9000.yy",},"order":1,},
     {"id":{"name":"scr_Everything","path":"scripts/scr_Everything/scr_Everything.yy",},"order":0,},
     {"id":{"name":"spr_Background","path":"sprites/spr_Background/spr_Background.yy",},"order":1,},
     {"id":{"name":"spr_Hexagon","path":"sprites/spr_Hexagon/spr_Hexagon.yy",},"order":6,},
@@ -16,7 +16,7 @@
     {"id":{"name":"scr_Cannon","path":"scripts/scr_Cannon/scr_Cannon.yy",},"order":1,},
     {"id":{"name":"Cannon","path":"objects/Cannon/Cannon.yy",},"order":4,},
     {"id":{"name":"Time","path":"objects/Time/Time.yy",},"order":13,},
-    {"id":{"name":"Gun","path":"objects/Gun/Gun.yy",},"order":3,},
+    {"id":{"name":"Gun","path":"objects/Gun/Gun.yy",},"order":2,},
     {"id":{"name":"spr_Circle","path":"sprites/spr_Circle/spr_Circle.yy",},"order":4,},
     {"id":{"name":"CC_Engineer","path":"objects/CC_Engineer/CC_Engineer.yy",},"order":5,},
     {"id":{"name":"Bullet","path":"objects/Bullet/Bullet.yy",},"order":2,},

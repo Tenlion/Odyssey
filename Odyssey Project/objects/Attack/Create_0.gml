@@ -4,9 +4,8 @@ _attachment_foe = 0;
 
 _damage = 0;
 _range = 0;
+_knockback = 0;
 _knockback_force = 0;
-_knockback_speed = 0;
-_knockback_angle = 0;
 
 _sprAttack = 0;
 _sprAttack_color = 0;

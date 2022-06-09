@@ -21,7 +21,7 @@ if (_sprRing_rotation != _sprRing_rotation_target) {
 
 	var currentAngle_to_targetAngle_difference = angle_difference(_sprRing_rotation_target, _sprRing_rotation);
 	
-	_sprRing_rotation += currentAngle_to_targetAngle_difference * _sprRing_rotation_speed;
+	_sprRing_rotation += (currentAngle_to_targetAngle_difference * (_sprRing_rotation_speed * global.DELTA_MULTIPLIER));
 }
 
 
@@ -34,7 +34,7 @@ if (_cannon_to_attachment_angle != _player_to_cursor_angle) {
 
 	_attachment_to_cursor_angle_difference = angle_difference(_player_to_cursor_angle, _cannon_to_attachment_angle);
 
-	_cannon_to_attachment_angle += _value_to_desired_value(0, _attachment_to_cursor_angle_difference, _attachment._weight);
+	_cannon_to_attachment_angle += _value_to_desired_value(0, _attachment_to_cursor_angle_difference, _attachment._weight * global.DELTA_MULTIPLIER);
 }
 
 
