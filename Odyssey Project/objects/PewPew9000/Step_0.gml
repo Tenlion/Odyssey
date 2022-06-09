@@ -17,7 +17,7 @@ if (_active == true) {
 		
 		
 			// Upping the fireAccumulator while the left mouse button is held down.
-			_fire_accumulator += _fire_rate;
+			_fire_accumulator += _fire_rate * global.DELTA_MULTIPLIER;
 			
 			// Check that determines when the weapon fires based on the fireAccumulator going over the fireTime.
 			if (_fire_accumulator >= _fire_time) {
