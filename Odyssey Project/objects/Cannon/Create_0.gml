@@ -86,8 +86,3 @@ for (var attach = 0; attach < _number_of_attachments; attach++) {
 	_slots[attach]._item_id = _attachments[attach];
 	_slots[attach]._entity_id = id;
 }
-
-_attachments[0]._weight = 180;
-_attachments[1]._weight = 5;
-_attachments[2]._weight = 1;
-_attachments[3]._weight = 0.5;

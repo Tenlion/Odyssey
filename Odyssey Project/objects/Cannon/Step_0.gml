@@ -26,20 +26,20 @@ if	(keyboard_check(ord("W")) == false) &&
 	(keyboard_check(ord("A")) == false) &&
 	(keyboard_check(ord("D")) == false) {
 	
-		_force_x = _value_to_desired_value(_force_x, 0, _brake * global.DELTA_MULTIPLIER);
-		_force_y = _value_to_desired_value(_force_y, 0, _brake * global.DELTA_MULTIPLIER);
+		_force_x = _number_to_number(_force_x, 0, _brake * global.DELTA_MULTIPLIER);
+		_force_y = _number_to_number(_force_y, 0, _brake * global.DELTA_MULTIPLIER);
 }
 
 else if	(keyboard_check(ord("W")) == false) &&
 		(keyboard_check(ord("S")) == false) {
 	
-		_force_y = _value_to_desired_value(_force_y, 0, _turn * global.DELTA_MULTIPLIER);
+		_force_y = _number_to_number(_force_y, 0, _turn * global.DELTA_MULTIPLIER);
 }
 
 else if	(keyboard_check(ord("A")) == false) &&
 		(keyboard_check(ord("D")) == false) {
 	
-		_force_x = _value_to_desired_value(_force_x, 0, _turn * global.DELTA_MULTIPLIER);
+		_force_x = _number_to_number(_force_x, 0, _turn * global.DELTA_MULTIPLIER);
 }
 
 

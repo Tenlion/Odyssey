@@ -5,10 +5,9 @@
 event_inherited();
 
 
+if (_range <= 0) { instance_destroy(); }
 
-if (_speed <= 0) { instance_destroy(); }
-
-
+else if (_speed <= 0) { instance_destroy(); }
 
 else if (position_meeting(x, y, _attachment_foe) == true) {
 		

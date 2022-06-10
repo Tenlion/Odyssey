@@ -1,4 +1,5 @@
 
+_name = "";
 _active = false;
 
 _entity_id = 0;

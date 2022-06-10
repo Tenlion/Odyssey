@@ -13,8 +13,8 @@ event_inherited();
 if (keyboard_check_pressed(ord(" ")) == true) {
 	
 	_sprRing_rotation_target = _angle_fix(_sprRing_rotation_target + _sprRing_rotation_adjust);
-}
 
+}
 
 
 if (_sprRing_rotation != _sprRing_rotation_target) {
@@ -26,15 +26,13 @@ if (_sprRing_rotation != _sprRing_rotation_target) {
 
 
 
-
-
 // -------------------------------- Track ------------------------------------
 
 if (_cannon_to_attachment_angle != _player_to_cursor_angle) {
 
 	_attachment_to_cursor_angle_difference = angle_difference(_player_to_cursor_angle, _cannon_to_attachment_angle);
 
-	_cannon_to_attachment_angle += _value_to_desired_value(0, _attachment_to_cursor_angle_difference, _attachment._weight * global.DELTA_MULTIPLIER);
+	_cannon_to_attachment_angle += _number_to_number(0, _attachment_to_cursor_angle_difference, _attachment._weight * global.DELTA_MULTIPLIER);
 }
 
 

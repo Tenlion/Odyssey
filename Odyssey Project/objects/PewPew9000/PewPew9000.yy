@@ -6,8 +6,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "Gun",
-    "path": "objects/Gun/Gun.yy",
+    "name": "Attachment",
+    "path": "objects/Attachment/Attachment.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,

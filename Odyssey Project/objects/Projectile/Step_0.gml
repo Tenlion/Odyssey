@@ -8,7 +8,3 @@ y = _move_to_target_straightY(x, y, _destination_x, _destination_y, _speed * glo
 
 _range -= _speed * global.DELTA_MULTIPLIER;
 _speed += _acceleration * global.DELTA_MULTIPLIER;
-
-
-if (_range <= 0) { instance_destroy(); }
-

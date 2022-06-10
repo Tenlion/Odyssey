@@ -22,8 +22,8 @@ function _relPosX_inSprite_real(itemX, spriteWidth, spriteX) {
 
 
 // RELATIVE POSITION IN SPRITE FOR Y (Returns REAL Number)
-// Returns the relative Y value of an object within a sprite.  If the object is within the sprite AND
-// the spriteX represents the Y position of the sprite, then a value between -1.0 to 1.0 will be returned.
+// Returns the relative Y value of a item within a sprite.  If the item is within the sprite AND
+// the spriteY represents the Y position of the sprite, then a value between -1.0 to 1.0 will be returned.
 function _relPosY_inSprite_real(itemY, spriteHeight, spriteY) {
 	
 	// Calculating the result.
@@ -42,13 +42,12 @@ function _relPosY_inSprite_real(itemY, spriteHeight, spriteY) {
 
 
 // RELATIVE POSITION IN SPRITE FOR X (Returns WHOLE Number)
-// Returns the relative X value of an object within a sprite.  If the object is within the sprite AND
+// Returns the relative X value of an item within a sprite.  If the item is within the sprite AND
 // the spriteX represents the X position of the sprite, then either -1, 0 or 1 will be returned.
-function _relPosX_inSprite_whole(object, spriteWidth, spriteX) {
+function _relPosX_inSprite_whole(itemX, spriteWidth, spriteX) {
 	
 	// Calculating the result.
-	var result = (object.x - spriteX) / (spriteWidth / 2);
-	
+	var result = (itemX - spriteX) / (spriteWidth / 2);
 	
 	// CHECK : If the result is above 0, then set the result to 1.
 	if (result > 0) { result = 1; }
@@ -58,7 +57,6 @@ function _relPosX_inSprite_whole(object, spriteWidth, spriteX) {
 	
 	// ELSE : If the result is neither of the checks, then set the result to 0. 
 	else { result = 0; }
-	
 	
 	// Throwing back either -1, 0 or 1 depending on the calculation above.
 	return result;
@@ -69,11 +67,10 @@ function _relPosX_inSprite_whole(object, spriteWidth, spriteX) {
 // RELATIVE POSITION IN SPRITE FOR Y (Returns WHOLE Number)
 // Returns the relative Y value of an object within a sprite.  If the object is within the sprite AND
 // the spriteX represents the Y position of the sprite, then either -1, 0 or 1 will be returned.
-function _relPosY_inSprite_whole(object, spriteHeight, spriteY) {
+function _relPosY_inSprite_whole(itemY, spriteHeight, spriteY) {
 	
 	// Calculating the result.
-	var result = (object.y - spriteY) / (spriteHeight / 2);
-	
+	var result = (itemY - spriteY) / (spriteHeight / 2);
 	
 	// CHECK : If the result is above 0, then set the result to 1.
 	if (result > 0) { result = 1; }
@@ -83,7 +80,6 @@ function _relPosY_inSprite_whole(object, spriteHeight, spriteY) {
 	
 	// ELSE : If the result is neither of the checks, then set the result to 0. 
 	else { result = 0; }
-	
 	
 	// Throwing back either -1, 0 or 1 depending on the calculation above.
 	return result;
@@ -116,59 +112,6 @@ function _angle_fix(angle) {
 
 //------------------------- MOVE TO TARGET -----------------------------
 
-// MOVE TO TARGET (SEMI-GRID)
-// Moving an instance to a specified target with a set speed in a semi-grid manner.
-function _move_to_target_semiGrid(instToMove, targetX, targetY, instSpeed) {
-	
-	// Local Variables
-	var distance = point_distance(instToMove.x, instToMove.y, targetX, targetY);	// distance : Distance between instToMove and the target.
-	var distX = abs(targetX - instToMove.x);										// distX : Distance between the instToMove X coordinate and the target's X coordinate in a non-negative form.
-	var distY = abs(targetY - instToMove.y);										// distY : Distance between the instToMove Y coordinate and the target's Y coordinate in a non-negative form. 
-	
-	// CHECK : If the distance between the instance and target is GREATER THAN the given speed, then proceed with movement checks.
-	if (distance > instSpeed) {
-		
-		// CHECK : If the distX is GREATER THAN the given speed, then proceed with X movement checks.
-		// This check is to prevent X coordinate bouncing.
-		if (distX > instSpeed) {
-			
-			// CHECKS : Determining if the instToMove's X is to the right or left of the target, then commiting the instToMove to translate toward the target.
-			if		(instToMove.x > targetX) {instToMove.x -= instSpeed}
-			else if (instToMove.x < targetX) {instToMove.x += instSpeed}
-		}
-		
-		// ELSE : Set the instToMove's X to the targetX.
-		else { instToMove.x = targetX; }
-		
-		
-		
-		// CHECK : If the distY is GREATER THAN the given speed, then proceed with Y movement checks.
-		// This check is to prevent Y coordinate bouncing.
-		if (distY > instSpeed) {
-		
-			// CHECKS : Determining if the instToMove's Y is above or below the target, then commiting the instToMove to translate toward the target.
-			if		(instToMove.y > targetY) {instToMove.y -= instSpeed}
-			else if (instToMove.y < targetY) {instToMove.y += instSpeed}
-		}
-		
-		// ELSE : Set the instToMove's Y to the targetY.
-		else { instToMove.y = targetY; }
-	}
-	
-	// ELSE : If the distance between the instance and target is LESS THAN the given speed, then
-	// set the instance's position to match that of the target.  This action prevents the instance
-	// that is being called to move from bouncing infinitely.
-	else {
-		
-		instToMove.x = targetX;
-		instToMove.y = targetY;
-	}
-}
-
-
-
-
-
 // MOVE TO TARGET X (STRAIGHT)
 // Moving an instance to a specified x-target with a set speed in a straight-manner.
 function _move_to_target_straightX(itemToMoveX, itemToMoveY, targetX, targetY, speedToMove) {
@@ -186,8 +129,6 @@ function _move_to_target_straightX(itemToMoveX, itemToMoveY, targetX, targetY, s
 	// that is being called to bounce infinitely.
 	else { return targetX; }
 }
-
-
 
 
 
@@ -211,46 +152,66 @@ function _move_to_target_straightY(itemToMoveX, itemToMoveY, targetX, targetY, s
 
 
 
-
-
-function _value_to_desired_value(value, desiredValue, speed) {
+function _number_to_number(number, goal, step) {
 	
-	// Checking if the value is greater than desiredValue.
-	// If true, continue checking the value.
+	// Checking if the number is greater than goal.
+	// If true, continue checking the number.
 	// If false, continue to the else-if statement.
-	if (value > desiredValue) {
+	if (number > goal) {
 		
-		// Checking if the result from "value + speed" is greater than desiredValue.
-		// If true, return desiredValue.  We do this because the expression would skip over desiredValue otherwise.
-		// If false, return the result of "value + speed".
-		if ((value - speed) < desiredValue) { return desiredValue; }
+		// Checking if the result from "number + step" is greater than goal.
+		// If true, return goal.  We do this because the expression would skip over goal otherwise.
+		// If false, return the result of "number + step".
+		if ((number - step) < goal) { return goal; }
 		
-		else { return value - speed; }
+		else { return number - step; }
 	}
 	
-	
-	
-	// Checking if the value is less than desiredValue.
-	// If true, continue checking the value.
+	// Checking if the number is less than goal.
+	// If true, continue checking the number.
 	// If false, continue to the else statement.
-	else if (value < desiredValue) {
+	else if (number < goal) {
 		
-		// Checking if the result from "value - speed" is less than desiredValue.
-		// If true, return desiredValue. We do this because the expression would skip over desiredValue otherwise.
-		// If false, return the result of "value - speed".
-		if ((value + speed) > desiredValue) { return desiredValue; }
+		// Checking if the result from "number - step" is less than goal.
+		// If true, return goal. We do this because the expression would skip over goal otherwise.
+		// If false, return the result of "number - step".
+		if ((number + step) > goal) { return goal; }
 		
-		else { return value + speed; }
+		else { return number + step; }
 	}
 	
-	
-	
-	// If the value is neither over desiredValue or under desiredValue, 
-	// then the value must be desiredValue.  So, return desiredValue.
-	else { return desiredValue; }
+	// If the number is neither over goal or under goal, then the number must be goal.
+	else { return goal; }
 }
 
-function _angle_of_points(x1, y1, x2, y2) {
+
+/*
+function _metric_system(value, typeOfMeter) {
 	
-	return arctan2(y2 - y1, x2 - x1) * (-180 / pi);
+	switch (typeOfMeter) {
+		
+		case "Milli" : return value / 1000;
+		break;
+		
+		case "Centi" : return value / 100;
+		break;
+		
+		case "Deci" : return value / 10;
+		break;
+		
+		case "Meter" : return value;
+		break;
+		
+		case "Deca" : return value * 10;
+		break;
+		
+		case "Hecto" : return value * 100;
+		break;
+		
+		case "Kilo" : return value * 1000;
+		break;
+		
+		default : return 0;
+		break;
+	}
 }

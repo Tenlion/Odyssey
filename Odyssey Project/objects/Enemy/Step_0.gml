@@ -11,14 +11,14 @@ if ((_force_x < _force_max) && (_force_x > _force_min)) {
 	if		(_target_x > x) { _force_x += _acceleration * global.DELTA_MULTIPLIER; }
 	else if (_target_x < x) { _force_x -= _acceleration * global.DELTA_MULTIPLIER; }
 }
-else { _force_x = _value_to_desired_value(_force_x, 0, _acceleration * global.DELTA_MULTIPLIER); }
+else { _force_x = _number_to_number(_force_x, 0, _acceleration * global.DELTA_MULTIPLIER); }
 
 if ((_force_y < _force_max) && (_force_y > _force_min)) {
 	
 	if		(_target_y > y) { _force_y += _acceleration * global.DELTA_MULTIPLIER; }
 	else if (_target_y < y) { _force_y -= _acceleration * global.DELTA_MULTIPLIER; }
 }
-else { _force_y = _value_to_desired_value(_force_y, 0, _acceleration * global.DELTA_MULTIPLIER); }
+else { _force_y = _number_to_number(_force_y, 0, _acceleration * global.DELTA_MULTIPLIER); }
 
 
 

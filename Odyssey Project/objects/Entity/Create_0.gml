@@ -32,18 +32,32 @@ _foe = 0;
 
 Things to Do
 0.	Optimize, comment and document.
-1.	Create time object.
-2.	Kick and Knockback
-3.	Attachment Weight
-4.	Shot Count Overlap Issue
 5.	Falloff Range
-6.	Accuracy  
-7.	Deliberate whether stats should be functioned or not?  I believe they should be, but I haven't
-	thought about it too much.  It would make things a lot easier if they can be though. :)
-8.	After the Time Object is made, optimize everything that has been made so far.  Object Inheritance, conditional statements
-	+ their use efficiency, layer usage and instance implementation.
+6.	Accuracy
 
 Accomplished Tasks
+
++	Create time object.
+	RESULTS : Done.
+	
++	Kick and Knockback
+	RESULTS : Done.
+	
++	Attachment Weight
+	RESULTS : Done.
+	
++	Shot Count Overlap Issue
+	RESULTS : Done.
+	
++	Deliberate whether stats should be functioned or not?  I believe they should be, but I haven't
+	thought about it too much.  It would make things a lot easier if they can be though. :)
+	RESULTS : No.  Stats can be used in a multi-purpose fashion, so limiting to them to one functionality
+	would be a bad idea.
+	
++	After the Time Object is made, optimize everything that has been made so far.  Object Inheritance, conditional statements
+	+ their use efficiency, layer usage and instance implementation.
+	RESULTS : Done.
+	
 +	Bullets need to follow the attachment angle so they know where to go.
 	SOLVED : Done.
 	
