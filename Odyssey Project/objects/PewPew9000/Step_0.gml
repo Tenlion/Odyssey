@@ -3,6 +3,14 @@
 if (_fire_accumulator < _fire_time) { _fire_accumulator += global.DELTA_ACTUAL; }
 
 
+// Checking if the deviation is NOT equivalent to it's base AND if the left mouse button is inactive.  
+// If true, realign the deviation.
+if ((mouse_check_button(mb_left) == false) && (_accuracy_deviation != _accuracy_deviation_base)) { 
+	
+	_accuracy_deviation = _number_to_number(_accuracy_deviation, _accuracy_deviation_base, _recovery * global.DELTA_MULTIPLIER); 
+}
+
+
 // Checking to see if the attachment is active.
 if (_active == true) {
 	
@@ -31,11 +39,11 @@ if (_active == true) {
 				_kick = (_kick_force / _entity_id._mass);
 				_kick_angle = _direction - 180;
 				_entity_id._force_x += lengthdir_x(_kick, _kick_angle);
-				_entity_id._force_y += lengthdir_y(_kick, _kick_angle);	
+				_entity_id._force_y += lengthdir_y(_kick, _kick_angle);
 				
 				
-				// Looping out a number of projectiles based on the shotCount of the weapon.
-				for (var projectile = 0; projectile < _multishot; projectile++) {
+				// Looping out a number of projectiles based on the _projectile_count of the weapon.
+				for (var projectile = 0; projectile < _projectile_count; projectile++) {
 					
 					// Creating an attack and defining the properties inside before it moves.
 					_projectiles[projectile] = instance_create_layer(x, y, "Projectiles", _projectile_object);
@@ -44,13 +52,24 @@ if (_active == true) {
 					_projectiles[projectile]._damage = _damage;
 					_projectiles[projectile]._range = _range;
 					_projectiles[projectile]._knockback_force = _knockback_force;
-					_projectiles[projectile]._speed = _projectile_speed;
-					_projectiles[projectile]._acceleration = _projectile_acceleration;
+					_projectiles[projectile]._speed = random_range(_projectile_speed_min * _projectile_speed,_projectile_speed_max * _projectile_speed);
+					_projectiles[projectile]._acceleration = random_range(_projectile_acceleration_min * _projectile_acceleration, _projectile_acceleration_max * _projectile_acceleration);
 					
-					// Assigning the position the pistol's attack should move to.
-					_projectiles[projectile]._destination_x = x + lengthdir_x(_range, _direction);
-					_projectiles[projectile]._destination_y = y + lengthdir_y(_range, _direction);
+					// Calculating the attack's direction.
+					_attack_direction = random_range(_direction - _accuracy_deviation, _direction + _accuracy_deviation);
+					
+					// Calculating attack's spawn position.
+					_spawn_x = random_range(x - _spawn_deviation, x + _spawn_deviation);
+					_spawn_y = random_range(y - _spawn_deviation, y + _spawn_deviation);
+					//_projectiles[projectile].x = _spawn_x;
+					_projectiles[projectile].y = _spawn_y;
+					
+					// Assigning the ending position of the attack.
+					_projectiles[projectile]._destination_x = x + lengthdir_x(_range, _attack_direction);
+					_projectiles[projectile]._destination_y = y + lengthdir_y(_range, _attack_direction);
 				}
+				
+				_accuracy_deviation =  _number_to_number(_accuracy_deviation, _accuracy_deviation_max, _recoil);
 			}
 		}
 	}

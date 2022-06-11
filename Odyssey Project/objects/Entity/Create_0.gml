@@ -34,6 +34,9 @@ Things to Do
 0.	Optimize, comment and document.
 5.	Falloff Range
 6.	Accuracy
+7.	Deliberate whether stats (maybe only certain ones) should be functioned or not?  I believe they 
+	should be, but I haven't thought about it too much.  It would make things a lot easier if they 
+	can be though. :)
 
 Accomplished Tasks
 
@@ -48,11 +51,6 @@ Accomplished Tasks
 	
 +	Shot Count Overlap Issue
 	RESULTS : Done.
-	
-+	Deliberate whether stats should be functioned or not?  I believe they should be, but I haven't
-	thought about it too much.  It would make things a lot easier if they can be though. :)
-	RESULTS : No.  Stats can be used in a multi-purpose fashion, so limiting to them to one functionality
-	would be a bad idea.
 	
 +	After the Time Object is made, optimize everything that has been made so far.  Object Inheritance, conditional statements
 	+ their use efficiency, layer usage and instance implementation.
