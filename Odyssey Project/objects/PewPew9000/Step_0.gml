@@ -1,10 +1,21 @@
 
+_endx_line_1 = x + lengthdir_x(_range, _direction - _accuracy_deviation);
+_endy_line_1 = y + lengthdir_y(_range, _direction - _accuracy_deviation);
+_endx_line_2 = x + lengthdir_x(_range, _direction + _accuracy_deviation);
+_endy_line_2 = y + lengthdir_y(_range, _direction + _accuracy_deviation);
+
+_startx_line_1 = x - lengthdir_x(_spawn_radius, _direction + 90);
+_starty_line_1 = y - lengthdir_y(_spawn_radius, _direction + 90);
+_startx_line_2 = x + lengthdir_x(_spawn_radius, _direction + 90);
+_starty_line_2 = y + lengthdir_y(_spawn_radius, _direction + 90);
+		
+		
 // Accumulating time into the _fire_accumulator if it is less than the value inside _fire_time.
 if (_fire_accumulator < _fire_time) { _fire_accumulator += global.DELTA_ACTUAL; }
 
 
-// Checking if the deviation is NOT equivalent to it's base AND if the left mouse button is inactive.  
-// If true, realign the deviation.
+// Checking if the deviation is NOT equivalent to it's base AND if the left mouse button is inactive.
+// If true, realign the deviation using recovery.
 if ((mouse_check_button(mb_left) == false) && (_accuracy_deviation != _accuracy_deviation_base)) { 
 	
 	_accuracy_deviation = _number_to_number(_accuracy_deviation, _accuracy_deviation_base, _recovery * global.DELTA_MULTIPLIER); 
@@ -58,17 +69,17 @@ if (_active == true) {
 					// Calculating the attack's direction.
 					_attack_direction = random_range(_direction - _accuracy_deviation, _direction + _accuracy_deviation);
 					
-					// Calculating attack's spawn position.
-					_spawn_x = random_range(x - _spawn_deviation, x + _spawn_deviation);
-					_spawn_y = random_range(y - _spawn_deviation, y + _spawn_deviation);
-					//_projectiles[projectile].x = _spawn_x;
-					_projectiles[projectile].y = _spawn_y;
+					// Calculating the attack's spawn position.
+					_spawn_deviation = random_range(_spawn_radius * -1, _spawn_radius);
+					_projectiles[projectile].x = x + lengthdir_x(_spawn_deviation, _direction + 90);
+					_projectiles[projectile].y = y + lengthdir_y(_spawn_deviation, _direction + 90);
 					
-					// Assigning the ending position of the attack.
+					// Assigning the end position for the attack.
 					_projectiles[projectile]._destination_x = x + lengthdir_x(_range, _attack_direction);
 					_projectiles[projectile]._destination_y = y + lengthdir_y(_range, _attack_direction);
 				}
 				
+				// Applying recoil onto the accuracy for every shot.
 				_accuracy_deviation =  _number_to_number(_accuracy_deviation, _accuracy_deviation_max, _recoil);
 			}
 		}
