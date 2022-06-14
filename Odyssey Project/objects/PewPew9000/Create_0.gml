@@ -56,7 +56,7 @@ _projectile_object = Bullet;
 // simply takes the Projectile Count as it's variable to declare the max number of projectiles stored inside
 // of itself.
 // RANGE : 1 - Infinite
-_projectile_count = 1;
+_projectile_count = 100;
 _projectiles = [_projectile_count];
 
 // STAT : Projectile Speed Minimum + Maximum
@@ -68,8 +68,8 @@ _projectile_speed_max = 15;
 // STAT : Projectile Acceleration Minimum + Maximum
 // NOTE : Setting these properties as the same number will ensure the acceleration of the shot projectiles are the same.
 // RANGE : -Infinite - Infinite for Minimum + Maxmium
-_projectile_acceleration_min = 0.1;
-_projectile_acceleration_max = 0.3;
+_projectile_acceleration_min = 0;
+_projectile_acceleration_max = 0;
 
 // STAT : Kick
 // NOTE : Negative Kick will cause the attached entity to be pulled in the direction of the shot.
@@ -125,14 +125,18 @@ _accuracy_deviation_current = _accuracy_deviation_base;
 // Most attachments will probably have a spawn radius of 0, but for attachments with larger barrels that shoot a ton of projectiles...
 // Well, this stat is made for them.
 // RANGE : 0 - Infinite
-_spawn_radius = 20;
+_spawn_radius = 0;
 
-_endx_line_1 = 0;
-_endy_line_1 = 0;
-_endx_line_2 = 0;
-_endy_line_2 = 0;
+_line_active = true;
+_line_length = _range * 0.1;
+
+_projectile_width_halved = (sprite_get_width(spr_Square) * 0.1) * 0.5;
 
 _startx_line_1 = 0;
 _starty_line_1 = 0;
 _startx_line_2 = 0;
 _starty_line_2 = 0;
+_endx_line_1 = 0;
+_endy_line_1 = 0;
+_endx_line_2 = 0;
+_endy_line_2 = 0;

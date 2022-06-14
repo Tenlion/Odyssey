@@ -14,15 +14,18 @@ if ((mouse_check_button(mb_left) == false) && (_accuracy_deviation_current != _a
 // Checking to see if the attachment is active.
 if (_active == true) {
 	
-	_endx_line_1 = x + lengthdir_x(_range, _direction - _accuracy_deviation_current);
-	_endy_line_1 = y + lengthdir_y(_range, _direction - _accuracy_deviation_current);
-	_endx_line_2 = x + lengthdir_x(_range, _direction + _accuracy_deviation_current);
-	_endy_line_2 = y + lengthdir_y(_range, _direction + _accuracy_deviation_current);
-
-	_startx_line_1 = x - lengthdir_x(_spawn_radius, _direction + 90);
-	_starty_line_1 = y - lengthdir_y(_spawn_radius, _direction + 90);
-	_startx_line_2 = x + lengthdir_x(_spawn_radius, _direction + 90);
-	_starty_line_2 = y + lengthdir_y(_spawn_radius, _direction + 90);
+	if (_line_active == true) {
+		
+		_startx_line_1 = x - lengthdir_x(_spawn_radius + _projectile_width_halved, _direction + 90);
+		_starty_line_1 = y - lengthdir_y(_spawn_radius + _projectile_width_halved, _direction + 90);
+		_startx_line_2 = x + lengthdir_x(_spawn_radius + _projectile_width_halved, _direction + 90);
+		_starty_line_2 = y + lengthdir_y(_spawn_radius + _projectile_width_halved, _direction + 90);
+		
+		_endx_line_1 = _startx_line_1 + lengthdir_x(_line_length + _projectile_width_halved, _direction - _accuracy_deviation_current);
+		_endy_line_1 = _starty_line_1 + lengthdir_y(_line_length + _projectile_width_halved, _direction - _accuracy_deviation_current);
+		_endx_line_2 = _startx_line_2 + lengthdir_x(_line_length + _projectile_width_halved, _direction + _accuracy_deviation_current);
+		_endy_line_2 = _starty_line_2 + lengthdir_y(_line_length + _projectile_width_halved, _direction + _accuracy_deviation_current);
+	}
 	
 	// Check that looks to see if the player is trying to fire the weapon using the left mouse button AND
 	// if the weapon's _fire_accumulator has cultivated enough time to fire AND checking to see if the
@@ -59,6 +62,7 @@ if (_active == true) {
 				_projectiles[projectile]._knockback_force = _knockback_force;
 				_projectiles[projectile]._speed = random_range(_projectile_speed_min, _projectile_speed_max);
 				_projectiles[projectile]._acceleration = random_range(_projectile_acceleration_min, _projectile_acceleration_max);
+				_projectiles[projectile]._sprAttack_rotation = _direction;
 					
 				// Calculating the attack's direction.
 				var direction_for_attack = random_range(_direction - _accuracy_deviation_current, _direction + _accuracy_deviation_current);
