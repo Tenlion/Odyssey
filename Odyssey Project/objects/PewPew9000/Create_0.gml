@@ -56,20 +56,20 @@ _projectile_object = Bullet;
 // simply takes the Projectile Count as it's variable to declare the max number of projectiles stored inside
 // of itself.
 // RANGE : 1 - Infinite
-_projectile_count = 100;
+_projectile_count = 1;
 _projectiles = [_projectile_count];
 
 // STAT : Projectile Speed Minimum + Maximum
 // NOTE : Setting these properties as the same number will ensure the speed of the shot projectiles are the same.
 // RANGE : 0 - Infinite for Minimum + Maxmium
-_projectile_speed_min = 10;
-_projectile_speed_max = 15;
+_projectile_speed_min = 5;
+_projectile_speed_max = 10;
 
 // STAT : Projectile Acceleration Minimum + Maximum
 // NOTE : Setting these properties as the same number will ensure the acceleration of the shot projectiles are the same.
 // RANGE : -Infinite - Infinite for Minimum + Maxmium
-_projectile_acceleration_min = 0;
-_projectile_acceleration_max = 0;
+_projectile_acceleration_min = 0.1;
+_projectile_acceleration_max = 0.3;
 
 // STAT : Kick
 // NOTE : Negative Kick will cause the attached entity to be pulled in the direction of the shot.
@@ -82,18 +82,21 @@ _kick_force = 0;
 _knockback_force = 0;
 
 // STAT : Falloff Point
-// NOTE : The point in which falloff occurs for the projectiles.  Maxing out falloff point will cause a projectile
-// to not have any falloff.
+// NOTE : The point in which falloff occurs for the projectiles.  
+// Maxing out falloff point will cause a projectile to not have any falloff.
 // RANGE : 0 - 1
 _falloff_point = _range * 0.5;
 
-// STAT : Falloff Severity
-// NOTE : The level of damage that is fallen off from the projectiles after they reach the falloff point.
-// Setting this to 1, will cause a projectile to lose 100% of it's damage after reaching it's max range.
-// Setting this to 0, will make falloff invalid.
-// Setting this to -1, will cause the falloff value to increase the projectile's damage by ?% after reaching it's max range.
-// RANGE : -1 - 1
-_falloff_severity = -1;
+// STAT : Falloff Mercy
+// NOTE : The level of damage that is fallen off or increased from the projectiles after they reach the falloff point.
+// Setting this to +2, will cause damage to begin dropping on the Falloff Point from 200% to 0%. (Yes, going above +1 will cause the projectile's damage to increase at the Falloff Point.)
+// Setting this to +1, will cause damage to begin dropping on the Falloff Point from 100% to 0%. (This is the standard falloff approach.)
+// Setting this to 0, will cause the projectile to do 0 damage after it hits the Falloff Point.  But it will still continue to fly to it's max range.
+// Setting this to -1, will cause projectiles to heal from the Falloff Point from 100% to 0% of the damage value.
+// Setting this to -2, will cause projectiles to heal from the Falloff Point from 200% to 0% of the damage value.
+// Flipping the damage to be negative (healing), will flip all of the healing/damage logic above (does not effect percentage decrease).
+// RANGE : -Infinite - Infinite
+_falloff_mercy = -1;
 
 // STAT : Accuracy
 // NOTE : Accuracy can be messed with using recoil and recovery.
@@ -103,7 +106,7 @@ _accuracy = 100;
 // STAT : Recoil
 // NOTE : Recoil increases the current accuracy deviation by it's value everytime the attachment is fired.
 // RANGE : 0 - 180
-_recoil = 3;
+_recoil = 0;
 
 // STAT : Recovery
 // NOTE : Recovery decreases the current accuracy deviation by it's value while the attachment is not being fired.
@@ -128,9 +131,9 @@ _accuracy_deviation_current = _accuracy_deviation_base;
 _spawn_radius = 0;
 
 _line_active = true;
-_line_length = _range * 0.1;
+_line_length = _range * 1;
 
-_projectile_width_halved = (sprite_get_width(spr_Square) * 0.1) * 0.5;
+_projectile_width_halved = (sprite_get_width(spr_Square) * 0.5) * 0.5;
 
 _startx_line_1 = 0;
 _starty_line_1 = 0;

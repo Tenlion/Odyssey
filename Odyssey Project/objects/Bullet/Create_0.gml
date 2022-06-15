@@ -11,8 +11,8 @@ event_inherited();
 // Attack Sprite Properties
 _sprAttack = spr_Square;
 _sprAttack_color = c_white;
-_sprAttack_width_scale = 0.1;
-_sprAttack_height_scale = 0.1;
+_sprAttack_width_scale = 0.5;
+_sprAttack_height_scale = 0.5;
 _sprAttack_rotation = 0;
 
 mask_index = _sprAttack;

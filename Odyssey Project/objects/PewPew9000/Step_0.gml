@@ -20,11 +20,11 @@ if (_active == true) {
 		_starty_line_1 = y - lengthdir_y(_spawn_radius + _projectile_width_halved, _direction + 90);
 		_startx_line_2 = x + lengthdir_x(_spawn_radius + _projectile_width_halved, _direction + 90);
 		_starty_line_2 = y + lengthdir_y(_spawn_radius + _projectile_width_halved, _direction + 90);
-		
-		_endx_line_1 = _startx_line_1 + lengthdir_x(_line_length + _projectile_width_halved, _direction - _accuracy_deviation_current);
-		_endy_line_1 = _starty_line_1 + lengthdir_y(_line_length + _projectile_width_halved, _direction - _accuracy_deviation_current);
-		_endx_line_2 = _startx_line_2 + lengthdir_x(_line_length + _projectile_width_halved, _direction + _accuracy_deviation_current);
-		_endy_line_2 = _starty_line_2 + lengthdir_y(_line_length + _projectile_width_halved, _direction + _accuracy_deviation_current);
+				
+		_endx_line_1 = (x - lengthdir_x(_projectile_width_halved, _direction + 90)) + lengthdir_x(_line_length, _direction - _accuracy_deviation_current);
+		_endy_line_1 = (y - lengthdir_y(_projectile_width_halved, _direction + 90)) + lengthdir_y(_line_length, _direction - _accuracy_deviation_current);
+		_endx_line_2 = (x + lengthdir_x(_projectile_width_halved, _direction + 90)) + lengthdir_x(_line_length, _direction + _accuracy_deviation_current);
+		_endy_line_2 = (y + lengthdir_y(_projectile_width_halved, _direction + 90)) + lengthdir_y(_line_length, _direction + _accuracy_deviation_current);
 	}
 	
 	// Check that looks to see if the player is trying to fire the weapon using the left mouse button AND
@@ -42,9 +42,11 @@ if (_active == true) {
 			// Reducing the count inside the ammo gauge the weapon is connected to.
 			_ammo_gauge_id._count -= _ammo_drain;
 				
-			// Kicking the attached entity.
+			// Calculating the value and direction of the kick.
 			var kick = (_kick_force / _entity_id._mass);
 			var kick_angle = _direction - 180;
+			
+			// Kicking the attached entity.
 			_entity_id._force_x += lengthdir_x(kick, kick_angle);
 			_entity_id._force_y += lengthdir_y(kick, kick_angle);
 	
@@ -56,9 +58,10 @@ if (_active == true) {
 				_projectiles[projectile]._attachment_id = id;
 				_projectiles[projectile]._attachment_foe = _entity_foe;
 				_projectiles[projectile]._damage = _damage;
+				_projectiles[projectile]._damage_original = _damage;
 				_projectiles[projectile]._range = _range;
 				_projectiles[projectile]._falloff_point = _falloff_point;
-				_projectiles[projectile]._falloff_severity = _falloff_severity;
+				_projectiles[projectile]._falloff_mercy = _falloff_mercy;
 				_projectiles[projectile]._knockback_force = _knockback_force;
 				_projectiles[projectile]._speed = random_range(_projectile_speed_min, _projectile_speed_max);
 				_projectiles[projectile]._acceleration = random_range(_projectile_acceleration_min, _projectile_acceleration_max);
