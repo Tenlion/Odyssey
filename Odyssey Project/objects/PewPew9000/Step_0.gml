@@ -14,32 +14,40 @@ if ((mouse_check_button(mb_left) == false) && (_accuracy_deviation_current != _a
 // Checking to see if the attachment is active.
 if (_active == true) {
 	
-	if (_line_active == true) {
+	switch (_trigger_type) {
+	
+		case "Held" :
+			if (mouse_check_button(mb_left) == true) { _firing = true; }
+			else { _firing = false; }
+		break;
 		
-		_startx_line_1 = x - lengthdir_x(_spawn_radius + _projectile_width_halved, _direction + 90);
-		_starty_line_1 = y - lengthdir_y(_spawn_radius + _projectile_width_halved, _direction + 90);
-		_startx_line_2 = x + lengthdir_x(_spawn_radius + _projectile_width_halved, _direction + 90);
-		_starty_line_2 = y + lengthdir_y(_spawn_radius + _projectile_width_halved, _direction + 90);
-				
-		_endx_line_1 = (x - lengthdir_x(_projectile_width_halved, _direction + 90)) + lengthdir_x(_line_length, _direction - _accuracy_deviation_current);
-		_endy_line_1 = (y - lengthdir_y(_projectile_width_halved, _direction + 90)) + lengthdir_y(_line_length, _direction - _accuracy_deviation_current);
-		_endx_line_2 = (x + lengthdir_x(_projectile_width_halved, _direction + 90)) + lengthdir_x(_line_length, _direction + _accuracy_deviation_current);
-		_endy_line_2 = (y + lengthdir_y(_projectile_width_halved, _direction + 90)) + lengthdir_y(_line_length, _direction + _accuracy_deviation_current);
+		case "Tap" :
+			if (mouse_check_button_pressed(mb_left) == true) { _firing = true; }
+			else { _firing = false; }
+		break;
+		
+		case "Release" :
+			if (mouse_check_button_released(mb_left) == true) { _firing = true; }
+			else { _firing = false; }
+		break;
+	
+		default :
+		break;
 	}
 	
-	// Check that looks to see if the player is trying to fire the weapon using the left mouse button AND
-	// if the weapon's _fire_accumulator has cultivated enough time to fire AND checking to see if the
-	// ammo count is high enough in the connected gauge before firing the weapon.
-	// If true, the weapon is allowed to fire.
-	// If false, the weapon can not fire.
-	if	(mouse_check_button(mb_left) == true) &&
+	// Check that looks to see if the player is trying to fire the attachment using the left mouse button AND
+	// if the attachment's _fire_accumulator has cultivated enough time to fire AND checking to see if the
+	// ammo count is high enough in the connected gauge before firing the attachment.
+	// If true, the attachment is allowed to fire.
+	// If false, the attachment can not fire.
+	if	(_firing == true) &&
 		(_fire_accumulator >= _fire_time) &&
 		(_ammo_gauge_id._count >= _ammo_drain) {
 			
-			// Resetting the fireAccumulator to 0 to appropriate the weapon's rate of fire.
+			// Resetting the fireAccumulator to 0 to appropriate the attachment's rate of fire.
 			_fire_accumulator = 0;
 				
-			// Reducing the count inside the ammo gauge the weapon is connected to.
+			// Reducing the count inside the ammo gauge the attachment is connected to.
 			_ammo_gauge_id._count -= _ammo_drain;
 				
 			// Calculating the value and direction of the kick.
@@ -50,7 +58,7 @@ if (_active == true) {
 			_entity_id._force_x += lengthdir_x(kick, kick_angle);
 			_entity_id._force_y += lengthdir_y(kick, kick_angle);
 	
-			// Looping out a number of projectiles based on the _attack_count of the weapon.
+			// Looping out a number of projectiles based on the _attack_count of the attachment.
 			for (var projectile = 0; projectile < _projectile_count; projectile++) {
 					
 				// Creating an attack and defining the properties inside before it moves.
@@ -65,6 +73,8 @@ if (_active == true) {
 				_projectiles[projectile]._knockback_force = _knockback_force;
 				_projectiles[projectile]._speed = random_range(_projectile_speed_min, _projectile_speed_max);
 				_projectiles[projectile]._acceleration = random_range(_projectile_acceleration_min, _projectile_acceleration_max);
+				_projectiles[projectile]._sprAttack_width_scale = _projectile_width_scale;
+				_projectiles[projectile]._sprAttack_height_scale = _projectile_height_scale;
 				_projectiles[projectile]._sprAttack_rotation = _direction;
 					
 				// Calculating the attack's direction.
