@@ -1,19 +1,13 @@
 
-// ----------------------- Pre-Processing --------------------------
-
 // Inheriting the Parent Create Event.
 event_inherited();
 
 
 
-// ---------------- Defining Projectile Properties -----------------
-
 // Projectile Unique Properties
-_damage_original = 0;
 _speed = 0;
 _acceleration = 0;
 _falloff_point = 0;
 _falloff_mercy = 0;
-_direction = 0;
 _destination_x = 0;
 _destination_y = 0;

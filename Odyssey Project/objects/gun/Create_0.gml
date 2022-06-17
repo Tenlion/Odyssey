@@ -14,14 +14,10 @@ _sprAttachment_color = c_white;
 _sprAttachment_width_scale = 0.5;
 _sprAttachment_height_scale = 0.5;
 
-
 // Attachment Properties
 _name = "PewPew9000";
 _weight = 1;					// 0 - 180
 _ammo_drain = 1;				// 0 - Infinite
-
-
-// PewPew9000 Unique Properties
 
 // STAT : Damage
 // NOTE : Negative damage will heal things.
@@ -33,12 +29,21 @@ _damage = 10;
 // RANGE : 0 - Infinite
 _range = 500;
 
-// STAT : Fire Time + Fire Accumulator
+// STAT : Trigger Type
+// NOTE : This property holds the mouse event that the attachment uses to fire the weapon.
+// RANGE : "Left Hold", "Left Tap", "Left Release", "Right Hold", "Right Tap" or "Right Release".
+_trigger_type = "Left Hold";
+
+// STAT : Fire Time + Fire Accumulator + Firing
 // NOTE : Fire Time is both fire delay and fire rate.  Fire Accumulator takes in time to appropriate
-// when the weapon can fire.
-// RANGE : 0 - Infinite
-_fire_time = 0.1;
-_fire_accumulator = 0;
+// when the weapon can fire.  This accumulator is always defaulted to the Fire Time on creation in order
+// to prevent the Step Event from accumulating time into the variable right from the get-go.  Firing is a
+// property that is used to tell checks inside the step event whether or not the attachment is actively
+// engaged in fire or not.  It is set to false on purpose, do not change it lol.
+// RANGE : 0 - Infinite for Fire Time
+_fire_time = 0.05;
+_fire_accumulator = _fire_time;
+_firing = false;
 
 // STAT : Attack Type
 // NOTE : The type of attack that any attachment that uses this as it's parent can take 
@@ -49,21 +54,38 @@ _attack_type = Projectile;
 // STAT : Projectile Object
 // NOTE : The exact type of projectile a child of this object will use for it's attacks.
 // RANGE : Object
-_projectile_object = Bullet;
+_projectile_object = Bullet_Standard;
+
+// STAT : Projectile Sprite
+// NOTE : This is used to store the attachment's current projectile sprite for the Draw Event to use.  This property is created in case
+// the developers wish to switch out the type of projectile that'll be thrown out of any attachment created by this template mid-game.
+// RANGE : Sprite
+_projectile_sprite = 0;
+
+// STAT : Projectile Width Scale
+// NOTE : Effects how long the projectiles will be.
+// RANGE : 0 - Infinite
+_projectile_width_scale = 0.15;
+
+// STAT : Projectile Height Scale
+// NOTE : Effects how tall the projectiles will be.  Additionally, this stat also effects the visuals of the accuracy lines to ensure
+// the projectile sprites don't appear to be spawning outside of the spawn radius.
+// RANGE : 0 - Infinite
+_projectile_height_scale = 0.025;
 
 // STAT : Projectile Count + Projectiles Array
 // NOTE : Projectile Count is indicative of how many attack objects are thrown out for every shot.  The array
 // simply takes the Projectile Count as it's variable to declare the max number of projectiles stored inside
-// of itself.
-// RANGE : 1 - Infinite
+// of itself.  Projectile Count does NOT effect ammo consumption.
+// RANGE : 1 - Infinite for Projectile Count
 _projectile_count = 1;
 _projectiles = [_projectile_count];
 
 // STAT : Projectile Speed Minimum + Maximum
 // NOTE : Setting these properties as the same number will ensure the speed of the shot projectiles are the same.
 // RANGE : 0 - Infinite for Minimum + Maxmium
-_projectile_speed_min = 5;
-_projectile_speed_max = 10;
+_projectile_speed_min = 1;
+_projectile_speed_max = 3;
 
 // STAT : Projectile Acceleration Minimum + Maximum
 // NOTE : Setting these properties as the same number will ensure the acceleration of the shot projectiles are the same.
@@ -74,7 +96,7 @@ _projectile_acceleration_max = 0.3;
 // STAT : Kick
 // NOTE : Negative Kick will cause the attached entity to be pulled in the direction of the shot.
 // RANGE : -Infinite - Infinite
-_kick_force = 0.2;
+_kick_force = 0;
 
 // STAT : Knockback
 // NOTE : Negative Knockback will cause the entity hit to be pulled toward the projectile they are hit with.
@@ -103,6 +125,15 @@ _falloff_mercy = 1;
 // RANGE : 0 - 100
 _accuracy = 100;
 
+// STAT : Accuracy Deviation Max, Base and Current
+// NOTE : Deviation Max sets the boundary for how far the accuracy can be deviated from it's base.  Deviation Base
+// is the base accuracy of the attachment that is determined by the Accuracy Stat.  Deviation Current is the property that
+// is fucked with everytime a shot is fired.
+// RANGE : 0 - 180 for Deviation Max
+_accuracy_deviation_max = 10;
+_accuracy_deviation_base = (100 - _accuracy) * 0.5;
+_accuracy_deviation_current = _accuracy_deviation_base;
+
 // STAT : Recoil
 // NOTE : Recoil increases the current accuracy deviation by it's value everytime the attachment is fired.
 // RANGE : 0 - 180
@@ -110,17 +141,19 @@ _recoil = 2;
 
 // STAT : Recovery
 // NOTE : Recovery decreases the current accuracy deviation by it's value while the attachment is not being fired.
-// RANGE : 0 - ?
-_recovery = 0.3;
+// RANGE : 0 - 1 is advised, but it does have the capability to go up to 180.  However, it would be very rare for an attachment
+// to ever have the need to go past 1.
+_recovery = 0.25;
 
-// STAT : Accuracy Deviation Max, Base and Current
-// NOTE : Deviation Max sets the boundary for how far the accuracy can be deviated from it's base.  Deviation Base
-// is the base accuracy of the attachment that is determined by the Accuracy Stat.  Deviation Current is the property that
-// is fucked with everytime a shot is fired.
-// RANGE : 0 - 180 for Deviation Max
-_accuracy_deviation_max = 45;
-_accuracy_deviation_base = (100 - _accuracy) * 0.5;
-_accuracy_deviation_current = _accuracy_deviation_base;
+// STAT : Line Active
+// NOTE : Determines whether or not accuracy lines are enabled for the attachment.
+// RANGE : True or False
+_line_active = true;
+
+// STAT : Line Length
+// NOTE : Determines how long the accuracy lines are.  Up to a max of the attachment's range stat.
+// RANGE : 0 - 1
+_line_length = _range * 1;
 
 // STAT : Spawn Radius
 // NOTE : This stat works similarly to the barrel width of a shotgun.  Projectiles always come out of a shotgun's barrel, but
@@ -129,15 +162,3 @@ _accuracy_deviation_current = _accuracy_deviation_base;
 // Well, this stat is made for them.
 // RANGE : 0 - Infinite
 _spawn_radius = 30;
-
-
-
-_trigger_type = "Held";
-_firing = false;
-
-_line_active = true;
-_line_length = _range * 1;
-
-_projectile_width_scale = 0.1;
-_projectile_height_scale = 0.1;
-_projectile_width_halved = (sprite_get_width(spr_Square) * _projectile_width_scale) * 0.5;

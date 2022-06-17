@@ -6,7 +6,6 @@ event_inherited();
 
 // Obtaining the angles associated with every Cannon.
 _cannon_to_magnet_angle = point_direction(x, y, _sprMagnet_x, _sprMagnet_y);
-_cannon_to_attachment_angle = point_direction(x, y, _attachment.x, _attachment.y);
 
 
 

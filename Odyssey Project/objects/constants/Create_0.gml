@@ -1,4 +1,6 @@
 
+// ---------------------------- TIME ----------------------------------
+
 // FRAMERATE TARGET : The framerate that the client is to be stabilized on.
 _framerate_target = 60;
 
@@ -19,9 +21,13 @@ global.DELTA_MULTIPLIER = global.DELTA_ACTUAL / _delta_target;
 
 
 
-//CODE FOR TESTING
+// -------------------------- MACROS ----------------------------------
 
-_my_time = 5;
+#macro EAST 0
+#macro NORTH 90
+#macro WEST 180
+#macro SOUTH 270
 
-x = room_width * 0.5;
-y = room_height * 0.5;
+#macro NEGATIVE -1
+
+#macro ANGLE_REVERSE 180
