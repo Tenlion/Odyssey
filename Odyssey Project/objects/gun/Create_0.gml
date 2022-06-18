@@ -27,7 +27,7 @@ _damage = 10;
 // STAT : Range
 // NOTE : The maximum range an attack will go.
 // RANGE : 0 - Infinite
-_range = 500;
+_range = 1000;
 
 // STAT : Trigger Type
 // NOTE : This property holds the mouse event that the attachment uses to fire the weapon.
@@ -54,13 +54,15 @@ _attack_type = Projectile;
 // STAT : Projectile Object
 // NOTE : The exact type of projectile a child of this object will use for it's attacks.
 // RANGE : Object
-_projectile_object = Bullet_Standard;
+_projectile_object = Straight_Boomerang;
 
 // STAT : Projectile Sprite
 // NOTE : This is used to store the attachment's current projectile sprite for the Draw Event to use.  This property is created in case
 // the developers wish to switch out the type of projectile that'll be thrown out of any attachment created by this template mid-game.
 // RANGE : Sprite
-_projectile_sprite = 0;
+var temporary_projectile = instance_create_layer(x, y, 0, _projectile_object);
+_projectile_sprite = _projectile_object._sprAttack;
+instance_destroy(temporary_projectile);
 
 // STAT : Projectile Width Scale
 // NOTE : Effects how long the projectiles will be.
@@ -71,7 +73,7 @@ _projectile_width_scale = 0.15;
 // NOTE : Effects how tall the projectiles will be.  Additionally, this stat also effects the visuals of the accuracy lines to ensure
 // the projectile sprites don't appear to be spawning outside of the spawn radius.
 // RANGE : 0 - Infinite
-_projectile_height_scale = 0.025;
+_projectile_height_scale = 0.1;
 
 // STAT : Projectile Count + Projectiles Array
 // NOTE : Projectile Count is indicative of how many attack objects are thrown out for every shot.  The array
@@ -84,8 +86,8 @@ _projectiles = [_projectile_count];
 // STAT : Projectile Speed Minimum + Maximum
 // NOTE : Setting these properties as the same number will ensure the speed of the shot projectiles are the same.
 // RANGE : 0 - Infinite for Minimum + Maxmium
-_projectile_speed_min = 1;
-_projectile_speed_max = 3;
+_projectile_speed_min = 10;
+_projectile_speed_max = 15;
 
 // STAT : Projectile Acceleration Minimum + Maximum
 // NOTE : Setting these properties as the same number will ensure the acceleration of the shot projectiles are the same.
@@ -101,7 +103,7 @@ _kick_force = 0;
 // STAT : Knockback
 // NOTE : Negative Knockback will cause the entity hit to be pulled toward the projectile they are hit with.
 // RANGE : -Infinite - Infinite
-_knockback_force = 0.5;
+_knockback_force = 0;
 
 // STAT : Falloff Point
 // NOTE : The point in which falloff occurs for the projectiles.  
@@ -137,23 +139,25 @@ _accuracy_deviation_current = _accuracy_deviation_base;
 // STAT : Recoil
 // NOTE : Recoil increases the current accuracy deviation by it's value everytime the attachment is fired.
 // RANGE : 0 - 180
-_recoil = 2;
+_recoil = 1;
 
 // STAT : Recovery
 // NOTE : Recovery decreases the current accuracy deviation by it's value while the attachment is not being fired.
 // RANGE : 0 - 1 is advised, but it does have the capability to go up to 180.  However, it would be very rare for an attachment
-// to ever have the need to go past 1.
-_recovery = 0.25;
+// to EVER have the need to go past 1.
+_recovery = 0.1;
 
 // STAT : Line Active
 // NOTE : Determines whether or not accuracy lines are enabled for the attachment.
 // RANGE : True or False
 _line_active = true;
 
-// STAT : Line Length
-// NOTE : Determines how long the accuracy lines are.  Up to a max of the attachment's range stat.
-// RANGE : 0 - 1
-_line_length = _range * 1;
+// STAT : Line Length Control + Line Length
+// NOTE : Control determines how long the accuracy lines are.  Up to a max of the attachment's range stat.
+// Line Length is the exact value of accuracy lines length based on the controller and _range.
+// RANGE : 0 - 1 for Line Length Control
+_line_length_control = 1;
+_line_length = _range * _line_length_control;
 
 // STAT : Spawn Radius
 // NOTE : This stat works similarly to the barrel width of a shotgun.  Projectiles always come out of a shotgun's barrel, but
@@ -161,4 +165,4 @@ _line_length = _range * 1;
 // Most attachments will probably have a spawn radius of 0, but for attachments with larger barrels that shoot a ton of projectiles...
 // Well, this stat is made for them.
 // RANGE : 0 - Infinite
-_spawn_radius = 30;
+_spawn_radius = 5;

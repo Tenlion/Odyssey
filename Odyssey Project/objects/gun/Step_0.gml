@@ -98,6 +98,9 @@ if (_active == true) {
 				// Calculating and setting the attack's spawn position.
 				_projectiles[projectile].x = x + lengthdir_x(spawn_deviation, _direction_north);
 				_projectiles[projectile].y = y + lengthdir_y(spawn_deviation, _direction_north);
+				_projectiles[projectile]._spawn_x = _projectiles[projectile].x;
+				_projectiles[projectile]._spawn_y = _projectiles[projectile].y;
+				
 				
 				// Calculating and setting the attack's end destination.
 				_projectiles[projectile]._destination_x = x + lengthdir_x(_range, direction_for_attack);
@@ -106,9 +109,6 @@ if (_active == true) {
 			
 			// Applying recoil onto the accuracy after a shot has occurred.
 			_accuracy_deviation_current =  _number_to_number(_accuracy_deviation_current, _accuracy_deviation_max, _recoil);
-			
-			// Obtaining the projectile instance's sprite for the Draw Event to use.
-			_projectile_sprite = _projectiles[0]._sprAttack;
 	}
 }
 

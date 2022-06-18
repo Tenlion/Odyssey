@@ -6,8 +6,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "Projectile",
-    "path": "objects/Projectile/Projectile.yy",
+    "name": "Projectile_Straight",
+    "path": "objects/Projectile_Straight/Projectile_Straight.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -32,7 +32,7 @@
     "path": "folders/Objects/Attack.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Bullet_Standard",
+  "name": "Straight_Bullet",
   "tags": [],
   "resourceType": "GMObject",
 }

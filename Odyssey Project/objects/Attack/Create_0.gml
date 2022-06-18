@@ -12,6 +12,13 @@ _range_current = 0;
 
 _knockback_force = 0;
 
+_spawn_x = 0;
+_spawn_y = 0;
+_position_x = 0;
+_position_y = 0;
+_destination_x = 0;
+_destination_y = 0;
+
 _sprAttack = 0;
 _sprAttack_color = 0;
 _sprAttack_width_scale = 1;
