@@ -89,26 +89,6 @@ function _relPosY_inSprite_whole(itemY, spriteHeight, spriteY) {
 
 
 
-//------------------------- ANGLE FIX -----------------------------
-
-// ANGLE FIX
-// Designed to fix angles that go out of the bounds of the 360 Angle Scope.
-function _angle_fix(angle) {
-
-	// CHECK : If the angle goes below or is equal to -360, then reset it's position to 0.
-	// Addition to 0 is better than re-assigning because it's more smooth for frames. (Might take more processing, but it's better for gameplay.)
-	if (angle <= -360) { return (angle + 360); }
-	
-	// CHECK : If the angle goes above or is equal to 360, then reset it's position to 0.
-	// Subtracting to 0 is better than re-assigning because it's more smooth for frames. (Might take more processing, but it's better for gameplay.)
-	else if (angle >= 360) { return (angle - 360); }
-	
-	else { return angle; }
-}
-
-
-
-
 
 //------------------------- MOVE TO TARGET -----------------------------
 
@@ -151,7 +131,10 @@ function _move_to_target_straightY(itemToMoveX, itemToMoveY, targetX, targetY, s
 }
 
 
+//------------------------- MISCELLANEOUS FUNCTIONS -----------------------------
 
+// NUMBER TO NUMBER
+// Getting a specified number to be the same value as another specified number via a specified value.
 function _number_to_number(number, goal, step) {
 	
 	// Checking if the number is greater than goal.
@@ -185,33 +168,95 @@ function _number_to_number(number, goal, step) {
 }
 
 
-/*
-function _metric_system(value, typeOfMeter) {
+
+
+// MOUSE EVENT CHECK
+// Checking if a mouse event is active by comparing a specified string to a switch event.
+function _mouse_event_check(event_wanted) {
 	
-	switch (typeOfMeter) {
+	// Prescribing a default variable.
+	var value = false;
+	
+	// SWITCH DESCRIPTION : This switch will check if the wanted mouse event is being triggered.
+	// If the wanted event is active, then the function returns "true".
+	// If the wanted event is NOT active, then the function returns "false".
+	switch (event_wanted) {
+
+		case "Left Hold" :
 		
-		case "Milli" : return value / 1000;
+			if (mouse_check_button(mb_left) == true) { value = true; }
+			
 		break;
 		
-		case "Centi" : return value / 100;
+		
+		
+		case "Left Tap" :
+		
+			if (mouse_check_button_pressed(mb_left) == true) { value = true; }
+			
 		break;
 		
-		case "Deci" : return value / 10;
+		
+		
+		case "Left Release" :
+		
+			if (mouse_check_button_released(mb_left) == true) { value = true; }
+			
+		break;
+
+
+
+		case "Right Hold" :
+		
+			if (mouse_check_button(mb_right) == true) { value = true; }
+			
 		break;
 		
-		case "Meter" : return value;
+		
+		
+		case "Right Tap" :
+		
+			if (mouse_check_button_pressed(mb_right) == true) { value = true; }
+			
 		break;
 		
-		case "Deca" : return value * 10;
+		
+		
+		case "Right Release" :
+		
+			if (mouse_check_button_released(mb_right) == true) { value = true; }
+			
 		break;
 		
-		case "Hecto" : return value * 100;
+		
+		
+		case "Middle Hold" :
+		
+			if (mouse_check_button(mb_middle) == true) { value = true; }
+			
 		break;
 		
-		case "Kilo" : return value * 1000;
+		
+		
+		case "Middle Tap" :
+		
+			if (mouse_check_button_pressed(mb_middle) == true) { value = true; }
+			
 		break;
 		
-		default : return 0;
+		
+		
+		case "Middle Release" :
+
+			if (mouse_check_button_released(mb_middle) == true) { value = true; }
+			
+		break;
+		
+		
+		
+		default :
 		break;
 	}
+	
+	return value;
 }

@@ -21,37 +21,6 @@ _turn = 0.01;
 
 
 
-// --------------- Chassis Properties ---------------
-
-_sprChassis = spr_Square;
-_sprChassis_color = c_green;
-
-
-
-// ----------------- Ring Properties ----------------
-
-_sprRing = spr_Circle;
-_sprRing_color = c_maroon;
-_sprRing_scale = 2;
-_sprRing_rotation = 0;
-_sprRing_rotation_target = 90;
-_sprRing_rotation_speed = 0.125;	// 0.0 - 1.0
-_sprRing_rotation_adjust = -45;	// -360 - 360
-
-_ring_radius = (sprite_get_width(_sprRing) * _sprRing_scale) * 0.5;
-
-_sprAnchor = spr_Square;
-_sprAnchor_x = 0;
-_sprAnchor_y = 0;
-_sprAnchor_rotation = 0;
-_sprAnchor_color = c_aqua;
-_sprAnchor_width_scale = 0.2;
-_sprAnchor_height_scale = 0.2;
-
-_anchor_angle = 90;
-
-
-
 // --------------- Track Properties ------------------
 
 _sprTrack = spr_Circle;

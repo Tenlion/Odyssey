@@ -7,44 +7,8 @@ event_inherited();
 // Checking to see if the attachment is active.
 if (_active == true) {
 
-	// Checking which trigger type to check to see if the player is actively trying to fire the weapon.
-	switch (_trigger_type) {
-
-		case "Left Hold" :
-			if (mouse_check_button(mb_left) == true) { _firing = true; }
-			else { _firing = false; }
-		break;
-		
-		case "Left Tap" :
-			if (mouse_check_button_pressed(mb_left) == true) { _firing = true; }
-			else { _firing = false; }
-		break;
-		
-		case "Left Release" :
-			if (mouse_check_button_released(mb_left) == true) { _firing = true; }
-			else { _firing = false; }
-		break;
-
-		case "Right Hold" :
-			if (mouse_check_button(mb_right) == true) { _firing = true; }
-			else { _firing = false; }
-		break;
-		
-		case "Right Tap" :
-			if (mouse_check_button_pressed(mb_right) == true) { _firing = true; }
-			else { _firing = false; }
-		break;
-		
-		case "Right Release" :
-			if (mouse_check_button_released(mb_right) == true) { _firing = true; }
-			else { _firing = false; }
-		break;
-		
-		default :
-		break;
-	}
-	
-	
+	// Checking if the correct trigger type is actively being used in order to fire the weapon.
+	_firing = _mouse_event_check(_trigger_type);
 	
 	// Checking if the player is trying to fire the attachment.
 	// Checking if the attachment's _fire_accumulator has cultivated enough time to fire.
@@ -100,7 +64,6 @@ if (_active == true) {
 				_projectiles[projectile].y = y + lengthdir_y(spawn_deviation, _direction_north);
 				_projectiles[projectile]._spawn_x = _projectiles[projectile].x;
 				_projectiles[projectile]._spawn_y = _projectiles[projectile].y;
-				
 				
 				// Calculating and setting the attack's end destination.
 				_projectiles[projectile]._destination_x = x + lengthdir_x(_range, direction_for_attack);

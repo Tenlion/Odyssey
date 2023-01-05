@@ -15,7 +15,7 @@ _sprAttachment_width_scale = 0.5;
 _sprAttachment_height_scale = 0.5;
 
 // Attachment Properties
-_name = "PewPew9000";
+_name = "Default";
 _weight = 1;					// 0 - 180
 _ammo_drain = 1;				// 0 - Infinite
 
@@ -27,7 +27,7 @@ _damage = 10;
 // STAT : Range
 // NOTE : The maximum range an attack will go.
 // RANGE : 0 - Infinite
-_range = 1000;
+_range = 500;
 
 // STAT : Trigger Type
 // NOTE : This property holds the mouse event that the attachment uses to fire the weapon.
@@ -41,7 +41,7 @@ _trigger_type = "Left Hold";
 // property that is used to tell checks inside the step event whether or not the attachment is actively
 // engaged in fire or not.  It is set to false on purpose, do not change it lol.
 // RANGE : 0 - Infinite for Fire Time
-_fire_time = 0.05;
+_fire_time = 0.1;
 _fire_accumulator = _fire_time;
 _firing = false;
 
@@ -54,7 +54,7 @@ _attack_type = Projectile;
 // STAT : Projectile Object
 // NOTE : The exact type of projectile a child of this object will use for it's attacks.
 // RANGE : Object
-_projectile_object = Straight_Boomerang;
+_projectile_object = Straight_Bullet;
 
 // STAT : Projectile Sprite
 // NOTE : This is used to store the attachment's current projectile sprite for the Draw Event to use.  This property is created in case

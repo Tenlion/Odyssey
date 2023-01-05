@@ -1,5 +1,5 @@
 
-function scr_Cannon() {
+function scr_GameStart() {
 
 	// Creating Layers
 	layer_create(-3, "Projectiles");
@@ -12,9 +12,9 @@ function scr_Cannon() {
 
 
 	// Creating the Player Instance
-	var instance_player = instance_create_layer(0, 0, "Visible Things", CSC_Gungineer);
+	var instance_player = instance_create_layer(0, 0, "Visible Things", Cannon_Test);
 	instance_player._attachment = instance_player._slots[0]._item_id;	// Assigning the Cannon's active attachment to be the attachment inside the 1st Slot.
-	instance_player._slots[0]._item_id._active = true;	// Setting the _active property inside the Cannon's active attachment to be true.
+	instance_player._slots[0]._item_id._active = true;					// Setting the _active property inside the Cannon's active attachment to be true.
 	
 	
 	// Creating Enemies

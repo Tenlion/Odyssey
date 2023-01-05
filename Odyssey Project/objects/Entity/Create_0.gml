@@ -32,13 +32,17 @@ _foe = 0;
 
 Things to Do
 0.	Optimize, comment and document.
-5.	Falloff Range
-6.	Accuracy
 7.	Deliberate whether stats (maybe only certain ones) should be functioned or not?  I believe they 
 	should be, but I haven't thought about it too much.  It would make things a lot easier if they 
 	can be though. :)
 
 Accomplished Tasks
+
++	Falloff Range
+	RESULTS : Done.
+	
++	Accuracy
+	RESULTS : Done.
 
 +	Create time object.
 	RESULTS : Done.
@@ -125,51 +129,4 @@ Accomplished Tasks
 	Sprite Width * Width Scale
 	Sprite Height * Height Scale
 	SOLVED : Done.
-
-
-
-GUNGINEER CANNON
-
-- Does not focus on buffing damage without thinking about the weapon that's currently being used.
-- Cannon focuses on taking a weapon and modifying it to do whatever the user wishes for while managing the damage that comes from the weapons.
-- A weapon will keep it's buffs and debuffs even when a weapon switch occurs.  Buffs/debuffs do NOT transfer from one weapon to another.  They are weapon unique.
-
-Space Bar : Rotates the Cannon Ring by 45 degrees.
-
-+ Projectile Speed
-    Q : Decreases Projectile Speed
-    E : Increases Projectile Speed
-
-+ Recoil
-    Q : Decreases Recoil.
-    E : Increases Recoil.
-
-+ Multishot
-    Q : Decreases Multishot by 1.  Increases Damage and Ammo Consumption.
-    E : Increases Multishot by 1.  Decreases Damage and Ammo Consumption.
-
-+ Fire Rate/Charge Rate
-    Q : Decreases Fire Rate/Charge Rate.  Increases Damage and Ammo Consumption.
-    E : Increases Fire Rate/Charge Rate.  Decreases Damage and Ammo Consumption.
-	
-+ Accuracy
-	Q : Decreases Accuracy.  Decreases Ammo Consumption.
-	E : Increases Accuracy.  Increases Ammo Consumption.
-
-+ Range
-	Q : Decreases Range.  Increases Falloff Range.
-	E : Increases Range.  Decreases Falloff Range.
-	
-+ Punchthrough
-	Q : Decreases Punchthrough by 1.
-	E : Increases Punchthrough by 1.
-		3.0 Punchthrough : 10% to 1st Target, 20% to 2nd Target, 30% to 3rd Target, 40% to 4th Target
-		2.0 Punchthrough : 15% to 1st Target, 25% to 2nd Target, 60% to 3rd Target
-		1.0 Punchthrough : 20% to 1st Target, 80% to 2nd Target
-		0.0 Punchthrough : 100% to 1st Target
-
-+ Boost Speed
-	Q : Increases Player Force.  Decreases Player Boost.  Player Force can't exceed it's base value.
-	E : Decreases Player Force.  Increases Player Boost.  Player Boost has a cap.
-	
 */

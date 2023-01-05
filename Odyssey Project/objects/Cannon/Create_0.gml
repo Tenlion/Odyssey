@@ -10,7 +10,6 @@ event_inherited();
 
 // Angles associated with a Cannon and constant elements found within all Cannons.
 _cannon_to_magnet_angle = 0;
-_cannon_to_attachment_angle = 0;
 
 // The ammo gauge that the cannon is connected to.
 _ammo_gauge = instance_create_layer(0, 0, "Visible Things", Ammo);
@@ -26,16 +25,6 @@ _brake = 0;	// ADVISED : 0 - 1 Real
 // Higher Turn = Shorter time for the Cannon to align to the desired direction.
 // Lower Turn = Longer time for the Cannon to align to the desired direction.
 _turn = 0;	// ADVISED : 0 - 1 Real
-
-
-
-// --------------------------- Chassis Properties ---------------------------
-
-_sprChassis = 0;
-_sprChassis_color = 0;
-_sprChassis_width_scale = 1;
-_sprChassis_height_scale = 1;
-_sprChassis_rotation = 0;
 
 
 
