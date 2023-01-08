@@ -8,7 +8,7 @@ function scr_GameStart() {
 
 	
 	// Creating Constants
-	instance_create_layer(0, 0, "Invisible Things", Constants);
+	instance_create_layer(0, 0, "Invisible Things", Constant);
 
 
 	// Creating the Player Instance
