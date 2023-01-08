@@ -8,7 +8,10 @@
   "managed": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "Object",
+    "path": "objects/Object/Object.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -29,7 +32,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Attachment",
-    "path": "folders/Objects/Attachment.yy",
+    "name": "Attachment Tree",
+    "path": "folders/Objects/Attachment Tree.yy",
   },
 }

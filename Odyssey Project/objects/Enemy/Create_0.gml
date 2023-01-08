@@ -4,6 +4,8 @@
 // Inheriting the Parent Create Event.
 event_inherited();
 
+// Defining the object's name.
+_object_name = "Enemy";
 
 _life = 100;
 

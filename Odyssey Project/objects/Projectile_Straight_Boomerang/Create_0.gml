@@ -2,6 +2,9 @@
 // Inheriting the Parent Create Event.
 event_inherited();
 
+// Defining the object's name.
+_object_name = "Projectile_Straight_Boomerang";
+
 
 
 // Attack Sprite Properties

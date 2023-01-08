@@ -8,9 +8,9 @@ event_inherited();
 
 // -------------------------------- Track ------------------------------------
 
-if (_attachment._entity_to_attachment_angle != _player_to_cursor_angle) {
+if (_attachment._entity_to_attachment_angle != _cannon_to_cursor_angle) {
 
-	_attachment_to_cursor_angle_difference = angle_difference(_player_to_cursor_angle, _attachment._entity_to_attachment_angle);
+	_attachment_to_cursor_angle_difference = angle_difference(_cannon_to_cursor_angle, _attachment._entity_to_attachment_angle);
 
 	_attachment._entity_to_attachment_angle += _number_to_number(0, _attachment_to_cursor_angle_difference, _attachment._weight * global.DELTA_MULTIPLIER);
 }

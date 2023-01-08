@@ -2,6 +2,8 @@
 // Inheriting the Parent Create Event.
 event_inherited();
 
+// Defining the object's name.
+_object_name = "Projectile";
 
 
 // Projectile Unique Properties

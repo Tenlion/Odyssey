@@ -4,23 +4,13 @@
 // Inheriting the Parent Step Event.
 event_inherited();
 
+// Obtaining the cursor's location.
+_cursor_x = device_mouse_x_to_gui(0);
+_cursor_y = device_mouse_y_to_gui(0);
+
 // Obtaining the angles associated with every Cannon.
 _cannon_to_magnet_angle = point_direction(x, y, _sprMagnet_x, _sprMagnet_y);
-
-
-
-// --------------------------- Reload ------------------------------------
-
-if (keyboard_check(ord("R")) == true) {
-	
-	// Checking if the reload would go over the connected ammo gauge's max value.
-	// If true, set the ammo gauge's count to the max.
-	// If false, up the ammo gauge's count by the max value.
-	if ((_ammo_gauge._count + _ammo_gauge._max) > _ammo_gauge._max) { _ammo_gauge._count = _ammo_gauge._max; }
-	
-	else { _ammo_gauge._count += _ammo_gauge._max; }
-}
-
+_cannon_to_cursor_angle = point_direction(x, y, _cursor_x, _cursor_y);
 
 
 // --------------------------- Movement ---------------------------------

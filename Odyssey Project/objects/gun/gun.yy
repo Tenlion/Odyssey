@@ -32,7 +32,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Attachment",
-    "path": "folders/Objects/Attachment.yy",
+    "name": "Attachment Children",
+    "path": "folders/Objects/Attachment Tree/Attachment Children.yy",
   },
 }

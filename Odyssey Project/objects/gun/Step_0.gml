@@ -12,18 +12,12 @@ if (_active == true) {
 	
 	// Checking if the player is trying to fire the attachment.
 	// Checking if the attachment's _fire_accumulator has cultivated enough time to fire.
-	// Checking if the ammo count is high enough in the connected gauge to fire.
 	// If true, the attachment is allowed to fire.
 	// If false, the attachment can not fire.
-	if	(_firing == true) &&
-		(_fire_accumulator >= _fire_time) &&
-		(_ammo_gauge_id._count >= _ammo_drain) {
+	if	(_firing == true) && (_fire_accumulator >= _fire_time) {
 			
 			// Resetting the _fire_accumulator to 0 to appropriate the attachment's rate of fire.
 			_fire_accumulator = 0;
-				
-			// Reducing the count inside the ammo gauge the attachment is connected to.
-			_ammo_gauge_id._count -= _ammo_drain;
 				
 			// Calculating the value and direction of the attachment's kick.
 			var kick = (_kick_force / _entity_id._mass);

@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "Straight_Bullet",
+  "name": "Projectile_Straight_Bullet",
   "spriteId": null,
   "solid": false,
   "visible": true,
@@ -31,7 +31,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Attack",
-    "path": "folders/Objects/Attack.yy",
+    "name": "Projectile_Straight Children",
+    "path": "folders/Objects/Attack Tree/Attack Children/Projectile Children/Projectile_Straight Children.yy",
   },
 }

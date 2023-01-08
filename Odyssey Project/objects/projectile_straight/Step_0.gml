@@ -2,6 +2,9 @@
 // Inheriting the Parent Step Event.
 event_inherited();
 
+// Defining the object's name.
+_object_name = "Projectile_Straight";
+
 
 
 // Checking if the instance has encountered it's _attachment_foe.

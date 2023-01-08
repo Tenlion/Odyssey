@@ -2,6 +2,9 @@
 // Inheriting the Parent Step Event.
 event_inherited();
 
+// Defining the object's name.
+_object_name = "Projectile_Straight_Bullet";
+
 
 
 // Checking if the _range_current is below or equal to 0.

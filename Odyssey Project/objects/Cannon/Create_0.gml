@@ -4,15 +4,22 @@
 // Inheriting the Parent Create Event.
 event_inherited();
 
+// Defining the object's name.
+_object_name = "Cannon";
 
 
 // ----------------------- General Properties ----------------------
 
+// Properties to hold the cursor's location.
+_cursor_x = 0;
+_cursor_y = 0;
+
 // Angles associated with a Cannon and constant elements found within all Cannons.
 _cannon_to_magnet_angle = 0;
+_cannon_to_cursor_angle = 0;
 
-// The ammo gauge that the cannon is connected to.
-_ammo_gauge = instance_create_layer(0, 0, "Visible Things", Ammo);
+// Cannon Adversary
+_foe = Enemy;
 
 
 
@@ -65,10 +72,9 @@ _slots = [_number_of_attachments];
 
 for (var attach = 0; attach < _number_of_attachments; attach++) {
 	
-	_attachments[attach] = instance_create_layer(0, 0, "Visible Things", Gun);
+	_attachments[attach] = instance_create_layer(0, 0, "Visible Things", Gun_Test);
 	_attachments[attach]._entity_id = id;
 	_attachments[attach]._entity_foe = _foe;
-	_attachments[attach]._ammo_gauge_id = _ammo_gauge;
 	
 	_slots[attach] = instance_create_layer(0, 0, "Invisible Things", Slot);
 	_slots[attach]._key_value = string(attach + 1);

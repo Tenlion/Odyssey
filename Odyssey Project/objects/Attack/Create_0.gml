@@ -1,4 +1,14 @@
 
+// ---------------- Pre-Processing -----------------
+
+// Inheriting the Parent Create Event.
+event_inherited();
+
+// Defining the object's name.
+_object_name = "Attack";
+
+
+
 _attachment_id = 0;
 _attachment_foe = 0;
 

@@ -32,7 +32,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Entity",
-    "path": "folders/Objects/Entity.yy",
+    "name": "Cannon Children",
+    "path": "folders/Objects/Entity Tree/Entity Children/Cannon Children.yy",
   },
 }

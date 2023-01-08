@@ -1,3 +1,12 @@
+// ---------------- Pre-Processing -----------------
+
+// Inheriting the Parent Create Event.
+event_inherited();
+
+// Defining the object's name.
+_object_name = "Attachment";
+
+
 
 _name = "";
 _active = false;
@@ -5,9 +14,6 @@ _active = false;
 _entity_id = 0;
 _entity_foe = 0;
 _entity_to_attachment_angle = 0;
-
-_ammo_gauge_id = 0;
-_ammo_drain = 0;
 
 _weight = 0;	// STRICT RANGE : 0 - 180
 
