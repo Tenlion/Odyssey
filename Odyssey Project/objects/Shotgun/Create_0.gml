@@ -14,8 +14,8 @@ _object_name = "Shotgun";
 // Visuals
 _sprAttachment = spr_Diamond;
 _sprAttachment_color = c_white;
-_sprAttachment_width_scale = 1;
-_sprAttachment_height_scale = 1;
+_sprAttachment_width_scale = 0.5;
+_sprAttachment_height_scale = 0.5;
 
 // Attachment Properties
 _name = "Default";
@@ -88,19 +88,19 @@ _projectiles = [_projectile_count];
 // STAT : Projectile Speed Minimum + Maximum
 // NOTE : Setting these properties as the same number will ensure the speed of the shot projectiles are the same.
 // RANGE : 0 - Infinite for Minimum + Maxmium
-_projectile_speed_min = 0.5;
-_projectile_speed_max = 1.5;
+_projectile_speed_min = 2;
+_projectile_speed_max = 2;
 
 // STAT : Projectile Acceleration Minimum + Maximum
 // NOTE : Setting these properties as the same number will ensure the acceleration of the shot projectiles are the same.
 // RANGE : -Infinite - Infinite for Minimum + Maxmium
-_projectile_acceleration_min = 0.5;
+_projectile_acceleration_min = 1;
 _projectile_acceleration_max = 2;
 
 // STAT : Kick
 // NOTE : Negative Kick will cause the attached entity to be pulled in the direction of the shot.
 // RANGE : -Infinite - Infinite
-_kick_force = 2;
+_kick_force = 2.5;
 
 // STAT : Knockback
 // NOTE : Negative Knockback will cause the entity hit to be pulled toward the projectile they are hit with.

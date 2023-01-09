@@ -127,7 +127,7 @@ _falloff_mercy = 1;
 // STAT : Accuracy
 // NOTE : Accuracy can be messed with using recoil and recovery.
 // RANGE : 0 - 100
-_accuracy = -1000;
+_accuracy = -10000;
 
 // STAT : Accuracy Deviation Max, Base and Current
 // NOTE : Deviation Max sets the boundary for how far the accuracy can be deviated from it's base.  Deviation Base
@@ -152,7 +152,7 @@ _recovery = 1;
 // STAT : Line Active
 // NOTE : Determines whether or not accuracy lines are enabled for the attachment.
 // RANGE : True or False
-_line_active = true;
+_line_active = false;
 
 // STAT : Line Length Control + Line Length
 // NOTE : Control determines how long the accuracy lines are.  Up to a max of the attachment's range stat.

@@ -1,6 +1,6 @@
 
-_target_x = Cannon.x;
-_target_y = Cannon.y;
+_target_x = _foe.x;
+_target_y = _foe.y;
 
 if (_life <= 0) { instance_destroy(); }
 

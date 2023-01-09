@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "Booma_wall",
+  "name": "Flex_Rifle",
   "spriteId": null,
   "solid": false,
   "visible": true,
@@ -30,7 +30,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Iced",
-    "path": "folders/Objects/Iced.yy",
+    "name": "Gun Children",
+    "path": "folders/Objects/Attachment Tree/Attachment Children/Gun Children.yy",
   },
 }

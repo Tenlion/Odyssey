@@ -14,8 +14,8 @@ _object_name = "Rocket";
 // Visuals
 _sprAttachment = spr_Diamond;
 _sprAttachment_color = c_white;
-_sprAttachment_width_scale = 1;
-_sprAttachment_height_scale = 1;
+_sprAttachment_width_scale = 0.5;
+_sprAttachment_height_scale = 0.5;
 
 // Attachment Properties
 _name = "Default";
@@ -29,7 +29,7 @@ _damage = 100;
 // STAT : Range
 // NOTE : The maximum range an attack will go.
 // RANGE : 0 - Infinite
-_range = 1500;
+_range = 5000;
 
 // STAT : Trigger Type
 // NOTE : This property holds the mouse event that the attachment uses to fire the weapon.
@@ -69,7 +69,7 @@ instance_destroy(temporary_projectile);
 // STAT : Projectile Width Scale
 // NOTE : Effects how long the projectiles will be.
 // RANGE : 0 - Infinite
-_projectile_width_scale = 1;
+_projectile_width_scale = 3;
 
 // STAT : Projectile Height Scale
 // NOTE : Effects how tall the projectiles will be.  Additionally, this stat also effects the visuals of the accuracy lines to ensure
@@ -88,19 +88,19 @@ _projectiles = [_projectile_count];
 // STAT : Projectile Speed Minimum + Maximum
 // NOTE : Setting these properties as the same number will ensure the speed of the shot projectiles are the same.
 // RANGE : 0 - Infinite for Minimum + Maxmium
-_projectile_speed_min = 0.3;
-_projectile_speed_max = 5;
+_projectile_speed_min = 2;
+_projectile_speed_max = 2;
 
 // STAT : Projectile Acceleration Minimum + Maximum
 // NOTE : Setting these properties as the same number will ensure the acceleration of the shot projectiles are the same.
 // RANGE : -Infinite - Infinite for Minimum + Maxmium
-_projectile_acceleration_min = 1;
-_projectile_acceleration_max = 1;
+_projectile_acceleration_min = 4;
+_projectile_acceleration_max = 4;
 
 // STAT : Kick
 // NOTE : Negative Kick will cause the attached entity to be pulled in the direction of the shot.
 // RANGE : -Infinite - Infinite
-_kick_force = 0;
+_kick_force = 2;
 
 // STAT : Knockback
 // NOTE : Negative Knockback will cause the entity hit to be pulled toward the projectile they are hit with.
@@ -127,27 +127,27 @@ _falloff_mercy = 1;
 // STAT : Accuracy
 // NOTE : Accuracy can be messed with using recoil and recovery.
 // RANGE : 0 - 100
-_accuracy = 90;
+_accuracy = 100;
 
 // STAT : Accuracy Deviation Max, Base and Current
 // NOTE : Deviation Max sets the boundary for how far the accuracy can be deviated from it's base.  Deviation Base
 // is the base accuracy of the attachment that is determined by the Accuracy Stat.  Deviation Current is the property that
 // is fucked with everytime a shot is fired.
 // RANGE : 0 - 180 for Deviation Max
-_accuracy_deviation_max = 20;
+_accuracy_deviation_max = 5;
 _accuracy_deviation_base = (100 - _accuracy) * 0.5;
 _accuracy_deviation_current = _accuracy_deviation_base;
 
 // STAT : Recoil
 // NOTE : Recoil increases the current accuracy deviation by it's value everytime the attachment is fired.
 // RANGE : 0 - 180
-_recoil = 0.5;
+_recoil = 5;
 
 // STAT : Recovery
 // NOTE : Recovery decreases the current accuracy deviation by it's value while the attachment is not being fired.
 // RANGE : 0 - 1 is advised, but it does have the capability to go up to 180.  However, it would be very rare for an attachment
 // to EVER have the need to go past 1.
-_recovery = 0.5;
+_recovery = 0.1;
 
 // STAT : Line Active
 // NOTE : Determines whether or not accuracy lines are enabled for the attachment.

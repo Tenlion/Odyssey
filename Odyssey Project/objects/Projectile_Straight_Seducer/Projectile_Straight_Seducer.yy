@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "Gun21",
+  "name": "Projectile_Straight_Seducer",
   "spriteId": null,
   "solid": false,
   "visible": true,
@@ -9,8 +9,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "Attachment",
-    "path": "objects/Attachment/Attachment.yy",
+    "name": "Projectile_Straight",
+    "path": "objects/Projectile_Straight/Projectile_Straight.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -25,14 +25,13 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Gun Children",
-    "path": "folders/Objects/Attachment Tree/Attachment Children/Gun Children.yy",
+    "name": "Projectile_Straight Children",
+    "path": "folders/Objects/Attack Tree/Attack Children/Projectile Children/Projectile_Straight Children.yy",
   },
 }

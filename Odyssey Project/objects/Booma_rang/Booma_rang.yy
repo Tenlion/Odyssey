@@ -30,7 +30,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Gun Children",
-    "path": "folders/Objects/Attachment Tree/Attachment Children/Gun Children.yy",
+    "name": "Iced",
+    "path": "folders/Objects/Iced.yy",
   },
 }

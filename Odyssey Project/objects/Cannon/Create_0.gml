@@ -72,7 +72,7 @@ _slots = [_number_of_attachments];
 
 for (var attach = 0; attach < _number_of_attachments; attach++) {
 	
-	_attachments[attach] = instance_create_layer(0, 0, "Visible Things", Gamma_ray);
+	_attachments[attach] = instance_create_layer(0, 0, "Visible Things", Gun_Test);
 	_attachments[attach]._entity_id = id;
 	_attachments[attach]._entity_foe = _foe;
 	

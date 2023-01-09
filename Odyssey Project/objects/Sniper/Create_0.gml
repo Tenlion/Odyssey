@@ -14,8 +14,8 @@ _object_name = "Gun";
 // Visuals
 _sprAttachment = spr_Diamond;
 _sprAttachment_color = c_white;
-_sprAttachment_width_scale = 1;
-_sprAttachment_height_scale = 1;
+_sprAttachment_width_scale = 0.5;
+_sprAttachment_height_scale = 0.5;
 
 // Attachment Properties
 _name = "Sniper";
@@ -24,7 +24,7 @@ _weight = 2;					// 0 - 180
 // STAT : Damage
 // NOTE : Negative damage will heal things.
 // RANGE : -Infinite - Infinite
-_damage = 100;
+_damage = 50;
 
 // STAT : Range
 // NOTE : The maximum range an attack will go.
@@ -88,24 +88,24 @@ _projectiles = [_projectile_count];
 // STAT : Projectile Speed Minimum + Maximum
 // NOTE : Setting these properties as the same number will ensure the speed of the shot projectiles are the same.
 // RANGE : 0 - Infinite for Minimum + Maxmium
-_projectile_speed_min = 7;
-_projectile_speed_max = 10;
+_projectile_speed_min = 6;
+_projectile_speed_max = 6;
 
 // STAT : Projectile Acceleration Minimum + Maximum
 // NOTE : Setting these properties as the same number will ensure the acceleration of the shot projectiles are the same.
 // RANGE : -Infinite - Infinite for Minimum + Maxmium
-_projectile_acceleration_min = 7;
-_projectile_acceleration_max = 10;
+_projectile_acceleration_min = 6;
+_projectile_acceleration_max = 6;
 
 // STAT : Kick
 // NOTE : Negative Kick will cause the attached entity to be pulled in the direction of the shot.
 // RANGE : -Infinite - Infinite
-_kick_force = 2;
+_kick_force = 5;
 
 // STAT : Knockback
 // NOTE : Negative Knockback will cause the entity hit to be pulled toward the projectile they are hit with.
 // RANGE : -Infinite - Infinite
-_knockback_force = 0;
+_knockback_force = 5;
 
 // STAT : Falloff Point
 // NOTE : The point in which falloff occurs for the projectiles.  

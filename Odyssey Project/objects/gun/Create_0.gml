@@ -14,8 +14,8 @@ _object_name = "Gun";
 // Visuals
 _sprAttachment = spr_Diamond;
 _sprAttachment_color = c_white;
-_sprAttachment_width_scale = 1;
-_sprAttachment_height_scale = 1;
+_sprAttachment_width_scale = 0.5;
+_sprAttachment_height_scale = 0.5;
 
 // Attachment Properties
 _name = "Default";

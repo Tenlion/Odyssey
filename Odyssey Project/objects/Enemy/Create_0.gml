@@ -15,6 +15,8 @@ _acceleration = 0.01;
 _force_max = 1;
 _force_min = -1;
 
+_foe = Cannon;
+
 
 
 _sprEnemy = spr_Square;

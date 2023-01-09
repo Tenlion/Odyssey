@@ -29,7 +29,7 @@ _damage = 10;
 // STAT : Range
 // NOTE : The maximum range an attack will go.
 // RANGE : 0 - Infinite
-_range = 500;
+_range = 2000;
 
 // STAT : Trigger Type
 // NOTE : This property holds the mouse event that the attachment uses to fire the weapon.
@@ -43,7 +43,7 @@ _trigger_type = "Left Hold";
 // property that is used to tell checks inside the step event whether or not the attachment is actively
 // engaged in fire or not.  It is set to false on purpose, do not change it lol.
 // RANGE : 0 - Infinite for Fire Time
-_fire_time = 0.1;
+_fire_time = 1;
 _fire_accumulator = _fire_time;
 _firing = false;
 
@@ -56,7 +56,7 @@ _attack_type = Projectile;
 // STAT : Projectile Object
 // NOTE : The exact type of projectile a child of this object will use for it's attacks.
 // RANGE : Object
-_projectile_object = Projectile_Straight_Bullet;
+_projectile_object = Projectile_Straight_Seducer;
 
 // STAT : Projectile Sprite
 // NOTE : This is used to store the attachment's current projectile sprite for the Draw Event to use.  This property is created in case
@@ -88,8 +88,8 @@ _projectiles = [_projectile_count];
 // STAT : Projectile Speed Minimum + Maximum
 // NOTE : Setting these properties as the same number will ensure the speed of the shot projectiles are the same.
 // RANGE : 0 - Infinite for Minimum + Maxmium
-_projectile_speed_min = 10;
-_projectile_speed_max = 15;
+_projectile_speed_min = 3;
+_projectile_speed_max = 3;
 
 // STAT : Projectile Acceleration Minimum + Maximum
 // NOTE : Setting these properties as the same number will ensure the acceleration of the shot projectiles are the same.
