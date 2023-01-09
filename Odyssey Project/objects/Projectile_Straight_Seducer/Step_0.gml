@@ -25,15 +25,15 @@ if (position_meeting(x, y, _attachment_foe) == true) {
 	// The instance has done it's job, so it's time for it to be erased.
 	
 	
-	_near_foe = instance_find(Enemy,1);
 	
-	(_near_foe.id == foe_instance.id){
-		_near_foe = instance_find(Enemy,1);
+	if(instance_number(Enemy) >= 1){
+		_near_foe = src_instance_nth_nearest(x,y,Enemy,2);
+		
+			
+		
+foe_instance._foe = _near_foe;
+			
 	}
-	
-	
-	foe_instance._foe = _near_foe;
-	
 	
 	instance_destroy();
 }

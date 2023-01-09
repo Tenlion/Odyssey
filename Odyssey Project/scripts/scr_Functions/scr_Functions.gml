@@ -260,3 +260,17 @@ function _mouse_event_check(event_wanted) {
 	
 	return value;
 }
+
+
+//instance_nth_nearest 
+//checks the nearest instance and then the 2nd,3nd,4th,and so on nearest instance
+/// instance_nth_nearest(x,y,obj,n)
+//
+//  Returns the id of the nth nearest instance of an object
+//  to a given point or noone if none is found.
+//
+//      x,y       point coordinates, real
+//      obj       object index (or all), real
+//      n         proximity, real
+//
+
