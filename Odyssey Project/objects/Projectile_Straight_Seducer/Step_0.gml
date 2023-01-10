@@ -15,6 +15,7 @@ if (position_meeting(x, y, _attachment_foe) == true) {
 	// Lowering the life of the foe by _damage_current.
 	foe_instance._life -= _damage_current;
 	
+	
 	// Calculating knockback using knockback force and the entity's mass.
 	var knockback = _knockback_force / foe_instance._mass;
 	
@@ -25,15 +26,10 @@ if (position_meeting(x, y, _attachment_foe) == true) {
 	// The instance has done it's job, so it's time for it to be erased.
 	
 	
-	
-	if(instance_number(Enemy) >= 1){
-		_near_foe = src_instance_nth_nearest(x,y,Enemy,2);
+	var _near_foe = _instance_nth_nearest(x,y,Enemy,2)
 		
+	foe_instance._foe = _near_foe;
 			
-		
-foe_instance._foe = _near_foe;
-			
-	}
 	
 	instance_destroy();
 }

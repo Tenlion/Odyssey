@@ -23,7 +23,7 @@ function scr_GameStart() {
 	
 	for (var foe = 0; foe < number_of_enemies; foe++) {
 
-		enemies[foe] = instance_create_layer(0, 0, "Visible Things", Enemy);
+		enemies[foe] = instance_create_layer(random_range(10,100),random_range(10,100), "Visible Things", Enemy);
 	}
 
 }

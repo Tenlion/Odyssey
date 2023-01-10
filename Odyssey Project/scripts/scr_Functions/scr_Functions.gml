@@ -262,15 +262,39 @@ function _mouse_event_check(event_wanted) {
 }
 
 
-//instance_nth_nearest 
+//_instance_nth_nearest 
 //checks the nearest instance and then the 2nd,3nd,4th,and so on nearest instance
 /// instance_nth_nearest(x,y,obj,n)
-//
-//  Returns the id of the nth nearest instance of an object
-//  to a given point or noone if none is found.
-//
-//      x,y       point coordinates, real
-//      obj       object index (or all), real
-//      n         proximity, real
-//
 
+ function _instance_nth_nearest(pointx,pointy, object,n){
+	// setting default variables
+    var list,nearest;
+	
+	// Giving arguments to the function
+    pointx = argument0;
+    pointy = argument1;
+    object = argument2;
+    n = argument3;
+	
+	//Within function "min" it  will get the max of either 1 or "n" argument incase number of objects is less than n# specified. exp n = 10 but only 5 objects exits it will return 5.
+	// function "instance_number" will give the number of objects of the argument in the current room
+	//min will then compare the two numbers and assign it to "n".The reason for max is incase the number of objects is less than "n" and would throw a error
+    n = min(max(1,n),instance_number(object));
+	
+	//Creates a data structure with a priority and assigns the index id to"list"
+    list = ds_priority_create();
+    nearest = noone;
+	
+	//"with" is used to give the code block to the "object" argument to run as if the object itself was the one to run it
+	//The object called then adds the to the DS"list" its id and self x,y distance to target x,y in function argument
+    with (object) ds_priority_add(list,id,distance_to_point(pointx,pointy));
+	
+	//Repeat is used "n" number of times as "ds_priority_delete_min" deletes the current priority
+	//exp is if you want the 3nd farthest it would delete the first closest and then the 2nd clostest and then return the 3nd furthest and asign it to variable "nearest"
+    repeat (n) nearest = ds_priority_delete_min(list);
+	
+	//Deletes the data structure as to not create a memory leak
+    ds_priority_destroy(list);
+	//Returns the nth closest object to x,y argument
+    return nearest;
+}
