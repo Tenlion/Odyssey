@@ -5,11 +5,11 @@
 event_inherited();
 
 // Defining the object's name.
-_object_name = "Gun_Test";
+_object_name = "Gun";
 
 
 
-// ------------------ Defining Gun_Test Properties -------------------
+// ------------------ Defining Gun Properties -------------------
 
 // Visuals
 _sprAttachment = spr_Diamond;
@@ -18,8 +18,8 @@ _sprAttachment_width_scale = 0.5;
 _sprAttachment_height_scale = 0.5;
 
 // Attachment Properties
-_name = "Gun_Test";
-_weight = 1;					// 0 - 180
+_name = "Default";
+_weight = 180;					// 0 - 180
 
 // STAT : Damage
 // NOTE : Negative damage will heal things.
@@ -29,12 +29,12 @@ _damage = 10;
 // STAT : Range
 // NOTE : The maximum range an attack will go.
 // RANGE : 0 - Infinite
-_range = 2000;
+_range = 500;
 
 // STAT : Trigger Type
 // NOTE : This property holds the mouse event that the attachment uses to fire the weapon.
 // RANGE : "Left Hold", "Left Tap", "Left Release", "Right Hold", "Right Tap" or "Right Release".
-_trigger_type = "Left Tap";
+_trigger_type = "Left Hold";
 
 // STAT : Fire Time + Fire Accumulator + Firing
 // NOTE : Fire Time is both fire delay and fire rate.  Fire Accumulator takes in time to appropriate
@@ -43,7 +43,7 @@ _trigger_type = "Left Tap";
 // property that is used to tell checks inside the step event whether or not the attachment is actively
 // engaged in fire or not.  It is set to false on purpose, do not change it lol.
 // RANGE : 0 - Infinite for Fire Time
-_fire_time = .5;
+_fire_time = 1;
 _fire_accumulator = _fire_time;
 _firing = false;
 
@@ -56,7 +56,7 @@ _attack_type = Projectile;
 // STAT : Projectile Object
 // NOTE : The exact type of projectile a child of this object will use for it's attacks.
 // RANGE : Object
-_projectile_object = Projectile_Straight_Seducer;
+_projectile_object = Projectile_Straight_Bullet;
 
 // STAT : Projectile Sprite
 // NOTE : This is used to store the attachment's current projectile sprite for the Draw Event to use.  This property is created in case
@@ -69,13 +69,13 @@ instance_destroy(temporary_projectile);
 // STAT : Projectile Width Scale
 // NOTE : Effects how long the projectiles will be.
 // RANGE : 0 - Infinite
-_projectile_width_scale = 0.15;
+_projectile_width_scale = 1;
 
 // STAT : Projectile Height Scale
 // NOTE : Effects how tall the projectiles will be.  Additionally, this stat also effects the visuals of the accuracy lines to ensure
 // the projectile sprites don't appear to be spawning outside of the spawn radius.
 // RANGE : 0 - Infinite
-_projectile_height_scale = 0.1;
+_projectile_height_scale = 1;
 
 // STAT : Projectile Count + Projectiles Array
 // NOTE : Projectile Count is indicative of how many attack objects are thrown out for every shot.  The array
@@ -88,24 +88,24 @@ _projectiles = [_projectile_count];
 // STAT : Projectile Speed Minimum + Maximum
 // NOTE : Setting these properties as the same number will ensure the speed of the shot projectiles are the same.
 // RANGE : 0 - Infinite for Minimum + Maxmium
-_projectile_speed_min = 3;
-_projectile_speed_max = 3;
+_projectile_speed_min = 0;
+_projectile_speed_max = 0;
 
 // STAT : Projectile Acceleration Minimum + Maximum
 // NOTE : Setting these properties as the same number will ensure the acceleration of the shot projectiles are the same.
 // RANGE : -Infinite - Infinite for Minimum + Maxmium
-_projectile_acceleration_min = 0.1;
-_projectile_acceleration_max = 0.3;
+_projectile_acceleration_min = 0;
+_projectile_acceleration_max = 0;
 
 // STAT : Kick
 // NOTE : Negative Kick will cause the attached entity to be pulled in the direction of the shot.
 // RANGE : -Infinite - Infinite
-_kick_force = 0.5;
+_kick_force = 0;
 
 // STAT : Knockback
 // NOTE : Negative Knockback will cause the entity hit to be pulled toward the projectile they are hit with.
 // RANGE : -Infinite - Infinite
-_knockback_force = 0.5;
+_knockback_force = 0;
 
 // STAT : Falloff Point
 // NOTE : The point in which falloff occurs for the projectiles.  
@@ -167,4 +167,41 @@ _line_length = _range * _line_length_control;
 // Most attachments will probably have a spawn radius of 0, but for attachments with larger barrels that shoot a ton of projectiles...
 // Well, this stat is made for them.
 // RANGE : 0 - Infinite
-_spawn_radius = 5;
+_spawn_radius = 1;
+
+
+//This code is for AoE only
+// How large the AoE will be in radius from the center. _AoE_radius of 500 will create a 1000 diamenter wide area.
+_AoE_radius = 500;
+
+//How long the AoE will last in seconds
+_AoE_lifespan = 5;
+
+//The direction of the AoE. Default is 360 to make a circle. you can change it to any degree relative to the attacks direction.
+
+//TESTING!!!
+_AoE_degree = 360;
+//TESTING!!
+
+//The ammount of deviation from the x,y set incase you want to offset the Aoe from the spawn location
+_AoE_deveation = 100;
+
+//This is where the AoE will spawn relative to where the AoE was actavated.
+// Default is 0 and sets it to the x,y of the object that spawned it.
+_AoE_spn_x = 0;
+_AoE_spn_y = 0;
+
+//Cluster unique value
+//Sets the ammount of "bomblets" to be dispersed in the AoE area
+_cluster_count = 0;
+
+//Flak(Bomblets) unique value
+
+// How large the flak radius will be
+_flak_radius =0;
+
+// The damage it will casue to enemys
+_flak_dmg = 0;
+
+// The delay between each flak round
+_flak_delay = 0; 
