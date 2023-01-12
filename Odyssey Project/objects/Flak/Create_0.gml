@@ -179,12 +179,10 @@ _AoE_lifespan = 5;
 
 //The direction of the AoE. Default is 360 to make a circle. you can change it to any degree relative to the attacks direction.
 
-//TESTING!!!
+//The cone or angle that the AoE will be set it.
+//NOTE: This will not work with blast and only works with cluster and projectile AoE
 _AoE_degree = 360;
-//TESTING!!
 
-//The ammount of deviation from the x,y set incase you want to offset the Aoe from the spawn location
-_AoE_deveation = 100;
 
 //This is where the AoE will spawn relative to where the AoE was actavated.
 // Default is 0 and sets it to the x,y of the object that spawned it.
@@ -193,15 +191,18 @@ _AoE_spn_y = 0;
 
 //Cluster unique value
 //Sets the ammount of "bomblets" to be dispersed in the AoE area
-_cluster_count = 0;
+_cluster_count = 5;
 
+//This sets the type of bomblet the AoE cluster uses.
+_AoE_cluster_type = AoE_Cluster_Flak;
 //Flak(Bomblets) unique value
 
 // How large the flak radius will be
-_flak_radius =0;
+//1 is normal while 2 is twice at as big. 0.5 is half the size.
+_flak_radius =1;
 
 // The damage it will casue to enemys
-_flak_dmg = 0;
+_flak_dmg = 10;
 
 // The delay between each flak round
 _flak_delay = 0; 

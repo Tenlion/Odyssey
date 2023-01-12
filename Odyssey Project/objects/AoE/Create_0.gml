@@ -11,7 +11,6 @@ _object_name = "AoE";
 _AoE_radius = 0;
 _AoE_lifespan = 0;
 _AoE_degree = 360;
-_AoE_deveation = 100;
 _AoE_attack_type = 0;
 _AoE_spn_x = 0;
 _AoE_spn_y = 0;

@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 //Super testing
-//_true_degree = random_range((_entity_to_attachment_angle - (_AoE_degree * 0.5)), (_entity_to_attachment_angle + (_AoE_degree * 0.5)));
+_true_degree = random_range((_entity_to_attachment_angle - (_AoE_degree * 0.5)), (_entity_to_attachment_angle + (_AoE_degree * 0.5)));
 
 _AoE  = instance_create_layer(_AoE_spn_x, _AoE_spn_y,"Instances",_AoE_attack_type);
 

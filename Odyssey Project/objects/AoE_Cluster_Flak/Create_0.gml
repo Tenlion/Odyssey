@@ -17,4 +17,4 @@ _AoE_spn_x = x;
 _AoE_spn_y = y;
 
 //setting attack type to Flak
-_cluster_type = Flak;
+_AoE_cluster_type = Flak;

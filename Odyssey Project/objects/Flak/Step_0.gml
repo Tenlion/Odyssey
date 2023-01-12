@@ -47,18 +47,17 @@ if (_active == true) {
 				_projectiles[projectile]._sprAttack_height_scale = _projectile_height_scale;
 				
 				//Flak round stats
-				_projectiles[projectile]._AoE_radius = 0;
-				_projectiles[projectile]._AoE_lifespan = 0;
-				_projectiles[projectile]._AoE_degree = 360;
-				_projectiles[projectile]._AoE_deveation = 100;
-				_projectiles[projectile]._AoE_attack_type = 0;
-				_projectiles[projectile]._AoE_spn_x = 0;
-				_projectiles[projectile]._AoE_spn_y = 0;
-				_projectiles[projectile]._cluster_type = 0;
-				_projectiles[projectile]._cluster_count = 0;
-				_projectiles[projectile]._flak_radius =0;
-				_projectiles[projectile]._flak_dmg = 0;
-				_projectiles[projectile]._flak_delay = 0; 
+				_projectiles[projectile]._AoE_radius = _AoE_radius;
+				_projectiles[projectile]._AoE_lifespan = _AoE_lifespan;
+				_projectiles[projectile]._AoE_degree = _AoE_degree;
+				_projectiles[projectile]._AoE_attack_type = _AoE_attack_type;
+				_projectiles[projectile]._AoE_spn_x = _AoE_spn_x;
+				_projectiles[projectile]._AoE_spn_y = _AoE_spn_y;
+				_projectiles[projectile]._cluster_type = _cluster_type;
+				_projectiles[projectile]._cluster_count = _cluster_count;
+				_projectiles[projectile]._flak_radius = _flak_radius;
+				_projectiles[projectile]._flak_dmg = _flak_dmg;
+				_projectiles[projectile]._flak_delay = _flak_delay;
 				
 
 				// Calculating the attack's direction and setting it's sprite rotation to match the attack direction.
