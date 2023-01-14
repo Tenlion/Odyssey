@@ -10,10 +10,11 @@ _object_name = "Projectile_Straight";
 // Checking if the instance has encountered it's _attachment_foe.
 // If true, apply _current_damage to the entity's _life and knockback the entity.
 if (position_meeting(x, y, _attachment_foe) == true) {
-		
+	
 	// Creating a variable to hold the instance id of the opposing entity.
 	var foe_instance = instance_position(x, y, _attachment_foe);
 	
+	_hit = true;
 	// Lowering the life of the foe by _damage_current.
 	foe_instance._life -= _damage_current;
 	
@@ -25,7 +26,8 @@ if (position_meeting(x, y, _attachment_foe) == true) {
 	foe_instance._force_y += lengthdir_y(knockback, _direction);
 	
 	// The instance has done it's job, so it's time for it to be erased.
-	instance_destroy();
+	
+	 instance_destroy();
 }
 
 

@@ -1,0 +1,1 @@
+draw_sprite(spr_Circle,1,400,400);

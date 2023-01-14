@@ -55,3 +55,4 @@ _direction = point_direction(x, y, _position_x, _position_y);
 
 x = _position_x;
 y = _position_y;
+

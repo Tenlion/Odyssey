@@ -18,18 +18,18 @@ _sprAttachment_width_scale = 0.5;
 _sprAttachment_height_scale = 0.5;
 
 // Attachment Properties
-_name = "Default";
-_weight = 180;					// 0 - 180
+_name = "Flak";
+_weight = 100;					// 0 - 180
 
 // STAT : Damage
 // NOTE : Negative damage will heal things.
 // RANGE : -Infinite - Infinite
-_damage = 10;
+_damage = 1;
 
 // STAT : Range
 // NOTE : The maximum range an attack will go.
 // RANGE : 0 - Infinite
-_range = 500;
+_range = 1000;
 
 // STAT : Trigger Type
 // NOTE : This property holds the mouse event that the attachment uses to fire the weapon.
@@ -56,7 +56,7 @@ _attack_type = Projectile;
 // STAT : Projectile Object
 // NOTE : The exact type of projectile a child of this object will use for it's attacks.
 // RANGE : Object
-_projectile_object = Projectile_Straight_Bullet;
+_projectile_object = Projectile_Straight_Flak;
 
 // STAT : Projectile Sprite
 // NOTE : This is used to store the attachment's current projectile sprite for the Draw Event to use.  This property is created in case
@@ -69,13 +69,13 @@ instance_destroy(temporary_projectile);
 // STAT : Projectile Width Scale
 // NOTE : Effects how long the projectiles will be.
 // RANGE : 0 - Infinite
-_projectile_width_scale = 1;
+_projectile_width_scale = 0.10;
 
 // STAT : Projectile Height Scale
 // NOTE : Effects how tall the projectiles will be.  Additionally, this stat also effects the visuals of the accuracy lines to ensure
 // the projectile sprites don't appear to be spawning outside of the spawn radius.
 // RANGE : 0 - Infinite
-_projectile_height_scale = 1;
+_projectile_height_scale = 0.10;
 
 // STAT : Projectile Count + Projectiles Array
 // NOTE : Projectile Count is indicative of how many attack objects are thrown out for every shot.  The array
@@ -88,8 +88,8 @@ _projectiles = [_projectile_count];
 // STAT : Projectile Speed Minimum + Maximum
 // NOTE : Setting these properties as the same number will ensure the speed of the shot projectiles are the same.
 // RANGE : 0 - Infinite for Minimum + Maxmium
-_projectile_speed_min = 0;
-_projectile_speed_max = 0;
+_projectile_speed_min = 20;
+_projectile_speed_max = 20;
 
 // STAT : Projectile Acceleration Minimum + Maximum
 // NOTE : Setting these properties as the same number will ensure the acceleration of the shot projectiles are the same.
@@ -111,7 +111,7 @@ _knockback_force = 0;
 // NOTE : The point in which falloff occurs for the projectiles.  
 // Maxing out falloff point will cause a projectile to not have any falloff.
 // RANGE : 0 - 1
-_falloff_point = _range * 0.5;
+_falloff_point = _range * 1;
 
 // STAT : Falloff Mercy
 // NOTE : The level of damage that is fallen off and/or increased from the projectiles after they reach the falloff point.
@@ -127,7 +127,7 @@ _falloff_mercy = 1;
 // STAT : Accuracy
 // NOTE : Accuracy can be messed with using recoil and recovery.
 // RANGE : 0 - 100
-_accuracy = 100;
+_accuracy = 90;
 
 // STAT : Accuracy Deviation Max, Base and Current
 // NOTE : Deviation Max sets the boundary for how far the accuracy can be deviated from it's base.  Deviation Base
@@ -141,7 +141,7 @@ _accuracy_deviation_current = _accuracy_deviation_base;
 // STAT : Recoil
 // NOTE : Recoil increases the current accuracy deviation by it's value everytime the attachment is fired.
 // RANGE : 0 - 180
-_recoil = 1;
+_recoil = 0.5;
 
 // STAT : Recovery
 // NOTE : Recovery decreases the current accuracy deviation by it's value while the attachment is not being fired.
@@ -172,34 +172,24 @@ _spawn_radius = 1;
 
 //This code is for AoE only
 // How large the AoE will be in radius from the center. _AoE_radius of 500 will create a 1000 diamenter wide area.
-_AoE_radius = 500;
+_AoE_radius = 200;
 
-//How long the AoE will last in seconds
-_AoE_lifespan = 5;
 
 //The direction of the AoE. Default is 360 to make a circle. you can change it to any degree relative to the attacks direction.
 
-//The cone or angle that the AoE will be set it.
-//NOTE: This will not work with blast and only works with cluster and projectile AoE
-_AoE_degree = 360;
 
 
-//This is where the AoE will spawn relative to where the AoE was actavated.
-// Default is 0 and sets it to the x,y of the object that spawned it.
-_AoE_spn_x = 0;
-_AoE_spn_y = 0;
 
 //Cluster unique value
 //Sets the ammount of "bomblets" to be dispersed in the AoE area
-_cluster_count = 5;
+_cluster_count = 20;
 
-//This sets the type of bomblet the AoE cluster uses.
-_AoE_cluster_type = AoE_Cluster_Flak;
+
 //Flak(Bomblets) unique value
 
 // How large the flak radius will be
 //1 is normal while 2 is twice at as big. 0.5 is half the size.
-_flak_radius =1;
+_flak_radius =50;
 
 // The damage it will casue to enemys
 _flak_dmg = 10;

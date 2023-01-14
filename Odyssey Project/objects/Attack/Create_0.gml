@@ -16,6 +16,7 @@ _direction = 0;
 
 _damage_original = 0;
 _damage_current = 0;
+_hit = 0;
 
 _range_original = 0;
 _range_current = 0;
