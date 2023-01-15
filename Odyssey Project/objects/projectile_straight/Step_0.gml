@@ -14,7 +14,7 @@ if (position_meeting(x, y, _attachment_foe) == true) {
 	// Creating a variable to hold the instance id of the opposing entity.
 	var foe_instance = instance_position(x, y, _attachment_foe);
 	
-	_hit = true;
+
 	// Lowering the life of the foe by _damage_current.
 	foe_instance._life -= _damage_current;
 	

@@ -7,6 +7,7 @@ _AoE_radius = 0;
 
 
 _cluster_count = 0;
+ cluster = 0;
 
 _flak_radius =0;
 _flak_dmg = 0;
@@ -25,3 +26,7 @@ _sprAttack_color = c_white;
 // Defining the collision mask for the Bullet object.
 mask_index = _sprAttack;
 sprite_collision_mask(mask_index, false, 1, 0, 0, 0, 0, bboxkind_rectangular, 0);
+
+
+
+
