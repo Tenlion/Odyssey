@@ -22,6 +22,9 @@ _entity_to_attachment_angle = 0;
 // Attack Sprite Properties
 _sprAttack = spr_Square;
 _sprAttack_color = c_white;
+_flak_sprite = Exo;
+_flak_sprite_draw = false;
+_flakk = false;
 
 // Defining the collision mask for the Bullet object.
 mask_index = _sprAttack;

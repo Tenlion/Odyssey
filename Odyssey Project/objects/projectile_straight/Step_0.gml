@@ -27,7 +27,7 @@ if (position_meeting(x, y, _attachment_foe) == true) {
 	
 	// The instance has done it's job, so it's time for it to be erased.
 	
-	 instance_destroy();
+	_hit = true;
 }
 
 

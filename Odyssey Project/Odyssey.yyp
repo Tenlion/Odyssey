@@ -14,6 +14,7 @@
     {"id":{"name":"Projectile_Straight_Flak","path":"objects/Projectile_Straight_Flak/Projectile_Straight_Flak.yy",},"order":3,},
     {"id":{"name":"Entity","path":"objects/Entity/Entity.yy",},"order":3,},
     {"id":{"name":"Gun_Test","path":"objects/Gun_Test/Gun_Test.yy",},"order":0,},
+    {"id":{"name":"test","path":"sprites/test/test.yy",},"order":11,},
     {"id":{"name":"spr_Square","path":"sprites/spr_Square/spr_Square.yy",},"order":7,},
     {"id":{"name":"Booma_wall","path":"objects/Booma_wall/Booma_wall.yy",},"order":1,},
     {"id":{"name":"Sniper","path":"objects/Sniper/Sniper.yy",},"order":1,},

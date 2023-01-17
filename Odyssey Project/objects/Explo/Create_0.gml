@@ -2,5 +2,5 @@
 // You can write your code in this editor
 
 
- it= .3;
+ it= 1;
  time = 0;

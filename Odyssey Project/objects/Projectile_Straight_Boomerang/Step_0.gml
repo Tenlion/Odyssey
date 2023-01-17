@@ -25,3 +25,4 @@ else if ((_position_x == _destination_x) && (_position_y == _destination_y)) {
 	_destination_x = _spawn_x;
 	_destination_y = _spawn_y;
 }
+else if(_hit = true){instance_destroy();}

@@ -170,30 +170,26 @@ _line_length = _range * _line_length_control;
 _spawn_radius = 1;
 
 
+//////////////////////////
 //This code is for AoE only
+//////////////////////////
+
 // How large the AoE will be in radius from the center. _AoE_radius of 500 will create a 1000 diamenter wide area.
 _AoE_radius = 500;
-
-
-//The direction of the AoE. Default is 360 to make a circle. you can change it to any degree relative to the attacks direction.
-
-
 
 
 //Cluster unique value
 //Sets the ammount of "bomblets" to be dispersed in the AoE area
 _cluster_count = 30;
 
-
 //Flak(Bomblets) unique value
 
+
 // How large the flak radius will be
-//1 is normal while 2 is twice at as big. 0.5 is half the size.
-_flak_radius =100;
+_flak_radius =400;
 
 // The damage it will casue to enemys
 _flak_dmg = 5;
 
-// The delay between each flak round meserec in miliseconds(1,000,000th of a second.)
-//The value   V here is in seconds for easy input.
-_flak_delay = 0.2; 
+// The delay between each flak round meserec in seconds
+_flak_delay = 0.001; 
