@@ -175,7 +175,7 @@ _spawn_radius = 1;
 //////////////////////////
 
 // How large the AoE will be in radius from the center. _AoE_radius of 500 will create a 1000 diamenter wide area.
-_AoE_radius = 100;
+_AoE_radius = 500;
 
 
 //Cluster unique value
@@ -186,10 +186,10 @@ _cluster_count = 30;
 
 
 // How large the flak radius will be
-_flak_radius =100;
+_flak_radius =200;
 
 // The damage it will casue to enemys
 _flak_dmg = 5;
 
 // The delay between each flak round meserec in seconds
-_flak_delay = 0.3; 
+_flak_delay = 0.2; 
