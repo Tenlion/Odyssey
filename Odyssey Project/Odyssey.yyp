@@ -23,7 +23,6 @@
     {"id":{"name":"Flex_Rifle","path":"objects/Flex_Rifle/Flex_Rifle.yy",},"order":4,},
     {"id":{"name":"Object","path":"objects/Object/Object.yy",},"order":15,},
     {"id":{"name":"spr_Octagon","path":"sprites/spr_Octagon/spr_Octagon.yy",},"order":2,},
-    {"id":{"name":"Explo","path":"objects/Explo/Explo.yy",},"order":0,},
     {"id":{"name":"scr_GameStart","path":"scripts/scr_GameStart/scr_GameStart.yy",},"order":1,},
     {"id":{"name":"Cannon","path":"objects/Cannon/Cannon.yy",},"order":0,},
     {"id":{"name":"Projectile_Straight_Boomerang","path":"objects/Projectile_Straight_Boomerang/Projectile_Straight_Boomerang.yy",},"order":0,},
