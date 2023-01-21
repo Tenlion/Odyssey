@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "Flak",
+  "name": "Beam",
   "spriteId": null,
   "solid": false,
   "visible": true,
@@ -9,8 +9,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "Attachment",
-    "path": "objects/Attachment/Attachment.yy",
+    "name": "Attack",
+    "path": "objects/Attack/Attack.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -26,12 +26,13 @@
   "physicsShapePoints": [],
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Attachment Children",
-    "path": "folders/Objects/Attachment Tree/Attachment Children.yy",
+    "name": "Attack Children",
+    "path": "folders/Objects/Attack Tree/Attack Children.yy",
   },
 }

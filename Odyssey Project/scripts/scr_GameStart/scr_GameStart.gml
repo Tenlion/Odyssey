@@ -2,6 +2,7 @@
 function scr_GameStart() {
 
 	// Creating Layers
+	layer_create(-4,"Lasers");
 	layer_create(-3, "Projectiles");
 	layer_create(-2, "Invisible Things");
 	layer_create(-1, "Visible Things");
@@ -18,7 +19,7 @@ function scr_GameStart() {
 	
 	
 	// Creating Enemies
-	var number_of_enemies = 10;
+	var number_of_enemies = 2;
 	var enemies = [number_of_enemies];
 	
 	for (var foe = 0; foe < number_of_enemies; foe++) {

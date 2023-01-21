@@ -25,8 +25,7 @@ if (position_meeting(x, y, _attachment_foe) == true) {
 	foe_instance._force_x += lengthdir_x(knockback, _direction);
 	foe_instance._force_y += lengthdir_y(knockback, _direction);
 	
-	// The instance has done it's job, so it's time for it to be erased.
-	
+	// A variable to check if said projectile has colided with something.
 	_hit = true;
 }
 
