@@ -5,16 +5,18 @@
 event_inherited();
 
 
-_sprAttack = spr_Rectangle;
-_sprAttack_color = c_white;
 
 _xEnd_1 = 0;
 _yEnd_1 = 0;
-
 _xEnd_2 = 0;
 _yEnd_2 = 0;
 
-_range = 0;
-_beam_dir = 0;
+_xStart_1 = 0;
+_yStart_1 = 0;
+_xStart_2 = 0;
+_yStart_2 = 0;
 
-_beam_spread = 30;
+_range = 0;
+_laser_dir = 0;
+_laser_width = 0;
+_laser_spread = 0;

@@ -9,7 +9,7 @@ event_inherited();
 if ((_active == true) && (_line_active == true)) {
 	
 	// Calculating the projectile instance's sprite height half in order to be used for visually accurate accuracy lines.
-	var projectile_height_halved = (sprite_get_width(_projectile_sprite) * _projectile_height_scale) * 0.5;
+	var projectile_height_halved = sprite_get_width(_laser_sprite)  * 0.5;
 	
 	// Defining a gap between the starting points of the lines using the attachment's spawn radius and projectile height.
 	var gap_for_starting_points = _spawn_radius + projectile_height_halved;

@@ -2,7 +2,7 @@
 // Inheriting the Parent Step Event.
 event_inherited();
 
-
+_DELTA_TIME = global.DELTA_ACTUAL;
 
 // Checking to see if the attachment is active.
 if (_active == true) {
@@ -14,7 +14,7 @@ if (_active == true) {
 	// Checking if the attachment's _fire_accumulator has cultivated enough time to fire.
 	// If true, the attachment is allowed to fire.
 	// If false, the attachment can not fire.
-	if	(_firing == true) && (_fire_accumulator >= _fire_time) {
+	if	(_firing == true) && (_fire_accumulator >= _fire_time) && (_overheated == false) && (instance_exists(_laser_object)==false) {
 			
 			// Resetting the _fire_accumulator to 0 to appropriate the attachment's rate of fire.
 			_fire_accumulator = 0;
@@ -28,47 +28,41 @@ if (_active == true) {
 			_entity_id._force_y += lengthdir_y(kick, kick_angle);
 	
 			// Looping out a number of projectiles based on the _projectile_count of the attachment.
-			for (var projectile = 0; projectile < _projectile_count; projectile++) {
+			for (var laser = 0; laser < _laser_count; laser++) {
 					
 				// Creating an attack and defining the properties inside before it moves.
-				_projectiles[projectile] = instance_create_layer(x, y, "Projectiles", _projectile_object);
-				_projectiles[projectile]._attachment_id = id;
-				_projectiles[projectile]._attachment_foe = _entity_foe;
-				_projectiles[projectile]._damage_original = _damage;
-				_projectiles[projectile]._damage_current = _damage;
-				_projectiles[projectile]._range_original = _range;
-				_projectiles[projectile]._range_current = _range;
-				_projectiles[projectile]._range = _range;
-				_projectiles[projectile]._beam_dir = _entity_to_attachment_angle;
-				_projectiles[projectile]._falloff_point = _falloff_point;
-				_projectiles[projectile]._falloff_mercy = _falloff_mercy;
-				_projectiles[projectile]._knockback_force = _knockback_force;
-				_projectiles[projectile]._speed = random_range(_projectile_speed_min, _projectile_speed_max);
-				_projectiles[projectile]._acceleration = random_range(_projectile_acceleration_min, _projectile_acceleration_max);
-				_projectiles[projectile]._sprAttack_width_scale = _projectile_width_scale;
-				_projectiles[projectile]._sprAttack_height_scale = _projectile_height_scale;
+				_lasers[laser] = instance_create_layer(x, y, "Lasers", _laser_object);
+				_lasers[laser]._attachment_id = id;
+				_lasers[laser]._attachment_foe = _entity_foe;
+				_lasers[laser]._damage_original = _damage;
+				_lasers[laser]._damage_current = _damage;
+				_lasers[laser]._range_original = _range;
+				_lasers[laser]._range_current = _range;
+				_lasers[laser]._range = _range;
+				_lasers[laser]._falloff_point = _falloff_point;
+				_lasers[laser]._falloff_mercy = _falloff_mercy;
+				_lasers[laser]._knockback_force = _knockback_force;
+				_lasers[laser]._laser_width = _laser_width ;
+				_lasers[laser]._laser_spread = _laser_spread;
 
 				// Calculating the attack's direction and setting it's sprite rotation to match the attack direction.
 				var direction_for_attack = random_range(_entity_to_attachment_angle - _accuracy_deviation_current, _entity_to_attachment_angle + _accuracy_deviation_current);
-				_projectiles[projectile]._sprAttack_rotation = direction_for_attack;
-				
-				// Calculating the spawn deviation of the attack from 0 (zero acting as a psuedo-spawnpoint).
-				var spawn_deviation = random_range(_spawn_radius * NEGATIVE, _spawn_radius);
+				_lasers[laser]._sprAttack_rotation = direction_for_attack;
 				
 				// Calculating and setting the attack's spawn position.
-				_projectiles[projectile].x = x + lengthdir_x(spawn_deviation, _direction_north);
-				_projectiles[projectile].y = y + lengthdir_y(spawn_deviation, _direction_north);
-				_projectiles[projectile]._spawn_x = _projectiles[projectile].x;
-				_projectiles[projectile]._spawn_y = _projectiles[projectile].y;
+				_lasers[laser]._spawn_x = _lasers[laser].x;
+				_lasers[laser]._spawn_y = _lasers[laser].y;
 				
 				// Calculating and setting the attack's end destination.
-				_projectiles[projectile]._destination_x = x + lengthdir_x(_range, direction_for_attack);
-				_projectiles[projectile]._destination_y = y + lengthdir_y(_range, direction_for_attack);
+				_lasers[laser]._destination_x = x + lengthdir_x(_range, direction_for_attack);
+				_lasers[laser]._destination_y = y + lengthdir_y(_range, direction_for_attack);
 			}
 			
 			// Applying recoil onto the accuracy after a shot has occurred.
 			_accuracy_deviation_current =  _number_to_number(_accuracy_deviation_current, _accuracy_deviation_max, _recoil);
 	}
+	
+	
 }
 
 
@@ -77,6 +71,16 @@ if (_active == true) {
 // If true, accumulate time into the _fire_accumulator.
 if (_fire_accumulator < _fire_time) { _fire_accumulator += global.DELTA_ACTUAL; }
 
+if(instance_exists(_laser_object)){
+	_heat += global.DELTA_ACTUAL;
+	}
+		else if(_heat > 0){ 
+			_heat -= global.DELTA_ACTUAL;
+			}
+		
+if(_heat > _overheat_max){_overheated = true;}
+	
+if(_heat <= 0){ _overheated = false;}
 // Checking if the accuracy deviation is NOT equivalent to it's base accuracy AND if the attachment is NOT actively firing.
 // If true, realign the deviation using recovery.
 if ((_accuracy_deviation_current != _accuracy_deviation_base) && (_firing != true)) {

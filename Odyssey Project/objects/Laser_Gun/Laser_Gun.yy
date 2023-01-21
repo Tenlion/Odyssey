@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "Beam",
+  "name": "Laser_Gun",
   "spriteId": null,
   "solid": false,
   "visible": true,
@@ -9,8 +9,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "Lasers",
-    "path": "objects/Lasers/Lasers.yy",
+    "name": "Attachment",
+    "path": "objects/Attachment/Attachment.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -25,12 +25,14 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Laser_children",
-    "path": "folders/Objects/Attack Tree/Attack Children/Laser_children.yy",
+    "name": "Attachment Children",
+    "path": "folders/Objects/Attachment Tree/Attachment Children.yy",
   },
 }
