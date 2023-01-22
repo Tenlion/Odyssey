@@ -17,6 +17,5 @@ _xStart_2 = 0;
 _yStart_2 = 0;
 
 _range = 0;
-_laser_dir = 0;
 _laser_width = 0;
 _laser_spread = 0;

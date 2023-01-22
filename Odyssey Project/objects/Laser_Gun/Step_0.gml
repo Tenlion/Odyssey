@@ -69,13 +69,13 @@ if (_active == true) {
 
 // Checking if the _fire_accumulator is less than _fire_time.
 // If true, accumulate time into the _fire_accumulator.
-if (_fire_accumulator < _fire_time) { _fire_accumulator += global.DELTA_ACTUAL; }
+if (_fire_accumulator < _fire_time) { _fire_accumulator += _DELTA_TIME; }
 
 if(instance_exists(_laser_object)){
-	_heat += global.DELTA_ACTUAL;
+	_heat += _DELTA_TIME;
 	}
 		else if(_heat > 0){ 
-			_heat -= global.DELTA_ACTUAL;
+			_heat -= _DELTA_TIME;
 			}
 		
 if(_heat > _overheat_max){_overheated = true;}

@@ -32,13 +32,16 @@ if (collision_line(_xEnd_1,_yEnd_1,_xEnd_2,_yEnd_2,_attachment_foe,false,true)) 
 }
 //............................
 
-for(var range = 0; range < _range; range++){
 	
 	_xStart_1 = x - lengthdir_x(_laser_width,_sprAttack_rotation+90);
 	_yStart_1 = y - lengthdir_y(_laser_width,_sprAttack_rotation+90);
 	
 	_xStart_2 = x + lengthdir_x(_laser_width,_sprAttack_rotation+90);
 	_yStart_2 = y + lengthdir_y(_laser_width,_sprAttack_rotation+90);
+
+for(var range = 0; range < _range; range+=20){
+	
+	
 	
 	
 
