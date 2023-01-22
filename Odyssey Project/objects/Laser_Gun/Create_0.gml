@@ -164,3 +164,6 @@ _laser_width = 50;
 //STAT : How wide the endpoint of the laser willl be in degrees. Acts like a flashlight
 //Range 0 - 180. Advised not to go past 90
 _laser_spread = 0;
+
+//STAT : sets how long in sec a pulse will last. Bigger the number the more damage it will do.
+_life_time = 0.25;
