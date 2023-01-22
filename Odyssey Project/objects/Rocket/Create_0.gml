@@ -18,7 +18,7 @@ _sprAttachment_width_scale = 0.5;
 _sprAttachment_height_scale = 0.5;
 
 // Attachment Properties
-_name = "Default";
+_name = "Rocket";
 _weight = 0.5;					// 0 - 180
 
 // STAT : Damage

@@ -5,7 +5,7 @@
 event_inherited();
 
 // Defining the object's name.
-_object_name = "Gun";
+_object_name = "Flak";
 
 
 
@@ -24,6 +24,7 @@ _weight = 100;					// 0 - 180
 // STAT : Damage
 // NOTE : Negative damage will heal things.
 // RANGE : -Infinite - Infinite
+//NOTE : this is not flak bomblet damage. 
 _damage = 1;
 
 // STAT : Range
@@ -175,21 +176,17 @@ _spawn_radius = 1;
 //////////////////////////
 
 // How large the AoE will be in radius from the center. _AoE_radius of 500 will create a 1000 diamenter wide area.
+//This is the range or area in which bomblets can spawn
 _AoE_radius = 500;
 
-
-//Cluster unique value
 //Sets the ammount of "bomblets" to be dispersed in the AoE area
 _cluster_count = 30;
 
-//Flak(Bomblets) unique value
-
-
-// How large the flak radius will be
+// How large the flak(bomblets) explosions radius will be
 _flak_radius =200;
 
-// The damage it will casue to enemys
+// The damage it will casue to foes hit
 _flak_dmg = 5;
 
-// The delay between each flak round meserec in seconds
+// The delay between each flak round in seconds
 _flak_delay = 0.2; 

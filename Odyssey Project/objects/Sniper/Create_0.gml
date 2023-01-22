@@ -5,7 +5,7 @@
 event_inherited();
 
 // Defining the object's name.
-_object_name = "Gun";
+_object_name = "Sniper";
 
 
 

@@ -14,7 +14,7 @@ if (_active == true) {
 	// Checking if the attachment's _fire_accumulator has cultivated enough time to fire.
 	// If true, the attachment is allowed to fire.
 	// If false, the attachment can not fire.
-	if	(_firing == true) && (_fire_accumulator >= _fire_time) && (_overheated == false) && (instance_exists(_laser_object)==false) {
+	if	(_firing == true) && (_fire_accumulator >= _fire_time) && (_overheated == false) && (instance_exists(_laser_id)==false) {
 			
 			// Resetting the _fire_accumulator to 0 to appropriate the attachment's rate of fire.
 			_fire_accumulator = 0;
@@ -57,6 +57,9 @@ if (_active == true) {
 				// Calculating and setting the attack's end destination.
 				_lasers[laser]._destination_x = x + lengthdir_x(_range, direction_for_attack);
 				_lasers[laser]._destination_y = y + lengthdir_y(_range, direction_for_attack);
+				
+				//Stores the Id to test of it is active or not.
+				_laser_id = _lasers[laser].id
 			}
 			
 			// Applying recoil onto the accuracy after a shot has occurred.
@@ -72,23 +75,29 @@ if (_active == true) {
 // If true, accumulate time into the _fire_accumulator.
 if (_fire_accumulator < _fire_time) { _fire_accumulator += _DELTA_TIME; }
 
-if(instance_exists(_laser_object)){
+//This adds "heat" as the laser exists based on delta time
+if(instance_exists(_laser_id)){
 	_heat += _DELTA_TIME;
 	}
+	
+	//This reduces the heat when the laser is not active or is cooling of from a overheat
+	//This else if is to check if heal is greater than 0. Other wise it would keep ticking down and grant laser more max heat.
 		else if(_heat > 0){ 
 			_heat -= _DELTA_TIME;
 			}
-		
+//This checks of heat has reached it max and if so  deletes the laser and can not be fired till fully cooled down.
 if(_heat > _overheat_max){_overheated = true;}
-	
+
+//This checks to see if heat has been reduced to 0 or below and turns the overheated back to fasle so the laser can be fired again.
 if(_heat <= 0){ _overheated = false;}
+
 // Checking if the accuracy deviation is NOT equivalent to it's base accuracy AND if the attachment is NOT actively firing.
 // If true, realign the deviation using recovery.
 if ((_accuracy_deviation_current != _accuracy_deviation_base) && (_firing != true)) {
 	
 	_accuracy_deviation_current = _number_to_number(_accuracy_deviation_current, _accuracy_deviation_base, _recovery * global.DELTA_MULTIPLIER); 
 }
-//............................................................................
+
 
 
 

@@ -2,20 +2,24 @@
 // Inheriting the Parent Create Event.
 event_inherited();
 
-//Flak sats
+//Setting flak bullet unique stats
+
 _AoE_radius = 0;
 
-
+//Ammount of bomblets
 _cluster_count = 0;
  cluster = 0;
-
+ 
+//how "big" the flak is, damage, and the delay between each explosion
 _flak_radius =0;
 _flak_dmg = 0;
 _flak_delay = 0;
 
+//the spawn xy cords of flak bomblets
 _flak_round_y = 0;
 _flak_round_x = 0;
 
+//accumulator for delay and angle
 _AoE_accumulator = 0;
 _entity_to_attachment_angle = 0;
 

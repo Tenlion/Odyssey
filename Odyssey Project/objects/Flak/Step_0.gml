@@ -46,7 +46,7 @@ if (_active == true) {
 				_projectiles[projectile]._sprAttack_width_scale = _projectile_width_scale;
 				_projectiles[projectile]._sprAttack_height_scale = _projectile_height_scale;
 				
-				//Flak round stats
+				//Flak round stats only
 				_projectiles[projectile]._AoE_radius = _AoE_radius;
 				_projectiles[projectile]._cluster_count = _cluster_count;
 				_projectiles[projectile]._flak_radius = _flak_radius;
