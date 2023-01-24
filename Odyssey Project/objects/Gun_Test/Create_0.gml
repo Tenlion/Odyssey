@@ -19,7 +19,7 @@ _sprAttachment_height_scale = 0.5;
 
 // Attachment Properties
 _name = "Gun_Test";
-_weight = 1;					// 0 - 180
+_weight = 180;					// 0 - 180
 
 // STAT : Damage
 // NOTE : Negative damage will heal things.
@@ -43,7 +43,7 @@ _trigger_type = "Left Tap";
 // property that is used to tell checks inside the step event whether or not the attachment is actively
 // engaged in fire or not.  It is set to false on purpose, do not change it lol.
 // RANGE : 0 - Infinite for Fire Time
-_fire_time = .5;
+_fire_time = 0.5;
 _fire_accumulator = _fire_time;
 _firing = false;
 
@@ -56,7 +56,7 @@ _attack_type = Projectile;
 // STAT : Projectile Object
 // NOTE : The exact type of projectile a child of this object will use for it's attacks.
 // RANGE : Object
-_projectile_object = Projectile_Straight_Seducer;
+_projectile_object = Projectile_Straight_Freeze;
 
 // STAT : Projectile Sprite
 // NOTE : This is used to store the attachment's current projectile sprite for the Draw Event to use.  This property is created in case
@@ -168,3 +168,7 @@ _line_length = _range * _line_length_control;
 // Well, this stat is made for them.
 // RANGE : 0 - Infinite
 _spawn_radius = 5;
+
+
+//....TESTING!!!TESTING!!!TESTING!!!...........................
+_freeze_time = 2;

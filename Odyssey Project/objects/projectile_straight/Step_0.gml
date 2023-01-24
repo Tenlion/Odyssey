@@ -12,18 +12,18 @@ _object_name = "Projectile_Straight";
 if (position_meeting(x, y, _attachment_foe) == true) {
 	
 	// Creating a variable to hold the instance id of the opposing entity.
-	var foe_instance = instance_position(x, y, _attachment_foe);
+	 _foe_instance = instance_position(x, y, _attachment_foe);
 	
 
 	// Lowering the life of the foe by _damage_current.
-	foe_instance._life -= _damage_current;
+	_foe_instance._life -= _damage_current;
 	
 	// Calculating knockback using knockback force and the entity's mass.
-	var knockback = _knockback_force / foe_instance._mass;
+	var knockback = _knockback_force / _foe_instance._mass;
 	
 	// Knocking back the entity in the direction the instance was traveling by the calculated knockback value above.
-	foe_instance._force_x += lengthdir_x(knockback, _direction);
-	foe_instance._force_y += lengthdir_y(knockback, _direction);
+	_foe_instance._force_x += lengthdir_x(knockback, _direction);
+	_foe_instance._force_y += lengthdir_y(knockback, _direction);
 	
 	// A variable to check if said projectile has colided with something.
 	_hit = true;

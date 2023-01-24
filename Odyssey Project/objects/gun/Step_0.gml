@@ -45,6 +45,9 @@ if (_active == true) {
 				_projectiles[projectile]._acceleration = random_range(_projectile_acceleration_min, _projectile_acceleration_max);
 				_projectiles[projectile]._sprAttack_width_scale = _projectile_width_scale;
 				_projectiles[projectile]._sprAttack_height_scale = _projectile_height_scale;
+				
+				_projectiles[projectile]._freeze_time = _freeze_time;
+				
 
 				// Calculating the attack's direction and setting it's sprite rotation to match the attack direction.
 				var direction_for_attack = random_range(_entity_to_attachment_angle - _accuracy_deviation_current, _entity_to_attachment_angle + _accuracy_deviation_current);

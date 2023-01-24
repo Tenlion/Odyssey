@@ -13,7 +13,7 @@ if (_range_current <= 0 || _speed <= 0 || position_meeting(x, y, _attachment_foe
 
 		//Setting sprite to 0 so it will not be seen till the flak is done.
 		_sprAttack = 0;
-		
+		_damage_current = 0;
 		//Setting the objects x,y for the flak epicenter
 		x = _true_x
 		y = _true_y

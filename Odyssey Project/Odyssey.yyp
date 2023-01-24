@@ -42,6 +42,7 @@
     {"id":{"name":"Flak","path":"objects/Flak/Flak.yy",},"order":2,},
     {"id":{"name":"Projectile_Straight_Seducer","path":"objects/Projectile_Straight_Seducer/Projectile_Straight_Seducer.yy",},"order":2,},
     {"id":{"name":"spr_Diamond","path":"sprites/spr_Diamond/spr_Diamond.yy",},"order":9,},
+    {"id":{"name":"Projectile_Straight_Freeze","path":"objects/Projectile_Straight_Freeze/Projectile_Straight_Freeze.yy",},"order":4,},
     {"id":{"name":"Booma_rang","path":"objects/Booma_rang/Booma_rang.yy",},"order":0,},
     {"id":{"name":"Projectile","path":"objects/Projectile/Projectile.yy",},"order":1,},
     {"id":{"name":"Slot","path":"objects/Slot/Slot.yy",},"order":1,},

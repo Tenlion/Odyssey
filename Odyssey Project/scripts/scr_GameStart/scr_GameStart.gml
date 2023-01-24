@@ -19,7 +19,7 @@ function scr_GameStart() {
 	
 	
 	// Creating Enemies
-	var number_of_enemies = 10;
+	var number_of_enemies = 1;
 	var enemies = [number_of_enemies];
 	
 	for (var foe = 0; foe < number_of_enemies; foe++) {
