@@ -30,7 +30,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Laser_children",
-    "path": "folders/Objects/Attack Tree/Attack Children/Laser_children.yy",
+    "name": "Laser Children",
+    "path": "folders/Objects/Attack Tree/Attack Children/Laser Children.yy",
   },
 }

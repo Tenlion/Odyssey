@@ -5,7 +5,7 @@
 event_inherited();
 
 // Defining the object's name.
-_object_name = "Laser_Gun";
+_object_name = "Tractor_beam";
 
 
 
@@ -18,13 +18,13 @@ _sprAttachment_width_scale = 0.5;
 _sprAttachment_height_scale = 0.5;
 
 // Attachment Properties
-_name = "Laser_gun";
+_name = "Tractor_beam";
 _weight = 180;					// 0 - 180
 
 // STAT : Damage
 // NOTE : Negative damage will heal things.
 // RANGE : -Infinite - Infinite
-_damage = 1;
+_damage = 0;
 
 // STAT : Range
 // NOTE : The maximum range an attack will go.
@@ -43,7 +43,7 @@ _trigger_type = "Left Hold";
 // property that is used to tell checks inside the step event whether or not the attachment is actively
 // engaged in fire or not.  It is set to false on purpose, do not change it lol.
 // RANGE : 0 - Infinite for Fire Time
-_fire_time = 0.5;
+_fire_time = 0;
 _fire_accumulator = _fire_time;
 _firing = false;
 
@@ -61,11 +61,10 @@ _overheated = false;
 // RANGE : Object
 _attack_type = Projectile;
 
-// STAT : Laser Object and Laser spawn id Holder
+// STAT : Laser Object
 // NOTE : The exact type of Laser a child of this object will use for it's attacks.
 // RANGE : Object
 _laser_object = Beam;
-_laser_id = 0;
 
 // STAT : Laser Sprite
 // NOTE : This is used to store the attachment's current Laser sprite for the Draw Event to use.  This property is created in case
@@ -94,7 +93,7 @@ _kick_force = 0;
 // STAT : Knockback
 // NOTE : Negative Knockback will cause the entity hit to be pulled toward the Laser they are hit with.
 // RANGE : -Infinite - Infinite
-_knockback_force = 0;
+_knockback_force = -0.05;
 
 // STAT : Falloff Point
 // NOTE : The point in which falloff occurs for the Laser.  
@@ -131,7 +130,7 @@ _accuracy_deviation_current = _accuracy_deviation_base;
 // STAT : Recoil
 // NOTE : Recoil increases the current accuracy deviation by it's value everytime the attachment is fired.
 // RANGE : 0 - 180
-_recoil = 1;
+_recoil = 0;
 
 // STAT : Recovery
 // NOTE : Recovery decreases the current accuracy deviation by it's value while the attachment is not being fired.
@@ -142,13 +141,13 @@ _recovery = 0.1;
 // STAT : Line Active
 // NOTE : Determines whether or not accuracy lines are enabled for the attachment.
 // RANGE : True or False
-_line_active = false;
+_line_active = true;
 
 // STAT : Line Length Control + Line Length
 // NOTE : Control determines how long the accuracy lines are.  Up to a max of the attachment's range stat.
 // Line Length is the exact value of accuracy lines length based on the controller and _range.
 // RANGE : 0 - 1 for Line Length Control
-_line_length_control = 0.5;
+_line_length_control = 0.1;
 _line_length = _range * _line_length_control;
 
 // STAT : Spawn Radius
@@ -166,5 +165,6 @@ _laser_width = 50;
 //Range 0 - 180. Advised not to go past 90
 _laser_spread = 0;
 
+//Pulse laser or pulse laser children only.
 //STAT : sets how long in sec a pulse will last. Bigger the number the more damage it will do.
 _life_time = 0.25;
