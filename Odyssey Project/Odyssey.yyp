@@ -31,6 +31,7 @@
     {"id":{"name":"Projectile_Straight_Boomerang","path":"objects/Projectile_Straight_Boomerang/Projectile_Straight_Boomerang.yy",},"order":0,},
     {"id":{"name":"Constant","path":"objects/Constant/Constant.yy",},"order":0,},
     {"id":{"name":"Laser_Gun","path":"objects/Laser_Gun/Laser_Gun.yy",},"order":4,},
+    {"id":{"name":"Flame_Thrower","path":"objects/Flame_Thrower/Flame_Thrower.yy",},"order":5,},
     {"id":{"name":"Lasers","path":"objects/Lasers/Lasers.yy",},"order":3,},
     {"id":{"name":"Shotgun","path":"objects/Shotgun/Shotgun.yy",},"order":2,},
     {"id":{"name":"Rocket","path":"objects/Rocket/Rocket.yy",},"order":3,},
