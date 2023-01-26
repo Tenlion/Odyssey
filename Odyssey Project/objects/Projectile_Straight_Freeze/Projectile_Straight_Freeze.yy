@@ -31,7 +31,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Projectile_Straight Children",
-    "path": "folders/Objects/Attack Tree/Attack Children/Projectile Children/Projectile_Straight Children.yy",
+    "name": "Iced",
+    "path": "folders/Objects/Iced.yy",
   },
 }
