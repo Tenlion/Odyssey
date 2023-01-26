@@ -43,7 +43,7 @@ _trigger_type = "Left Tap";
 // property that is used to tell checks inside the step event whether or not the attachment is actively
 // engaged in fire or not.  It is set to false on purpose, do not change it lol.
 // RANGE : 0 - Infinite for Fire Time
-_fire_time = 0.5;
+_fire_time = 0.0;
 _fire_accumulator = _fire_time;
 _firing = false;
 
@@ -100,12 +100,12 @@ _projectile_acceleration_max = 0.3;
 // STAT : Kick
 // NOTE : Negative Kick will cause the attached entity to be pulled in the direction of the shot.
 // RANGE : -Infinite - Infinite
-_kick_force = 0.5;
+_kick_force = 0.0;
 
 // STAT : Knockback
 // NOTE : Negative Knockback will cause the entity hit to be pulled toward the projectile they are hit with.
 // RANGE : -Infinite - Infinite
-_knockback_force = 0.5;
+_knockback_force = 0.0;
 
 // STAT : Falloff Point
 // NOTE : The point in which falloff occurs for the projectiles.  
