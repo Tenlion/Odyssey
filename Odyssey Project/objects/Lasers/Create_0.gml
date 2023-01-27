@@ -21,3 +21,4 @@ _laser_width = 0;
 _laser_spread = 0;
 
 _life_accum= 0;
+_range_accuracy = 20;

@@ -2,10 +2,10 @@
 // If true, apply _current_damage to the entity's _life and knockback the entity.
 if (collision_line(_xEnd_1,_yEnd_1,_xEnd_2,_yEnd_2,_attachment_foe,false,true)) {
 	
-	// Creating a data to hold the instance id of the opposing entity.
+	// Creating a DS list to hold the instance id of the opposing entitys.
 	var foe_list = ds_list_create();
 	
-	//Testing of any enemy is colliding with the end of the laser and stores the Id in a ds list
+	//Testing if any enemies are colliding with the end of the laser and stores the Id in a ds list
 	var _num = collision_line_list(_xEnd_1,_yEnd_1,_xEnd_2,_yEnd_2,_attachment_foe,false,true,foe_list,false);
 			
 			if (_num > 0){
@@ -39,17 +39,19 @@ if (collision_line(_xEnd_1,_yEnd_1,_xEnd_2,_yEnd_2,_attachment_foe,false,true)) 
 }
 
 //setting the start point of the laser according to where the attatchment is
-_las_srt_1 = lengthdir_x(_laser_width,_sprAttack_rotation+90);
-_las_srt_2 = lengthdir_y(_laser_width,_sprAttack_rotation+90);
+_laser_start_1 = lengthdir_x(_laser_width,_sprAttack_rotation+90);
+_laser_start_2 = lengthdir_y(_laser_width,_sprAttack_rotation+90);
 	
-_xStart_1 = x - _las_srt_1;
-_yStart_1 = y - _las_srt_2;
+_xStart_1 = x - _laser_start_1;
+_yStart_1 = y - _laser_start_2;
 	
-_xStart_2 = x + _las_srt_1;
-_yStart_2 = y + _las_srt_2;
+_xStart_2 = x + _laser_start_1;
+_yStart_2 = y + _laser_start_2;
 
 //Loops the range of the laser until it reaches it's max range or it hits somthing.
-for(var range = 0; range < _range; range+=20){
+//!!INPORTANT NOTE : The lower the range+= the more accurate the laser is but decreases preformance load by n^2.
+//Increasing range+= will make it less accurate but also increases preformance
+for(var range = 0; range < _range; range += _range_accuracy){
 	
 	_xEnd_1 = _xStart_1 + lengthdir_x(range,_sprAttack_rotation - _laser_spread);
 	_yEnd_1 = _yStart_1 + lengthdir_y(range,_sprAttack_rotation - _laser_spread);

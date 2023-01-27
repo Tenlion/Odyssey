@@ -164,3 +164,10 @@ _laser_width = 50;
 //STAT : How wide the endpoint of the laser willl be in degrees. Acts like a flashlight
 //Range 0 - 180. Advised not to go past 90
 _laser_spread = 0;
+
+//STAT : This is a preformace only stat. The higher the number the more preformance but less accurate.
+// The lower the number the more accurate the laser becomes but at a heavy loss of preformance.
+// The term accuracy is how many pixles the end of the laser will move per loop itiration.
+// This is directly related to the range of the laser. The longer the range the less preformance and vice versa.
+// Recommended to keep at default.
+_range_accuracy = 20;

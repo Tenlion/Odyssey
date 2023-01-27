@@ -168,3 +168,10 @@ _laser_spread = 0;
 //Pulse laser or pulse laser children only.
 //STAT : sets how long in sec a pulse will last. Bigger the number the more damage it will do.
 _life_time = 0.25;
+
+//STAT : This is a preformace only stat. The higher the number the more preformance but less accurate.
+// The lower the number the more accurate the laser becomes but at a heavy loss of preformance.
+// The term accuracy is how many pixles the end of the laser will move per loop itiration.
+// This is directly related to the range of the laser. The longer the range the less preformance and vice versa.
+// Recommended to keep at default.
+_range_accuracy = 20;

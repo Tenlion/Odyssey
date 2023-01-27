@@ -45,6 +45,7 @@ if (_active == true) {
 				_lasers[laser]._laser_width = _laser_width ;
 				_lasers[laser]._laser_spread = _laser_spread;
 				_lasers[laser]._life_time = _life_time;
+				_lasers[laser]._range_accuracy = _range_accuracy;
 
 				// Calculating the attack's direction and setting it's sprite rotation to match the attack direction.
 				var direction_for_attack = random_range(_entity_to_attachment_angle - _accuracy_deviation_current, _entity_to_attachment_angle + _accuracy_deviation_current);
