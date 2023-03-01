@@ -11,11 +11,10 @@
     {"id":{"name":"spr_Octagon","path":"sprites/spr_Octagon/spr_Octagon.yy",},"order":2,},
     {"id":{"name":"spr_Circle","path":"sprites/spr_Circle/spr_Circle.yy",},"order":4,},
     {"id":{"name":"spr_Diamond","path":"sprites/spr_Diamond/spr_Diamond.yy",},"order":9,},
+    {"id":{"name":"scr_Functions","path":"scripts/scr_Functions/scr_Functions.yy",},"order":0,},
     {"id":{"name":"Space","path":"rooms/Space/Space.yy",},"order":0,},
   ],
   "Options": [
-    {"name":"Linux","path":"options/linux/options_linux.yy",},
-    {"name":"macOS","path":"options/mac/options_mac.yy",},
     {"name":"Windows","path":"options/windows/options_windows.yy",},
     {"name":"operagx","path":"options/operagx/options_operagx.yy",},
     {"name":"Main","path":"options/main/options_main.yy",},
