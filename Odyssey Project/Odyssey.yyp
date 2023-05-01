@@ -7,6 +7,7 @@
     {"id":{"name":"spr_Hexagon","path":"sprites/spr_Hexagon/spr_Hexagon.yy",},"order":6,},
     {"id":{"name":"Sprite9","path":"sprites/Sprite9/Sprite9.yy",},"order":15,},
     {"id":{"name":"spr_Square","path":"sprites/spr_Square/spr_Square.yy",},"order":7,},
+    {"id":{"name":"Control","path":"objects/Control/Control.yy",},"order":0,},
     {"id":{"name":"spr_Rectangle","path":"sprites/spr_Rectangle/spr_Rectangle.yy",},"order":8,},
     {"id":{"name":"spr_Octagon","path":"sprites/spr_Octagon/spr_Octagon.yy",},"order":2,},
     {"id":{"name":"spr_Circle","path":"sprites/spr_Circle/spr_Circle.yy",},"order":4,},
