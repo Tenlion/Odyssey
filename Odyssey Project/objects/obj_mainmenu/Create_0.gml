@@ -17,7 +17,7 @@ in the obj_button.
 _destination = [
 room_goto_next,
 function() {room_goto(2)},
-function() {audio_play_sound(snd_click_fail,1,0)},
+function() {},
 game_end
 ];
 
@@ -46,9 +46,11 @@ array_foreach(_text,function(_button_text) {
 #endregion
 
 #region Ini Load
+
+//prototype file functions
 if (file_exists("settings.ini")){
 	settings_load()
 } else {
-	settings_write()
+	settings_write_default()
 }
 #endregion

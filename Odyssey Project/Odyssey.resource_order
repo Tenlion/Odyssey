@@ -2,10 +2,11 @@
   "FolderOrderSettings": [],
   "ResourceOrderSettings": [
     {"name":"Start_Menu","order":2,"path":"rooms/Start_Menu/Start_Menu.yy",},
+    {"name":"spr_button_bg","order":2,"path":"sprites/spr_button_bg/spr_button_bg.yy",},
     {"name":"Sprite9","order":15,"path":"sprites/Sprite9/Sprite9.yy",},
     {"name":"obj_background","order":1,"path":"objects/obj_background/obj_background.yy",},
     {"name":"snd_hover","order":2,"path":"sounds/snd_hover/snd_hover.yy",},
-    {"name":"spr_Background","order":1,"path":"sprites/spr_Background/spr_Background.yy",},
+    {"name":"spr_background","order":1,"path":"sprites/spr_background/spr_background.yy",},
     {"name":"Game_Space","order":1,"path":"rooms/Game_Space/Game_Space.yy",},
     {"name":"obj_button","order":2,"path":"objects/obj_button/obj_button.yy",},
     {"name":"snd_click_fail","order":1,"path":"sounds/snd_click_fail/snd_click_fail.yy",},

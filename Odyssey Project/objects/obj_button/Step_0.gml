@@ -22,14 +22,13 @@ if
 		obj_mainmenu.menu_index = _this_button.index;
 	 }
 	 if (_click) {
-		 audio_play_sound(snd_click_success,1,0)
-		 
-		 _this_button.button_function();
+		 //audio_play_sound(snd_click_success,1,0)
+		 _this_button.clicked();
 	 }
 }
 
 //Check if keyboard clicked
 if (_select) and (_this_button.index == obj_mainmenu.menu_index){
-	audio_play_sound(snd_click_success,1,0)
-	_this_button.button_function();
+	//audio_play_sound(snd_click_success,1,0)
+	_this_button.clicked();
 }
